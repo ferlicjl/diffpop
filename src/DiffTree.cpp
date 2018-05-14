@@ -398,7 +398,7 @@ void DiffTree::time_steps(int n, int outputFrequency)
 {
     //initializeTree();
 	//std::cout << "made it here" << std::cout;
-	bool verbose = false;
+	bool verbose = true;
 	int obsMod = pow(10, round(log10(n)-1));
 	//initializeCells();
 
@@ -454,7 +454,6 @@ void DiffTree::time_steps(int n, int outputFrequency)
 	//writeAll(n);
 
     std::ofstream done_file;
-	std::cout << "HELRKJELKJRLE" << std::endl;
     done_file.open(opath+".done");
     done_file << "Done" << std::endl;
     done_file.close();

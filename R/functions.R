@@ -415,13 +415,13 @@ simulateTree = function(tree, fixed = FALSE, time = 100, traverseFrequency = -1,
 
   # Call appropriate
   if(fixed){
-    flex:::simulateFixedTreeCodeNew(nObs = time,
+    diffpop:::simulateFixedTreeCodeNew(nObs = time,
                                     traverseFrequency = traverseFrequency,
                                     indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
                                     outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
                                     seed = seed)
   } else {
-    flex:::simulateTreeCodeNew(nObs = time,
+    diffpop:::simulateTreeCodeNew(nObs = time,
                                traverseFrequency = traverseFrequency,
                                indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
                                outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
