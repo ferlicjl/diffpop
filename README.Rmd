@@ -2,7 +2,9 @@
 title: "DIFFpop"
 author: "Jeremy Ferlic, Jiantao Shi, Thomas O. McDonald, and Franziska Michor"
 date: "April 18, 2018"
-output: md_document
+output: 
+  md_document:
+    variant: markdown_github
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
