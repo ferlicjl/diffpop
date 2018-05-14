@@ -15,11 +15,11 @@ Imports:
     Rcpp,
     RcppGSL,
     igraph,
+	R.utils,
     ggplot2,
     dplyr,
     magrittr,
-    tidyr,
-	R.utils
+    tidyr
 LinkingTo: Rcpp, RcppGSL
 SystemRequirements: GNU GSL
 NeedsCompilation: yes

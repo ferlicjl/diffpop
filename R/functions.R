@@ -319,7 +319,7 @@ writeTree = function(tree, outdir = "tree_files/"){
   g = myTree
   cdir = getwd()
 
-  directory = getAbsolutePath(outdir)
+  directory = R.utils::getAbsolutePath(outdir)
 
   #outdir = paste(getwd(), outdir, sep = "")
   dir.create(directory, showWarnings = F, recursive = T)
@@ -387,4 +387,47 @@ removeTree = function(){
     rm(list = objs[grep("myTree", objs)], pos = ".GlobalEnv")
   }
 }
+
+#' simulateTree
+#'
+#' Used to plot hierarchy structure using igraph
+#'
+#' @param tree DiffTree object to simulate
+#' @param fixed boolean.  TRUE if simulating a fixed population hierarchy using FixedPops and DiffTriangles, FALSE if simulating a dynamic-sized population hierarchy using GrowingPops
+#' @param time number of time units to simulate
+#' @param traverseFrequency how often to output entire system population to filesystem
+#' @param indir input directory for tree files
+#' @param outdir output directory
+#' @param seed numeric seed for random number generator
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' simulateTree(myTree, fixed = TRUE, time = 500, traverseFrequency = 1, indir = "input_dir", outdir = "output_dir")
+#' }
+simulateTree = function(tree, fixed = FALSE, time = 100, traverseFrequency = -1, indir = ".", outdir = ".", seed = NULL){
+  # Write tree files
+  writeTree(tree, indir)
+
+  # Create directory for output files
+  directory = R.utils::getAbsolutePath(outdir)
+  dir.create(directory, showWarnings = F, recursive = T)
+
+  # Call appropriate
+  if(fixed){
+    flex:::simulateFixedTreeCodeNew(nObs = time,
+                                    traverseFrequency = traverseFrequency,
+                                    indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
+                                    outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
+                                    seed = seed)
+  } else {
+    flex:::simulateTreeCodeNew(nObs = time,
+                               traverseFrequency = traverseFrequency,
+                               indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
+                               outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
+                               seed = seed)
+  }
+}
+
+
 
