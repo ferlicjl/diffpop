@@ -4,9 +4,11 @@
 \alias{addEdge}
 \title{addEdge}
 \usage{
-addEdge(parent, child, type, rate)
+addEdge(tree, parent, child, type, rate)
 }
 \arguments{
+\item{tree}{DiffTree to add transition to}
+
 \item{parent}{parent population name ("from" population)}
 
 \item{child}{child population name ("to" population)}
@@ -20,8 +22,8 @@ Used to designate transition between populations
 }
 \examples{
 \dontrun{
-addEdge("Population A", "Population A", "alpha", 0.01)
-addEdge("Population A", "Population B", "gamma1", 0.05)
-addEdge("Population A", "Population A", "mutation", 1e-7)
+addEdge(myTree, "Population A", "Population A", "alpha", 0.01)
+addEdge(myTree, "Population A", "Population B", "gamma1", 0.05)
+addEdge(myTree, "Population A", "Population A", "mutation", 1e-7)
 }
 }

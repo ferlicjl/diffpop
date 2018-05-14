@@ -4,9 +4,11 @@
 \alias{GrowingPop}
 \title{GrowingPop}
 \usage{
-GrowingPop(name, size, label = 0)
+GrowingPop(tree, name, size, label = 0)
 }
 \arguments{
+\item{tree}{DiffTree object to add GrowingPop to}
+
 \item{name}{population name}
 
 \item{size}{initial population size}
@@ -18,6 +20,6 @@ Designates a GrowingPop, a structure used to simulate differentiation via a bran
 }
 \examples{
 \dontrun{
-GrowingPop("Population A", 1000, 0.5)
+GrowingPop(myTree, "Population A", 1000, 0.5)
 }
 }

@@ -4,9 +4,11 @@
 \alias{plotTree}
 \title{plotTree}
 \usage{
-plotTree(allEdge = F)
+plotTree(tree, allEdge = F)
 }
 \arguments{
+\item{tree}{DiffTree object to plot}
+
 \item{allEdge}{boolean variable set to TRUE to plot all transitions, set to FALSE to only show gamma1, gamma2, and beta edges}
 }
 \description{
@@ -14,6 +16,6 @@ Used to plot hierarchy structure using igraph
 }
 \examples{
 \dontrun{
-plotTree(allEdge = TRUE)
+plotTree(myTree, allEdge = TRUE)
 }
 }

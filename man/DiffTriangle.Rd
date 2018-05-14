@@ -4,9 +4,11 @@
 \alias{DiffTriangle}
 \title{DiffTriangle}
 \usage{
-DiffTriangle(name, height, first_level = 1, label = 0)
+DiffTriangle(tree, name, height, first_level = 1, label = 0)
 }
 \arguments{
+\item{tree}{DiffTree object to add DiffTriangle to}
+
 \item{name}{population name}
 
 \item{height}{number of levels in structure, corresponding to number of levels until full maturation}
@@ -20,6 +22,6 @@ Designates a DiffTriangle, a fixed-size structure used to model a population und
 }
 \examples{
 \dontrun{
-DiffTriangle("Differentiated Population A", 12, 1000, 0.5)
+DiffTriangle(myTree, "Differentiated Population A", 12, 1000, 0.5)
 }
 }

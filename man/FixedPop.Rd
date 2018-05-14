@@ -4,9 +4,11 @@
 \alias{FixedPop}
 \title{FixedPop}
 \usage{
-FixedPop(name, size, label = 0)
+FixedPop(tree, name, size, label = 0)
 }
 \arguments{
+\item{tree}{DiffTree object to add FixedPop to}
+
 \item{name}{population name}
 
 \item{size}{initial population size}
@@ -18,6 +20,6 @@ Designates a FixedPop, a structure whose size remains constant throughout the co
 }
 \examples{
 \dontrun{
-FixedPop("Population A", 1000, 0.5)
+FixedPop(myTree, "Population A", 1000, 0.5)
 }
 }

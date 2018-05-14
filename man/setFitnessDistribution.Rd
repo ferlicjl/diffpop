@@ -4,11 +4,13 @@
 \alias{setFitnessDistribution}
 \title{setFitnessDistribution}
 \usage{
-setFitnessDistribution(distribution = "normal", is_random = T,
+setFitnessDistribution(tree, distribution = "normal", is_random = T,
   alpha_fitness = 0, beta_fitness = 1, pass_prob = 1,
   upper_fitness = NA, lower_fitness = NA)
 }
 \arguments{
+\item{tree}{DiffTree object for which to set fitness distribution}
+
 \item{distribution}{random distribution from which to draw ("normal", "doubleexp", "uniform")}
 
 \item{is_random}{boolean variable set to TRUE if random fitness distribution is specified}
@@ -28,6 +30,6 @@ Used to designate distribution from which changes in fitness for a new clone are
 }
 \examples{
 \dontrun{
-setFitnessDistribution(distribution = "uniform", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 0, upper_fitness = 5, lower_fitness = 0)
+setFitnessDistribution(tree = myTree, distribution = "uniform", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 0, upper_fitness = 5, lower_fitness = 0)
 }
 }

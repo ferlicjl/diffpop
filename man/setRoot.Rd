@@ -4,11 +4,18 @@
 \alias{setRoot}
 \title{setRoot}
 \usage{
-setRoot(popName)
+setRoot(tree, popName)
 }
 \arguments{
+\item{tree}{DiffTree object to modify}
+
 \item{popName}{name of furthest upstream population}
 }
 \description{
 Used to designate furthest upstream population in the hierarchy
+}
+\examples{
+\dontrun{
+setRoot(myTree, "Population A")
+}
 }

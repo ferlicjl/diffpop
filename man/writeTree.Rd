@@ -4,9 +4,11 @@
 \alias{writeTree}
 \title{writeTree}
 \usage{
-writeTree(outdir = "tree_files/")
+writeTree(tree, outdir = "tree_files/")
 }
 \arguments{
+\item{tree}{DiffTree object to write}
+
 \item{outdir}{output directory for files}
 }
 \description{
@@ -14,6 +16,6 @@ Used to create tree files needed by C++ simulation
 }
 \examples{
 \dontrun{
-writeTree(outdir = "C:/diffpop/example1/")
+writeTree(myTree, outdir = "C:/diffpop/example1/")
 }
 }
