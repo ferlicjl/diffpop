@@ -1,0 +1,67 @@
+setwd("C:/DFCI/Jeremy/flex/flex/")
+
+library(flex)
+
+unlink("graph_files/*", recursive = T)
+
+flex:::removeTree()
+GrowingPop("pop1", sample(500:1000, 1), label = 0.0)
+addEdge("pop1", "pop1", "alpha", (0.5+runif(1))/100)
+
+for(i in 2:3){
+  GrowingPop(paste("pop", i, sep = ""), sample(500:1000, 1), label = 0)
+  popi = paste("pop", i, sep = "")
+  #popparent = paste("pop", sample(1:(i-1), 1), sep ="")
+  popparent = paste("pop", (i-1), sep = "")
+  addEdge(popparent, popi, "gamma1", runif(1)/100)
+  if(runif(1) < 0.25){
+    addEdge(popi, popi, "alpha", runif(1, max = 0.3))
+  }
+
+  addEdge(popi, popparent, "dediff", runif(1))
+}
+i = 4
+GrowingPop(paste("pop", i, sep = ""), sample(50:100, 1), label = 1)
+popi = paste("pop", i, sep = "")
+#popparent = paste("pop", sample(1:(i-1), 1), sep ="")
+popparent = paste("pop", (i-1), sep = "")
+addEdge(popparent, popi, "gamma1", runif(1)/100)
+if(runif(1) < 0.25){
+  addEdge(popi, popi, "alpha", runif(1)/100)
+}
+addEdge(popi, popparent, "dediff", runif(1)/100)
+
+#addEdge("pop2", "pop1", "dediff", 0.5)
+setRoot("pop1")
+
+
+
+#myTree = randomExample
+
+par(mfrow=c(1,1))
+plotTree(allEdge = T)
+
+writeTree()
+
+simulateTreeCodeNew(nObs = 1000, indir = paste(getwd(), "/graph_files/", sep = ""),
+             outdir = paste(getwd(), "/graph_files/", sep = ""))
+
+
+inDir = paste(getwd(), "/graph_files/", sep = "")
+setwd(inDir)
+popfiles = list.files(inDir, pattern="^out.*.pop$", full.names=F)
+lblfiles = list.files(inDir, pattern="^out.*.label$", full.names=F)
+
+a = read.table(popfiles[length(popfiles)], header = T)
+b = read.table(lblfiles[length(lblfiles)], header = T)
+
+par(mfrow=c(3,4))
+for(i in 2:ncol(a)){
+  plot(a[,1], a[,i], main = colnames(a)[i], ylab = "Population size", xlab = "time")
+  plot(b[,1], b[,i], main = colnames(b)[i],ylim = c(0,1), xlab = "time",
+       ylab = "Fraction Labelled", col = "red")
+}
+
+infofiles = list.files(inDir, pattern="^out.*.info$", full.names=F)
+info = read.table(infofiles[length(infofiles)], header = T)
+

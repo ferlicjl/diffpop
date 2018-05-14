@@ -1,0 +1,38 @@
+{
+    "data" : [
+        "\nR version 3.4.2 (2017-09-28) -- \"Short Summer\"\nCopyright (C) 2017 The R Foundation for Statistical Computing\nPlatform: x86_64-w64-mingw32/x64 (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under certain conditions.\nType 'license()' or 'licence()' for distribution details.\n\nR is a collaborative project with many contributors.\nType 'contributors()' for more information and\n'citation()' on how to cite R or R packages in publications.\n\nType 'demo()' for some demos, 'help()' for on-line help, or\n'help.start()' for an HTML browser interface to help.\nType 'q()' to quit R.\n\n",
+        "[Workspace loaded from C:/DFCI/Jeremy/flex/flex/.RData]\n\n",
+        "> ",
+        "source('C:/Users/Jeremy/Dropbox/Harvard/Finances/assemble.R')",
+        "Loading required package: rJava\n",
+        "Loading required package: xlsxjars\n",
+        "Error in rbind(final, df) : object 'final' not found\n",
+        "In addition: ",
+        "Warning messages:\n",
+        "1: package ‘xlsx’ was built under R version 3.4.3 \n",
+        "2: package ‘rJava’ was built under R version 3.4.3 \n",
+        "3: package ‘xlsxjars’ was built under R version 3.4.3 \n",
+        "4: package ‘readxl’ was built under R version 3.4.3 \n",
+        "> ",
+        "source('C:/Users/Jeremy/Dropbox/Harvard/Finances/assemble.R')",
+        "\nRestarting R session...\n\n\nRestarting R session...\n\n\nRestarting R session...\n\n\nRestarting R session...\n\n"
+    ],
+    "type" : [
+        2,
+        2,
+        0,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        1,
+        2
+    ]
+}

@@ -1,0 +1,2567 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/DiffTree.h",
+                "kind" : 2,
+                "line" : 31,
+                "name" : "DiffTree",
+                "parent_name" : "",
+                "usr" : "c:@C@DiffTree"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/DiffTree.h",
+        "file_last_write" : 1525889652
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/DiffTriangle.h",
+                "kind" : 2,
+                "line" : 29,
+                "name" : "DiffTriangle",
+                "parent_name" : "",
+                "usr" : "c:@C@DiffTriangle"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/DiffTriangle.h",
+        "file_last_write" : 1525712352
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/FixedPop.h",
+                "kind" : 2,
+                "line" : 27,
+                "name" : "FixedPop",
+                "parent_name" : "",
+                "usr" : "c:@C@FixedPop"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/FixedPop.h",
+        "file_last_write" : 1525711917
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/GrowingPop.h",
+                "kind" : 2,
+                "line" : 30,
+                "name" : "GrowingPop",
+                "parent_name" : "",
+                "usr" : "c:@C@GrowingPop"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/GrowingPop.h",
+        "file_last_write" : 1525880708
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/Node.h",
+                "kind" : 2,
+                "line" : 28,
+                "name" : "Node",
+                "parent_name" : "",
+                "usr" : "c:@C@Node"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/Node.h",
+        "file_last_write" : 1525712565
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/NodeList.h",
+                "kind" : 2,
+                "line" : 30,
+                "name" : "NodeList",
+                "parent_name" : "",
+                "usr" : "c:@C@NodeList"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/NodeList.h",
+        "file_last_write" : 1525712525
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 24,
+                "name" : "GlobalParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@GlobalParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 48,
+                "name" : "clone",
+                "parent_name" : "",
+                "usr" : "c:@S@clone"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 68,
+                "name" : "FitnessParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@FitnessParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 79,
+                "name" : "MutationParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@MutationParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 87,
+                "name" : "PunctuationParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@PunctuationParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 96,
+                "name" : "EpistaticParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@EpistaticParameters"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantGlobalStructs.h",
+        "file_last_write" : 1488997466
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/constantRVFunctions.h",
+        "file_last_write" : 1488997466
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/inst/include/helpers.h",
+        "file_last_write" : 1525284320
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 163,
+                "name" : "setFitnessDist(FitnessParameters)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setFitnessDist#$@S@FitnessParameters#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 176,
+                "name" : "setRoot(GrowingPop *)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setRoot#*$@C@GrowingPop#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 183,
+                "name" : "zeroEvents",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@zeroEvents#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTree.cpp",
+        "file_last_write" : 1525889750
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 159,
+                "name" : "addTriChild(DiffTriangle *)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@addTriChild#*$@C@DiffTriangle#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 169,
+                "name" : "addTriChild(DiffTriangle *, double)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@addTriChild#*$@C@DiffTriangle#d#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 177,
+                "name" : "initialize(long)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@initialize#L#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 319,
+                "name" : "add_cell(long, int, double)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@add_cell#L#I#d#"
+            },
+            {
+                "column" : 24,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 397,
+                "name" : "getRemoveLastLevel(int)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@getRemoveLastLevel#I#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 415,
+                "name" : "doubleCells(int)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@doubleCells#I#"
+            },
+            {
+                "column" : 24,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 425,
+                "name" : "removeLastAndDouble(int)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@removeLastAndDouble#I#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 448,
+                "name" : "printCodes",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@printCodes#"
+            },
+            {
+                "column" : 22,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 453,
+                "name" : "getSumRates",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@getSumRates#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 495,
+                "name" : "time_step(bool)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@time_step#b#"
+            },
+            {
+                "column" : 22,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 500,
+                "name" : "sdi",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@sdi#"
+            },
+            {
+                "column" : 22,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 505,
+                "name" : "coded",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@coded#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 510,
+                "name" : "writeToFile(int &)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@writeToFile#&I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/DiffTriangle.cpp",
+        "file_last_write" : 1525711468
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 67,
+                "name" : "up_Event(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@up_Event#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 84,
+                "name" : "down_Event(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@down_Event#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 116,
+                "name" : "time_step(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@time_step#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 198,
+                "name" : "single_event(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@single_event#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 257,
+                "name" : "dediff",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@dediff#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 292,
+                "name" : "add_cell(long, int, double)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@add_cell#L#I#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 307,
+                "name" : "getNumEvents",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@getNumEvents#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/FixedPop.cpp",
+        "file_last_write" : 1525711438
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 122,
+                "name" : "addChild(GrowingPop *, double, double, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@addChild#*$@C@GrowingPop#d#d#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 139,
+                "name" : "addDediff(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@addDediff#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 147,
+                "name" : "setParent(GrowingPop *)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setParent#*$@C@GrowingPop#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 153,
+                "name" : "setTree(DiffTree *)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setTree#*$@C@DiffTree#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 160,
+                "name" : "setUpstreamEvents(int)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setUpstreamEvents#I#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 166,
+                "name" : "zeroEvents",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@zeroEvents#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 178,
+                "name" : "setDiff1(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setDiff1#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 190,
+                "name" : "setDiff2(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setDiff2#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 202,
+                "name" : "setAsymdiff(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setAsymdiff#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 216,
+                "name" : "calcDelta",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@calcDelta#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 235,
+                "name" : "calcAlpha",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@calcAlpha#"
+            },
+            {
+                "column" : 15,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 6,
+                "line" : 261,
+                "name" : "operator<<(int &, const GrowingPop &)",
+                "parent_name" : "",
+                "usr" : "c:@F@operator<<#&I#&1$@C@GrowingPop#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 268,
+                "name" : "printPretty(int)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@printPretty#I#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 278,
+                "name" : "printCodes",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@printCodes#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 309,
+                "name" : "getNumEvents",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@getNumEvents#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 318,
+                "name" : "getNumDownEvents",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@getNumDownEvents#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 333,
+                "name" : "mitosis",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@mitosis#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 356,
+                "name" : "apoptosis",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@apoptosis#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 369,
+                "name" : "diff1",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@diff1#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 407,
+                "name" : "diff2",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@diff2#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 445,
+                "name" : "asym_diff",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@asym_diff#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 477,
+                "name" : "dediff",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@dediff#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 513,
+                "name" : "mutate(long)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@mutate#L#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 549,
+                "name" : "mutateCur",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@mutateCur#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 584,
+                "name" : "erase_cell(long)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@erase_cell#L#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 592,
+                "name" : "add_cell(long, int, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@add_cell#L#I#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 603,
+                "name" : "add_dediffCell(long, int, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@add_dediffCell#L#I#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 617,
+                "name" : "initializeCells(long)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@initializeCells#L#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 639,
+                "name" : "initializeTree",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@initializeTree#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 652,
+                "name" : "time_step(bool)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@time_step#b#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 705,
+                "name" : "single_event(bool)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@single_event#b#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 757,
+                "name" : "print_rates",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@print_rates#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 776,
+                "name" : "setAlpha(double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setAlpha#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 782,
+                "name" : "setDeath(double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setDeath#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 788,
+                "name" : "setMu(double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setMu#d#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 795,
+                "name" : "sdi",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@sdi#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 801,
+                "name" : "coded",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@coded#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 823,
+                "name" : "writeToFile(int &)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@writeToFile#&I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/GrowingPop.cpp",
+        "file_last_write" : 1525892570
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 12,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/Node.cpp",
+                "kind" : 7,
+                "line" : 90,
+                "name" : "setList(NodeList *)",
+                "parent_name" : "Node",
+                "usr" : "c:@C@Node@F@setList#*$@C@NodeList#"
+            },
+            {
+                "column" : 12,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/Node.cpp",
+                "kind" : 7,
+                "line" : 94,
+                "name" : "removeFromList",
+                "parent_name" : "Node",
+                "usr" : "c:@C@Node@F@removeFromList#"
+            },
+            {
+                "column" : 12,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/Node.cpp",
+                "kind" : 7,
+                "line" : 113,
+                "name" : "printNode",
+                "parent_name" : "Node",
+                "usr" : "c:@C@Node@F@printNode#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/Node.cpp",
+        "file_last_write" : 1525711530
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 49,
+                "name" : "insert(long, int, double, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@insert#L#I#d#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 93,
+                "name" : "insert(long, int, double, int, int, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@insert#L#I#d#I#I#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 137,
+                "name" : "remove(long, int, double, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@remove#L#I#d#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 172,
+                "name" : "remove(long, int, double, int, int, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@remove#L#I#d#I#I#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 207,
+                "name" : "balanceLeft",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@balanceLeft#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 235,
+                "name" : "balanceRight",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@balanceRight#"
+            },
+            {
+                "column" : 17,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 267,
+                "name" : "getAt(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@getAt#I#"
+            },
+            {
+                "column" : 17,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 282,
+                "name" : "getCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@getCur#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 286,
+                "name" : "setCurIndex(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@setCurIndex#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 302,
+                "name" : "setCurFitness(double)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@setCurFitness#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 317,
+                "name" : "increaseAtCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@increaseAtCur#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 331,
+                "name" : "removeAtCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@removeAtCur#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 345,
+                "name" : "removeAt(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@removeAt#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 374,
+                "name" : "increaseAt(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@increaseAt#I#"
+            },
+            {
+                "column" : 17,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 386,
+                "name" : "getAtFitness(double)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@getAtFitness#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 401,
+                "name" : "traversePrint",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@traversePrint#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 412,
+                "name" : "printCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@printCur#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 416,
+                "name" : "labelled",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@labelled#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 430,
+                "name" : "sdi",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@sdi#"
+            },
+            {
+                "column" : 15,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 482,
+                "name" : "numTypes",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@numTypes#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 492,
+                "name" : "deleteList",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@deleteList#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 505,
+                "name" : "writeToFile(int &)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@writeToFile#&I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 515,
+                "name" : "writeToFile2(int &)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@writeToFile2#&I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/NodeList.cpp",
+        "file_last_write" : 1525711500
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 22,
+                "name" : "cdoubleexp(double *, struct FitnessParameters *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@cdoubleexp#*d#*$@S@FitnessParameters#*I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 43,
+                "name" : "cnormal(double *, struct FitnessParameters *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@cnormal#*d#*$@S@FitnessParameters#*I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 53,
+                "name" : "cuniform(double *, struct FitnessParameters *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@cuniform#*d#*$@S@FitnessParameters#*I#"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 65,
+                "name" : "ConstantGenerateMutationProb(MutationParameters, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ConstantGenerateMutationProb#$@S@MutationParameters#*I#"
+            },
+            {
+                "column" : 5,
+                "file" : "C:/DFCI/Jeremy/flex/diffpop/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 86,
+                "name" : "ConstantGeneratePunctuation(PunctuationParameters, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ConstantGeneratePunctuation#$@S@PunctuationParameters#*I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/constantRVFunctions.cpp",
+        "file_last_write" : 1488997466
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/helpers.cpp",
+        "file_last_write" : 1525453643
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/diffpop/src/newController.cpp",
+        "file_last_write" : 1525892584
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/DiffTree.h",
+                "kind" : 2,
+                "line" : 31,
+                "name" : "DiffTree",
+                "parent_name" : "",
+                "usr" : "c:@C@DiffTree"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/DiffTree.h",
+        "file_last_write" : 1525889652
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/DiffTriangle.h",
+                "kind" : 2,
+                "line" : 29,
+                "name" : "DiffTriangle",
+                "parent_name" : "",
+                "usr" : "c:@C@DiffTriangle"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/DiffTriangle.h",
+        "file_last_write" : 1525712352
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/FixedPop.h",
+                "kind" : 2,
+                "line" : 27,
+                "name" : "FixedPop",
+                "parent_name" : "",
+                "usr" : "c:@C@FixedPop"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/FixedPop.h",
+        "file_last_write" : 1525711917
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/GrowingPop.h",
+                "kind" : 2,
+                "line" : 30,
+                "name" : "GrowingPop",
+                "parent_name" : "",
+                "usr" : "c:@C@GrowingPop"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/GrowingPop.h",
+        "file_last_write" : 1525880708
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/Node.h",
+                "kind" : 2,
+                "line" : 28,
+                "name" : "Node",
+                "parent_name" : "",
+                "usr" : "c:@C@Node"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/Node.h",
+        "file_last_write" : 1525712565
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 7,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/NodeList.h",
+                "kind" : 2,
+                "line" : 30,
+                "name" : "NodeList",
+                "parent_name" : "",
+                "usr" : "c:@C@NodeList"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/NodeList.h",
+        "file_last_write" : 1525712525
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 24,
+                "name" : "GlobalParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@GlobalParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 48,
+                "name" : "clone",
+                "parent_name" : "",
+                "usr" : "c:@S@clone"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 68,
+                "name" : "FitnessParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@FitnessParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 79,
+                "name" : "MutationParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@MutationParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 87,
+                "name" : "PunctuationParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@PunctuationParameters"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+                "kind" : 3,
+                "line" : 96,
+                "name" : "EpistaticParameters",
+                "parent_name" : "",
+                "usr" : "c:@S@EpistaticParameters"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantGlobalStructs.h",
+        "file_last_write" : 1488997466
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/constantRVFunctions.h",
+        "file_last_write" : 1488997466
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/inst/include/helpers.h",
+        "file_last_write" : 1525284320
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 163,
+                "name" : "setFitnessDist(FitnessParameters)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setFitnessDist#$@S@FitnessParameters#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 176,
+                "name" : "setRoot(GrowingPop *)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setRoot#*$@C@GrowingPop#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 183,
+                "name" : "zeroEvents",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@zeroEvents#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 192,
+                "name" : "setMap(std::map<std::string, GrowingPop *>)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setMap#$@N@std@C@map>#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#*$@C@GrowingPop#$@N@std@S@less>#S1_#$@N@std@C@allocator>#$@N@std@S@pair>#1S1_#S4_#"
+            },
+            {
+                "column" : 31,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 201,
+                "name" : "getRates",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getRates#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 214,
+                "name" : "checkZero",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@checkZero#"
+            },
+            {
+                "column" : 36,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 226,
+                "name" : "getCellTypes",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getCellTypes#"
+            },
+            {
+                "column" : 15,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 236,
+                "name" : "getNextMutant",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getNextMutant#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 241,
+                "name" : "nextEventTime",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@nextEventTime#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 259,
+                "name" : "updateState(double, double)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@updateState#d#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 271,
+                "name" : "simulate(int, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@simulate#I#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 395,
+                "name" : "time_steps(int, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@time_steps#I#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 460,
+                "name" : "writeCellHeader(std::ofstream &)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeCellHeader#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 472,
+                "name" : "writeTypesHeader(std::ofstream &)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeTypesHeader#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 484,
+                "name" : "writeEventsHeader(std::ofstream &)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeEventsHeader#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 501,
+                "name" : "writeSDI(std::ofstream &, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeSDI#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 514,
+                "name" : "writeTypes(std::ofstream &, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeTypes#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 527,
+                "name" : "writePopSize(std::ofstream &, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writePopSize#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 539,
+                "name" : "writeLabelled(std::ofstream &, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeLabelled#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 552,
+                "name" : "writeEvents(std::ofstream &, int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeEvents#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 595,
+                "name" : "writeAll(int)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeAll#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 610,
+                "name" : "writeMutant(std::string, int, double)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@writeMutant#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#I#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 620,
+                "name" : "bfsPrint",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@bfsPrint#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 635,
+                "name" : "time_step",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@time_step#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 664,
+                "name" : "print",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@print#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 669,
+                "name" : "initializeCells",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@initializeCells#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 687,
+                "name" : "initializeTree",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@initializeTree#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 699,
+                "name" : "printCells",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@printCells#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 718,
+                "name" : "calcDelta",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@calcDelta#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 735,
+                "name" : "calcAlpha",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@calcAlpha#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 752,
+                "name" : "dediffTo(std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@dediffTo#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 769,
+                "name" : "getDediff(std::string, std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getDediff#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 786,
+                "name" : "setDediff(std::string, std::string, double)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setDediff#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 800,
+                "name" : "gamma1To(std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@gamma1To#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 817,
+                "name" : "getGamma1(std::string, std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getGamma1#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 834,
+                "name" : "setGamma1(std::string, std::string, double)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setGamma1#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 848,
+                "name" : "gamma2To(std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@gamma2To#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 865,
+                "name" : "getGamma2(std::string, std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getGamma2#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 882,
+                "name" : "setGamma2(std::string, std::string, double)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setGamma2#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 896,
+                "name" : "betaTo(std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@betaTo#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 913,
+                "name" : "getBeta(std::string, std::string)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@getBeta#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 930,
+                "name" : "setBeta(std::string, std::string, double)",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setBeta#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#S0_#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+                "kind" : 7,
+                "line" : 945,
+                "name" : "setFitnessDistribution",
+                "parent_name" : "DiffTree",
+                "usr" : "c:@C@DiffTree@F@setFitnessDistribution#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTree.cpp",
+        "file_last_write" : 1525889750
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 159,
+                "name" : "addTriChild(DiffTriangle *)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@addTriChild#*$@C@DiffTriangle#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 169,
+                "name" : "addTriChild(DiffTriangle *, double)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@addTriChild#*$@C@DiffTriangle#d#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 177,
+                "name" : "initialize(long)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@initialize#L#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 319,
+                "name" : "add_cell(long, std::string, double)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@add_cell#L#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#d#"
+            },
+            {
+                "column" : 24,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 397,
+                "name" : "getRemoveLastLevel(int)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@getRemoveLastLevel#I#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 415,
+                "name" : "doubleCells(int)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@doubleCells#I#"
+            },
+            {
+                "column" : 24,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 425,
+                "name" : "removeLastAndDouble(int)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@removeLastAndDouble#I#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 448,
+                "name" : "printCodes",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@printCodes#"
+            },
+            {
+                "column" : 22,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 453,
+                "name" : "getSumRates",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@getSumRates#"
+            },
+            {
+                "column" : 35,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 458,
+                "name" : "getRates",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@getRates#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 495,
+                "name" : "time_step(bool)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@time_step#b#"
+            },
+            {
+                "column" : 22,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 500,
+                "name" : "sdi",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@sdi#"
+            },
+            {
+                "column" : 22,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 505,
+                "name" : "coded",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@coded#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+                "kind" : 7,
+                "line" : 510,
+                "name" : "writeToFile(std::ofstream &)",
+                "parent_name" : "DiffTriangle",
+                "usr" : "c:@C@DiffTriangle@F@writeToFile#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/DiffTriangle.cpp",
+        "file_last_write" : 1525711468
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 67,
+                "name" : "up_Event(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@up_Event#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 84,
+                "name" : "down_Event(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@down_Event#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 116,
+                "name" : "time_step(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@time_step#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 198,
+                "name" : "single_event(bool)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@single_event#b#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 257,
+                "name" : "dediff",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@dediff#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 292,
+                "name" : "add_cell(long, std::string, double)",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@add_cell#L#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+                "kind" : 7,
+                "line" : 307,
+                "name" : "getNumEvents",
+                "parent_name" : "FixedPop",
+                "usr" : "c:@C@FixedPop@F@getNumEvents#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/FixedPop.cpp",
+        "file_last_write" : 1525711438
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 122,
+                "name" : "addChild(GrowingPop *, double, double, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@addChild#*$@C@GrowingPop#d#d#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 139,
+                "name" : "addDediff(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@addDediff#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 147,
+                "name" : "setParent(GrowingPop *)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setParent#*$@C@GrowingPop#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 153,
+                "name" : "setTree(DiffTree *)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setTree#*$@C@DiffTree#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 160,
+                "name" : "setUpstreamEvents(int)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setUpstreamEvents#I#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 166,
+                "name" : "zeroEvents",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@zeroEvents#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 178,
+                "name" : "setDiff1(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setDiff1#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 190,
+                "name" : "setDiff2(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setDiff2#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 202,
+                "name" : "setAsymdiff(GrowingPop *, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setAsymdiff#*$@C@GrowingPop#d#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 216,
+                "name" : "calcDelta",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@calcDelta#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 235,
+                "name" : "calcAlpha",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@calcAlpha#"
+            },
+            {
+                "column" : 15,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 6,
+                "line" : 261,
+                "name" : "operator<<(int &, const GrowingPop &)",
+                "parent_name" : "",
+                "usr" : "c:@F@operator<<#&I#&1$@C@GrowingPop#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 268,
+                "name" : "printPretty(int)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@printPretty#I#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 278,
+                "name" : "printCodes",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@printCodes#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 309,
+                "name" : "getNumEvents",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@getNumEvents#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 318,
+                "name" : "getNumDownEvents",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@getNumDownEvents#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 333,
+                "name" : "mitosis",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@mitosis#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 356,
+                "name" : "apoptosis",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@apoptosis#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 369,
+                "name" : "diff1",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@diff1#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 407,
+                "name" : "diff2",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@diff2#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 445,
+                "name" : "asym_diff",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@asym_diff#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 477,
+                "name" : "dediff",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@dediff#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 513,
+                "name" : "mutate(long)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@mutate#L#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 549,
+                "name" : "mutateCur",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@mutateCur#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 584,
+                "name" : "erase_cell(long)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@erase_cell#L#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 592,
+                "name" : "add_cell(long, int, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@add_cell#L#I#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 603,
+                "name" : "add_dediffCell(long, int, double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@add_dediffCell#L#I#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 617,
+                "name" : "initializeCells(long)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@initializeCells#L#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 639,
+                "name" : "initializeTree",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@initializeTree#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 652,
+                "name" : "time_step(bool)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@time_step#b#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 705,
+                "name" : "single_event(bool)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@single_event#b#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 757,
+                "name" : "print_rates",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@print_rates#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 776,
+                "name" : "setAlpha(double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setAlpha#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 782,
+                "name" : "setDeath(double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setDeath#d#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 788,
+                "name" : "setMu(double)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@setMu#d#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 795,
+                "name" : "sdi",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@sdi#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 801,
+                "name" : "coded",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@coded#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+                "kind" : 7,
+                "line" : 823,
+                "name" : "writeToFile(int &)",
+                "parent_name" : "GrowingPop",
+                "usr" : "c:@C@GrowingPop@F@writeToFile#&I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/GrowingPop.cpp",
+        "file_last_write" : 1525892570
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 12,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/Node.cpp",
+                "kind" : 7,
+                "line" : 90,
+                "name" : "setList(NodeList *)",
+                "parent_name" : "Node",
+                "usr" : "c:@C@Node@F@setList#*$@C@NodeList#"
+            },
+            {
+                "column" : 12,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/Node.cpp",
+                "kind" : 7,
+                "line" : 94,
+                "name" : "removeFromList",
+                "parent_name" : "Node",
+                "usr" : "c:@C@Node@F@removeFromList#"
+            },
+            {
+                "column" : 12,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/Node.cpp",
+                "kind" : 7,
+                "line" : 113,
+                "name" : "printNode",
+                "parent_name" : "Node",
+                "usr" : "c:@C@Node@F@printNode#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/Node.cpp",
+        "file_last_write" : 1525711530
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 49,
+                "name" : "insert(long, std::string, double, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@insert#L#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#d#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 93,
+                "name" : "insert(long, std::string, double, int, int, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@insert#L#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#d#I#I#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 137,
+                "name" : "remove(long, std::string, double, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@remove#L#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#d#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 172,
+                "name" : "remove(long, std::string, double, int, int, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@remove#L#$@N@std@C@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@C@allocator>#C#d#I#I#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 207,
+                "name" : "balanceLeft",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@balanceLeft#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 235,
+                "name" : "balanceRight",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@balanceRight#"
+            },
+            {
+                "column" : 17,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 267,
+                "name" : "getAt(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@getAt#I#"
+            },
+            {
+                "column" : 17,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 282,
+                "name" : "getCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@getCur#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 286,
+                "name" : "setCurIndex(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@setCurIndex#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 302,
+                "name" : "setCurFitness(double)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@setCurFitness#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 317,
+                "name" : "increaseAtCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@increaseAtCur#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 331,
+                "name" : "removeAtCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@removeAtCur#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 345,
+                "name" : "removeAt(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@removeAt#I#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 374,
+                "name" : "increaseAt(int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@increaseAt#I#"
+            },
+            {
+                "column" : 17,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 386,
+                "name" : "getAtFitness(double)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@getAtFitness#d#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 401,
+                "name" : "traversePrint",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@traversePrint#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 412,
+                "name" : "printCur",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@printCur#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 416,
+                "name" : "labelled",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@labelled#"
+            },
+            {
+                "column" : 18,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 430,
+                "name" : "sdi",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@sdi#"
+            },
+            {
+                "column" : 35,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 446,
+                "name" : "count_map_codes",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@count_map_codes#"
+            },
+            {
+                "column" : 38,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 464,
+                "name" : "count_map_mutation",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@count_map_mutation#"
+            },
+            {
+                "column" : 15,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 482,
+                "name" : "numTypes",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@numTypes#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 492,
+                "name" : "deleteList",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@deleteList#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 505,
+                "name" : "writeToFile(std::ofstream &)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@writeToFile#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#"
+            },
+            {
+                "column" : 16,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 515,
+                "name" : "writeToFile2(std::ofstream &)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@writeToFile2#&$@N@std@C@basic_ofstream>#C#$@N@std@S@char_traits>#C#"
+            },
+            {
+                "column" : 43,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+                "kind" : 7,
+                "line" : 530,
+                "name" : "makeTriangle(int, int)",
+                "parent_name" : "NodeList",
+                "usr" : "c:@C@NodeList@F@makeTriangle#I#I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/NodeList.cpp",
+        "file_last_write" : 1525711500
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 22,
+                "name" : "cdoubleexp(double *, struct FitnessParameters *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@cdoubleexp#*d#*$@S@FitnessParameters#*I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 43,
+                "name" : "cnormal(double *, struct FitnessParameters *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@cnormal#*d#*$@S@FitnessParameters#*I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 53,
+                "name" : "cuniform(double *, struct FitnessParameters *, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@cuniform#*d#*$@S@FitnessParameters#*I#"
+            },
+            {
+                "column" : 8,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 65,
+                "name" : "ConstantGenerateMutationProb(int, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ConstantGenerateMutationProb#I#*I#"
+            },
+            {
+                "column" : 5,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/constantRVFunctions.cpp",
+                "kind" : 6,
+                "line" : 86,
+                "name" : "ConstantGeneratePunctuation(int, int *)",
+                "parent_name" : "",
+                "usr" : "c:@F@ConstantGeneratePunctuation#I#*I#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/constantRVFunctions.cpp",
+        "file_last_write" : 1488997466
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 10,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 40,
+                "name" : "cellByFitness(std::vector<double>)",
+                "parent_name" : "",
+                "usr" : "c:@F@cellByFitness#$@N@std@C@vector>#d#$@N@std@C@allocator>#d#"
+            },
+            {
+                "column" : 21,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 52,
+                "name" : "normalize(std::vector<double>)",
+                "parent_name" : "",
+                "usr" : "c:@F@normalize#$@N@std@C@vector>#d#$@N@std@C@allocator>#d#"
+            },
+            {
+                "column" : 5,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 66,
+                "name" : "choose(std::vector<double>)",
+                "parent_name" : "",
+                "usr" : "c:@F@choose#$@N@std@C@vector>#d#$@N@std@C@allocator>#d#"
+            },
+            {
+                "column" : 25,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 84,
+                "name" : "count_map(std::vector<long>)",
+                "parent_name" : "",
+                "usr" : "c:@F@count_map#$@N@std@C@vector>#L#$@N@std@C@allocator>#L#"
+            },
+            {
+                "column" : 20,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 107,
+                "name" : "count_map(std::vector<int>)",
+                "parent_name" : "",
+                "usr" : "c:@F@count_map#$@N@std@C@vector>#I#$@N@std@C@allocator>#I#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 130,
+                "name" : "printVec(std::vector<long>)",
+                "parent_name" : "",
+                "usr" : "c:@F@printVec#$@N@std@C@vector>#L#$@N@std@C@allocator>#L#"
+            },
+            {
+                "column" : 6,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 136,
+                "name" : "printVec(std::vector<double>)",
+                "parent_name" : "",
+                "usr" : "c:@F@printVec#$@N@std@C@vector>#d#$@N@std@C@allocator>#d#"
+            },
+            {
+                "column" : 5,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 142,
+                "name" : "beginIndex(int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@beginIndex#I#I#"
+            },
+            {
+                "column" : 36,
+                "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+                "kind" : 6,
+                "line" : 157,
+                "name" : "splitDoubleVector(std::vector<long>, std::vector<double>)",
+                "parent_name" : "",
+                "usr" : "c:@F@splitDoubleVector#$@N@std@C@vector>#L#$@N@std@C@allocator>#L#$@N@std@C@vector>#d#$@N@std@C@allocator>#d#"
+            }
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/helpers.cpp",
+        "file_last_write" : 1525453643
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "C:/DFCI/Jeremy/flex/flex/src/newController.cpp",
+        "file_last_write" : 1525892584
+    }
+]

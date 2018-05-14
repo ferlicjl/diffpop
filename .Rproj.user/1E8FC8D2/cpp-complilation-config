@@ -1,0 +1,15 @@
+{
+    "args" : [
+        "-IC:/Program Files/RStudio/resources/libclang/builtin-headers/3.4",
+        "-IC:/Users/Jeremy/Documents/R/win-library/3.5/Rcpp/include",
+        "-IC:/Users/Jeremy/Documents/R/win-library/3.5/RcppGSL/include",
+        "-std=gnu++11",
+        "-IC:/PROGRA~1/R/R-35~1.0/include",
+        "-DNDEBUG",
+        "-IC:/local323",
+        "-IC:/DFCI/Jeremy/flex/diffpop/inst/include"
+    ],
+    "hash" : "152589655315082694081488997466",
+    "is_cpp" : true,
+    "pch" : "Rcpp"
+}

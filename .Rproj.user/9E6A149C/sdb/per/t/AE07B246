@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "setwd(\"/Users/michorlab/Documents/Jeremy/flex/flex/\")\n\nlibrary(flex)\n\nflex:::removeTree()\nCellPopulation(\"pop1\", sample(500:1000, 1), label = 0.0)\naddEdge(\"pop1\", \"pop1\", \"alpha\", 0.5+runif(1))\n\nfor(i in 2:3){\n  CellPopulation(paste(\"pop\", i, sep = \"\"), sample(500:1000, 1), label = 0)\n  popi = paste(\"pop\", i, sep = \"\")\n  #popparent = paste(\"pop\", sample(1:(i-1), 1), sep =\"\")\n  popparent = paste(\"pop\", (i-1), sep = \"\")\n  addEdge(popparent, popi, \"gamma\", runif(1))\n  if(runif(1) < 0.25){\n    addEdge(popi, popi, \"alpha\", runif(1))\n  }\n\n  addEdge(popi, popparent, \"dediff\", runif(1))\n}\ni = 4\nCellPopulation(paste(\"pop\", i, sep = \"\"), sample(500:1000, 1), label = 1)\npopi = paste(\"pop\", i, sep = \"\")\n#popparent = paste(\"pop\", sample(1:(i-1), 1), sep =\"\")\npopparent = paste(\"pop\", (i-1), sep = \"\")\naddEdge(popparent, popi, \"gamma\", runif(1))\nif(runif(1) < 0.25){\n  addEdge(popi, popi, \"alpha\", runif(1))\n}\naddEdge(popi, popparent, \"dediff\", runif(1))\n\n#addEdge(\"pop2\", \"pop1\", \"dediff\", 0.5)\nsetRoot(\"pop1\")\n\n\n\n#myTree = randomExample\n\npar(mfrow=c(1,1))\nplotTree(allEdge = T)\n\nwriteTree()\n\nsimulateTree(nObs = 5, indir = paste(getwd(), \"/graph_files/\", sep = \"\"),\n             outdir = paste(getwd(), \"/graph_files/\", sep = \"\"))\n\n\ninDir = paste(getwd(), \"/graph_files/\", sep = \"\")\nsetwd(inDir)\npopfiles = list.files(inDir, pattern=\"^out.*.pop$\", full.names=F)\nlblfiles = list.files(inDir, pattern=\"^out.*.label$\", full.names=F)\n\na = read.table(popfiles[length(popfiles)], header = T)\nb = read.table(lblfiles[length(lblfiles)], header = T)\n\npar(mfrow=c(3,4))\nfor(i in 2:ncol(a)){\n  plot(a[,1], a[,i], main = colnames(a)[i], ylab = \"Population size\", xlab = \"time\")\n  plot(b[,1], b[,i], main = colnames(b)[i],ylim = c(0,1), xlab = \"time\",\n       ylab = \"Fraction Labelled\", col = \"red\")\n}\n\ninfofiles = list.files(inDir, pattern=\"^out.*.info$\", full.names=F)\ninfo = read.table(infofiles[length(infofiles)], header = T)\n",
+    "created" : 1508259433478.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "307864245",
+    "id" : "AE07B246",
+    "lastKnownWriteTime" : 1508271085,
+    "last_content_update" : 1508271085328,
+    "path" : "~/Documents/Jeremy/flex/example1.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

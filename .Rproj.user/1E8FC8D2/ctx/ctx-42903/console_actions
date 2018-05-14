@@ -1,0 +1,20 @@
+{
+    "data" : [
+        "\nR version 3.4.2 (2017-09-28) -- \"Short Summer\"\nCopyright (C) 2017 The R Foundation for Statistical Computing\nPlatform: x86_64-w64-mingw32/x64 (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under certain conditions.\nType 'license()' or 'licence()' for distribution details.\n\nR is a collaborative project with many contributors.\nType 'contributors()' for more information and\n'citation()' on how to cite R or R packages in publications.\n\nType 'demo()' for some demos, 'help()' for on-line help, or\n'help.start()' for an HTML browser interface to help.\nType 'q()' to quit R.\n\n",
+        "[Workspace loaded from C:/DFCI/Jeremy/flex/flex/.RData]\n\n",
+        "> ",
+        "source('C:/DFCI/Jeremy/flex/label_LT.R')",
+        "[1] \"1 1 1 1\"\n[1] \"0.009 0 0.009\"\n",
+        "Error in FixedPopCell(\"LT\", LT, 0.17) : \n  could not find function \"FixedPopCell\"\n",
+        "\nRestarting R session...\n\n"
+    ],
+    "type" : [
+        2,
+        2,
+        0,
+        1,
+        2,
+        3,
+        2
+    ]
+}

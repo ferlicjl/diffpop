@@ -1,0 +1,3 @@
+install.packages("devtools")
+devtools::install_git("git://github.com/ferlicjl/diffpop.git")
+install.packages("dplyr")

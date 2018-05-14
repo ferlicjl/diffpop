@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "setwd(\"/Users/michorlab/Documents/Jeremy/flex/flex/\")\ngenerateExample(n_LT = 250)\npar(mfrow=c(1,1))\nplotTree(allEdge = F)\n\nwriteTree(outdir = \"/example/\")\n\n\nsimulateFixedTree(nObs = 300,indir = paste(getwd(), \"/example/\", sep = \"\"),\n                  outdir = paste(getwd(), \"/example/\", sep = \"\"))\n\ninDir = paste(getwd(), \"/example/\", sep = \"\")\nsetwd(inDir)\npopfiles = list.files(inDir, pattern=\"^out.*.pop$\", full.names=F)\nlblfiles = list.files(inDir, pattern=\"^out.*.label$\", full.names=F)\n\na = read.table(popfiles[length(popfiles)], header = T)\nb = read.table(lblfiles[length(lblfiles)], header = T)\n\npar(mfrow=c(2,5))\npar(mfrow=c(2,2))\nfor(i in 2:ncol(a)){\n  plot(a[,1], a[,i], main = colnames(a)[i], ylab = \"Population size\", xlab = \"time\")\n  plot(b[,1], b[,i], main = colnames(b)[i],ylim = c(0,1), xlab = \"time\",\n       ylab = \"Fraction Labelled\", col = \"red\")\n}\n\ninfofiles = list.files(inDir, pattern=\"^out.*.info$\", full.names=F)\ninfo = read.table(infofiles[length(infofiles)], header = T)\n",
+    "created" : 1508267199900.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3191673988",
+    "id" : "AC463C95",
+    "lastKnownWriteTime" : 1508267919,
+    "last_content_update" : 1508267919844,
+    "path" : "~/Documents/Jeremy/flex/example2.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
