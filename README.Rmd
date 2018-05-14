@@ -245,12 +245,12 @@ The last step is to use either the simulateTree or simulateFixedTree function to
 
 The following parameters are available to the user in the simulateTree/simulateFixedTree function.  
 
- | Parameter	 | Variable Type	 | Description                                                    | 
- | -----------+---------------+-------------------------------------------------------------- | 
- | nObs | 	integer | 	number of time units to simulate | 
- | traverseFrequency |  integer |  how often to output full census of populations | 
- | indir | 	string | 	directory location of input files | 
- | outdir | 	string | 	directory location for output files | 
- | seed | 	numeric |  optional seed for the random number generator | 
+| Parameter	 | Variable Type	 | Description                                                    | 
+| -----------+---------------+-------------------------------------------------------------- | 
+| nObs | 	integer | 	number of time units to simulate | 
+| traverseFrequency |  integer |  how often to output full census of populations | 
+| indir | 	string | 	directory location of input files | 
+| outdir | 	string | 	directory location for output files | 
+| seed | 	numeric |  optional seed for the random number generator | 
 
 Observations are made and output files updated at every integer time unit through $nObs$.  In addition, full printouts of each population are made every $traverseFrequency$ time unit.  The $indir$ directory informs the C++ backend where the input files are located for the differentiation hierarchy and $outdir$ specifies a particular directory to place all output files.  Optionally, the user can specify a numeric $seed$ for the GSL random number generator used throughout the simulation.
