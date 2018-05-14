@@ -32,30 +32,3 @@ simulateTreeCodeNew <- function(nObs = 10L, traverseFrequency = -1L, indir = "./
     .Call('_diffpop_simulateTreeCodeNew', PACKAGE = 'diffpop', nObs, traverseFrequency, indir, outdir, seed)
 }
 
-#' testcode
-#'
-#' Simulates an example tree, no input
-#'
-#' @export
-testcode <- function() {
-    .Call('_diffpop_testcode', PACKAGE = 'diffpop')
-}
-
-#' testcode2
-#'
-#' Simulates an example tree, no input
-#'
-#' @export
-testcode2 <- function(l) {
-    .Call('_diffpop_testcode2', PACKAGE = 'diffpop', l)
-}
-
-#' test3
-#'
-#' Simulates an example tree, no input
-#'
-#' @export
-test3 <- function(size, numReps) {
-    .Call('_diffpop_test3', PACKAGE = 'diffpop', size, numReps)
-}
-
