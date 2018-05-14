@@ -113,15 +113,6 @@ A DiffTree contains pointers to all populations throughout the differentiation h
 
 The cells of each population are maintained by a NodeList.  A NodeList is a doubly-linked list of Nodes.  Each Node keeps track of a particular cell state, defined by the combination of a barcode, mutation status, and fitness value, as well as a count of how many cells belong to that particular state.  In addition, DiffTriangle Nodes also contain data to record which triangle and at which level a cell resides.  Mutation status is a string listing which mutations have occurred in that state.  Information about particular mutations can be found in the mutation information file.  The NodeList keeps track of the total number of cells in the list and overall fitness for the population.  Methods exist to insert or remove cells from the list, maintaining a left-balanced list by cell count -- that is, cell states with higher cell counts are found to the left of the list.  This approach allows for more efficient indexing by cell count, particularly as diversity in the compartment decreases or dominant clones arise. 
 
-\begin{center}
-\includegraphics{nodelist1}\
-
-NodeList automatically balances by count:\newline
-    \begin{verbatim}insert(barcode 2, mutation 0, fitness 1, count 15)\end{verbatim}
-
-\includegraphics{nodelist2}\
-\end{center}
-
 #Event Types and Parameters
 
 Cellular events in DIFFpop are enacted according to their accompanying parameter rates, in units of number of events per cell per time unit.  
