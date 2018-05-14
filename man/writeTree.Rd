@@ -4,7 +4,7 @@
 \alias{writeTree}
 \title{writeTree}
 \usage{
-writeTree(outdir = "/graph_files/")
+writeTree(outdir = "tree_files/")
 }
 \arguments{
 \item{outdir}{output directory for files}

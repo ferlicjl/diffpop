@@ -18,7 +18,8 @@ Imports:
     ggplot2,
     dplyr,
     magrittr,
-    tidyr
+    tidyr,
+	R.utils
 LinkingTo: Rcpp, RcppGSL
 SystemRequirements: GNU GSL
 NeedsCompilation: yes

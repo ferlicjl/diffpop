@@ -291,13 +291,16 @@ plotTree = function(allEdge = F){
 #' \dontrun{
 #' writeTree(outdir = "C:/diffpop/example1/")
 #' }
-writeTree = function(outdir = "/graph_files/"){
+writeTree = function(outdir = "tree_files/"){
   options(scipen = 999)
   g = myTree
   cdir = getwd()
-  outdir = paste(getwd(), outdir, sep = "")
-  dir.create(outdir, showWarnings = F)
-  setwd(outdir)
+
+  directory = getAbsolutePath(outdir)
+
+  #outdir = paste(getwd(), outdir, sep = "")
+  dir.create(directory, showWarnings = F, recursive = T)
+  setwd(directory)
   write.graph(g, "g.txt", format = "ncol")
   write.table(cbind(V(g)$name, V(g)$type, V(g)$root), "nodes.txt", quote = F, row.names = F, col.names = F)
   write.table(cbind(V(g)$name), "names.txt", quote = F, row.names = F, col.names = F)
