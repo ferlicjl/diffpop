@@ -91,11 +91,11 @@ The population size of a DiffTriangle is specified by two parameters; the first,
 
 A DiffTree contains pointers to all populations throughout the differentiation hierarchy.  From the DiffTree object, all cell types in the hierarchy can be accessed in either a breadth-first or depth-first manner.  Hierarchy-wide functions, such as simulating the hierarchy and recording output, are initiated by calling functions of the DiffTree.  
 
-|Class Type|Population Size|Use                                 |
-|----------+---------------+------------------------------------|
-|GrowingPop|Dynamic|dynamically sized population with exponential event waiting times|
-|FixedPop|Constant|constant size homogenous population |
-|DiffTriangle|Constant|constant size population with $z$ levels of maturity|
+ |  Class Type | Population Size | Use                                  | 
+ | ----------+---------------+------------------------------------ | 
+ |  GrowingPop | Dynamic | dynamically sized population with exponential event waiting times | 
+ |  FixedPop | Constant | constant size homogenous population  | 
+ |  DiffTriangle | Constant | constant size population with $z$ levels of maturity | 
 
 
 ## NodeList Data Structure
@@ -115,15 +115,15 @@ NodeList automatically balances by count:\newline
 
 Cellular events in DIFFpop are enacted according to their accompanying parameter rates, in units of number of events per cell per time unit.  
 
-|Parameter	|Variable Type	|Description                                                   |
-|-----------+---------------+--------------------------------------------------------------|
-$\alpha$ (alpha)|	double|	mitotic self-renewal rate|
-$\beta$ (beta)| double|	asymmetric differentiation rate to downstream cell type|
-$\gamma_1$ (gamma1)|	double|	mitosis-independent (one-to-one) differentiation rate to downstream cell type|
-$\gamma_2$ (gamma2)|	double|	mitosis-dependent (one-to-two) differentiation rate to downstream cell type|
-$\zeta$ (zeta)|	double|	de-differentiation rate to upstream cell type|
-$\delta$ (delta)|	double|	apoptosis rate|
-$\mu$ (mu)|	double|	probability of mutation per mitotic event|
+ | Parameter	 | Variable Type	 | Description                                                    | 
+ | -----------+---------------+-------------------------------------------------------------- | 
+$\alpha$ (alpha) | 	double | 	mitotic self-renewal rate | 
+$\beta$ (beta) |  double | 	asymmetric differentiation rate to downstream cell type | 
+$\gamma_1$ (gamma1) | 	double | 	mitosis-independent (one-to-one) differentiation rate to downstream cell type | 
+$\gamma_2$ (gamma2) | 	double | 	mitosis-dependent (one-to-two) differentiation rate to downstream cell type | 
+$\zeta$ (zeta) | 	double | 	de-differentiation rate to upstream cell type | 
+$\delta$ (delta) | 	double | 	apoptosis rate | 
+$\mu$ (mu) | 	double | 	probability of mutation per mitotic event | 
 *Note Population specific parameters are specified using subscripts, i.e. $\alpha_{(LT-HSC)}$ is the mitotic self renewal rate for the LT-HSC population and $\gamma_{1(LT-HSC,ST-HSC)}$ is the one-to-one differentiation rate from the LT-HSC population to the ST-HSC population.
 
 
@@ -216,14 +216,14 @@ For the population size to remain constant, this first line of the equation must
 	
 Throughout the differentiation hierarchy, whenever a new clone arises due to mutation, a change in fitness can be drawn from a random distribution.  The parameters of that distribution can be specified by the user in R.  
 
-|Parameter Name|Type| Description                                |
-|--------------+----+--------------------------------------------|
-|fitness_distribution| string | "doubleexp", "normal", "uniform"|
-|alpha_fitness| double| alpha parameter for fitness distribution|
-|beta_fitness| double | beta parameter for fitness distribution|
-|pass_prob| boolean | probability that mutation does not result in a fitness change|
-|upper_fitness| double | upper bound on fitness|
-|lower_fitness| double | lower bound on fitness|
+ | Parameter Name | Type |  Description                                 | 
+ | --------------+----+-------------------------------------------- | 
+ | fitness_distribution |  string  |  "doubleexp", "normal", "uniform" | 
+ | alpha_fitness |  double |  alpha parameter for fitness distribution | 
+ | beta_fitness |  double  |  beta parameter for fitness distribution | 
+ | pass_prob |  boolean  |  probability that mutation does not result in a fitness change | 
+ | upper_fitness |  double  |  upper bound on fitness | 
+ | lower_fitness |  double  |  lower bound on fitness | 
 
 If the distribution function selected is normal, fitness additions are drawn from a $N(alpha\_fitness, beta\_fitness)$ distribution.  If the distribution function selected is uniform, fitness additions are drawn from a $U(alpha\_fitness, beta\_fitness)$ distribution.  If the distribution function selected is double exponential, alpha_fitness refers to the rate parameter of an exponetial distribution for the positive range and beta_fitness refers to the rate parameter of an exponential distribution for the negative range.
 
@@ -240,12 +240,12 @@ The last step is to use either the simulateTree or simulateFixedTree function to
 
 The following parameters are available to the user in the simulateTree/simulateFixedTree function.  
 
-|Parameter	|Variable Type	|Description                                                   |
-|-----------+---------------+--------------------------------------------------------------|
-|nObs|	integer|	number of time units to simulate|
-|traverseFrequency| integer| how often to output full census of populations|
-|indir|	string|	directory location of input files|
-|outdir|	string|	directory location for output files|
-|seed|	numeric| optional seed for the random number generator|
+ | Parameter	 | Variable Type	 | Description                                                    | 
+ | -----------+---------------+-------------------------------------------------------------- | 
+ | nObs | 	integer | 	number of time units to simulate | 
+ | traverseFrequency |  integer |  how often to output full census of populations | 
+ | indir | 	string | 	directory location of input files | 
+ | outdir | 	string | 	directory location for output files | 
+ | seed | 	numeric |  optional seed for the random number generator | 
 
 Observations are made and output files updated at every integer time unit through $nObs$.  In addition, full printouts of each population are made every $traverseFrequency$ time unit.  The $indir$ directory informs the C++ backend where the input files are located for the differentiation hierarchy and $outdir$ specifies a particular directory to place all output files.  Optionally, the user can specify a numeric $seed$ for the GSL random number generator used throughout the simulation.
