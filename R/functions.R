@@ -1,6 +1,17 @@
-library(igraph)
 
+#' FixedPop
+#'
+#' Designates a FixedPop, a structure whose size remains constant throughout the course of a simulation
+#'
+#' @param name population name
+#' @param size initial population size
+#' @param label initial probabilty that a cell receives a unique barcode
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' FixedPop("Population A", 1000, 0.5)
+#' }
 FixedPop = function(name, size, label = 0){
   # If a tree doesn't exist, create one
   if(!exists("myTree")){
@@ -16,7 +27,19 @@ FixedPop = function(name, size, label = 0){
   }
 }
 
+#' GrowingPop
+#'
+#' Designates a GrowingPop, a structure used to simulate differentiation via a branching process
+#'
+#' @param name population name
+#' @param size initial population size
+#' @param label initial probabilty that a cell receives a unique barcode
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' GrowingPop("Population A", 1000, 0.5)
+#' }
 GrowingPop = function(name, size, label = 0.0){
   # If a tree doesn't exist, create one
   if(!exists("myTree")){
@@ -31,8 +54,21 @@ GrowingPop = function(name, size, label = 0.0){
   }
 }
 
+#' DiffTriangle
+#'
+#' Designates a DiffTriangle, a fixed-size structure used to model a population undergoing different levels of maturation
+#'
+#' @param name population name
+#' @param height number of levels in structure, corresponding to number of levels until full maturation
+#' @param first_level number of triangles to be stacked side-by-side or the number of cells at the first level of maturation
+#' @param label initial probabilty that a cell receives a unique barcode
+#'
 #' @export
-DiffTriangle = function(name, height, first_level = 1, label = 0){
+#' @examples
+#' \dontrun{
+#' DiffTriangle("Differentiated Population A", 12, 1000, 0.5)
+#' }
+DiffTriangle = function(name, height, first_level = 1, label = 0.0){
   # If a tree doesn't exist, create one
   if(!exists("myTree")){
     myTree <<- graph.empty(n = 0, directed = T)
@@ -62,7 +98,17 @@ DiffTriangle = function(name, height, first_level = 1, label = 0){
 #  }
 #}
 
+#' setRoot
+#'
+#' Used to designate furthest upstream population in the hierarchy
+#'
+#' @param popName name of furthest upstream population
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' setRoot("Population A)
+#' }
 setRoot = function(popName){
   # If a tree doesn't exist, create one
   if(!exists("myTree")){
@@ -83,7 +129,23 @@ setRoot = function(popName){
   }
 }
 
+#' setFitnessDistribution
+#'
+#' Used to designate distribution from which changes in fitness for a new clone are drawn
+#'
+#' @param distribution random distribution from which to draw ("normal", "doubleexp", "uniform")
+#' @param is_random boolean variable set to TRUE if random fitness distribution is specified
+#' @param alpha_fitness alpha parameter for fitness distribution
+#' @param beta_fitness beta parameter for fitness distribution
+#' @param pass_prob probability that new clone developed a passenger mutation that does not affect its fitness
+#' @param upper_fitness upper limit on clone fitness
+#' @param lower_fitness lower limit on clone fitness
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' setFitnessDistribution(distribution = "uniform", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 0, upper_fitness = 5, lower_fitness = 0)
+#' }
 setFitnessDistribution = function(distribution = "normal", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 1, upper_fitness = NA, lower_fitness = NA){
   # If a tree doesn't exist, create one
   if(!exists("myTree")){
@@ -99,7 +161,22 @@ setFitnessDistribution = function(distribution = "normal", is_random = T, alpha_
   }
 }
 
+#' addEdge
+#'
+#' Used to designate transition between populations
+#'
+#' @param parent parent population name ("from" population)
+#' @param child child population name ("to" population)
+#' @param type transition or event type ("alpha", "beta", "gamma1", "gamma2", "delta", "zeta", "mutation")
+#' @param rate expected number of events per cell per time unit
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' addEdge("Population A", "Population A", "alpha", 0.01)
+#' addEdge("Population A", "Population B", "gamma1", 0.05)
+#' addEdge("Population A", "Population A", "mutation", 1e-7)
+#' }
 addEdge = function(parent, child, type, rate){
   c = checkEdge(parent, child, type) > 0
   if(rate < 0)
@@ -178,10 +255,20 @@ checkRoot = function(){
   return(FALSE)
 }
 
+#' plotTree
+#'
+#' Used to plot hierarchy structure using igraph
+#'
+#' @param allEdge boolean variable set to TRUE to plot all transitions, set to FALSE to only show gamma1, gamma2, and beta edges
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' plotTree(allEdge = TRUE)
+#' }
 plotTree = function(allEdge = F){
   if(!allEdge){
-    g.plot = delete.edges(myTree, which(E(myTree)$type != "gamma1"))
+    g.plot = delete.edges(myTree, which(E(myTree)$type != "gamma1") | which(E(myTree)$type != "gamma2") | which(E(myTree)$type != "beta"))
   } else {
     g.plot = myTree
   }
@@ -193,7 +280,17 @@ plotTree = function(allEdge = F){
   }
 }
 
+#' writeTree
+#'
+#' Used to create tree files needed by C++ simulation
+#'
+#' @param outdir output directory for files
+#'
 #' @export
+#' @examples
+#' \dontrun{
+#' writeTree(outdir = "C:/diffpop/example1/")
+#' }
 writeTree = function(outdir = "/graph_files/"){
   options(scipen = 999)
   g = myTree
