@@ -8,12 +8,15 @@ output: pdf_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE}
-library(printr)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "README-"
 )
+```
+
+``` {r printr, echo = FALSE}
+library(printr)
 ```
 
 # DIFFpop
