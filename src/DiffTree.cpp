@@ -311,6 +311,8 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 
     // Keep track of number of events.  Why not?
     int numEvents = 0;
+	
+	int obsMod = pow(10, round(log10(numTime)-1));
 
     // Display some stuff - debugging
 	if(verbose){
@@ -350,8 +352,8 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 			if((outputFrequency > 0 && obsTimes[curObsIndex] % outputFrequency == 0) || curTime == 0)
 				writeAll(obsTimes[curObsIndex]);
             zeroEvents();
-			if(verbose)
-				std::cout << "Observation " << obsTimes[curObsIndex] << std::endl;
+			if(verbose &&  obsTimes[curObsIndex] % obsMod == 0)
+				std::cout << "Observation " << obsTimes[curObsIndex] << " of " << numTime << std::endl;
             curObsIndex++;
             //std::cout << "Sucessfully made an observation" << std::endl;
 			if((unsigned)curObsIndex >= obsTimes.size()-1)
@@ -396,7 +398,8 @@ void DiffTree::time_steps(int n, int outputFrequency)
 {
     //initializeTree();
 	//std::cout << "made it here" << std::cout;
-	bool verbose = true;
+	bool verbose = false;
+	int obsMod = pow(10, round(log10(n)-1));
 	//initializeCells();
 
 	//std::cout << "can't make it here though..." << std::cout;
@@ -429,7 +432,7 @@ void DiffTree::time_steps(int n, int outputFrequency)
     {
 		simTime = i;
         Rcpp::checkUserInterrupt();
-		if(verbose)
+		if(verbose && i % obsMod == 0)
 			std::cout << "Time Step: " << i << std::endl;
         time_step();
         writeSDI(sdi_of, i);
@@ -451,6 +454,7 @@ void DiffTree::time_steps(int n, int outputFrequency)
 	//writeAll(n);
 
     std::ofstream done_file;
+	std::cout << "HELRKJELKJRLE" << std::endl;
     done_file.open(opath+".done");
     done_file << "Done" << std::endl;
     done_file.close();
