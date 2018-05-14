@@ -9,7 +9,7 @@ output: pdf_document
 
 
 
-#DIFFpop
+# DIFFpop
 
 DIFFpop is an R package to simulate cell labeling experiments performed on differentiation hierarchies.  
 
@@ -63,7 +63,7 @@ devtools::install_git("https://github.com/ferlicjl/diffpop.git")
 Installing the library should compile all necessary functions so that DIFFpop
 can be run as an R function.
 
-#Uses
+# Uses
 
 DIFFpop is an R package that uses C++ to simulate the maturation process of cells through user-defined differentiation hierarchies according to user-defined event rates.  The software is capable of simulating hierarchies in two manners: using a branching process with growing populations and using a modified Moran process with fixed population sizes.
 
@@ -71,23 +71,23 @@ For increasing population simulations, the system will grow or decline as a bran
 
 Simulations with fixed population sizes are carried out using a modified Moran Process.  A traditional Moran Process consist of a population of cells, each belonging to a certain class, and having an individual fitness.  In each time step, a random cell is selected for division and a random cell is selected for apotosis, ensuring that the population size remains constant.  To introduce selection, cells with higher fitness values are more likely to be selected for division.  To modify the Moran Process and place it in the setting of differentiation, we have included additional cellular events.  By continuing to couple events together, we are able to maintain a constant population size.
 
-#Software Design and Class Structures
+# Software Design and Class Structures
 
-##GrowingPop
+## GrowingPop
 
 A GrowingPop is the base class used to designate the various cell types throughout a differentiation tree.  A GrowingPop contains a list of cell states, functions to enact cellular events on those cell states, and event rates at which to perform those functions.  The hierarchical structure is maintained by pointers to upstream and downstream CellPopulations.
 
-##FixedPop
+## FixedPop
 
 A FixedPop is a class derived from a GrowingPop.  In order to maintain a constant population size, cellular events are coupled together; i.e. a mitosis event generating an additional cell is immediately coupled with a differentiation or death event.  Similarly, if the number of cells in the FixedPop population increases by one from upstream differentiation, a differentiation or death event of its own is immediately enacted to maintain the population level.  
 
-##DiffTriangle
+## DiffTriangle
 
 A DiffTriangle cell type is used to represent the downstream fully differentiated cells.  Cells are arranged in a triangle formation.  Cells enter the population on the highest level of the triangle, experiencing further differentiation and division to progress down the triangle.  When a new cell enters the DiffTriangle population, it causes an already existing cell on the highest level to divide and further differentiate to the next level of the triangle.  Those two cells each displace a pre-existing cell, causing them to divide and differentiate (thus generating four newly displaced cells), which in turn displace cells that further displace cells until reaching the lowest level of the triangle.  A displaced cell from the last row of the triangle can either be passed on to an offspring cell type (if there are further cell types in the hierarchy), or die out.  Importantly, DiffTriangle structures will not initiate any cellular events of their own, as differentiation waves throughout a triangle is only initiated when receiving a new cell from an upstream population.
 
 The population size of a DiffTriangle is specified by two parameters; the first, $z$ is the number of cell divisions until full maturation or the number of levels in the triangle.  The second is called the $mfactor$, which is the number of triangles to be stacked side-by-side.  If $mfactor$ is greater than 1, then a cell entering the DiffTriangle population simply chooses at random which specific triangle to enter.
 
-##DiffTree
+## DiffTree
 
 A DiffTree contains pointers to all populations throughout the differentiation hierarchy.  From the DiffTree object, all cell types in the hierarchy can be accessed in either a breadth-first or depth-first manner.  Hierarchy-wide functions, such as simulating the hierarchy and recording output, are initiated by calling functions of the DiffTree.  
 
@@ -98,7 +98,7 @@ A DiffTree contains pointers to all populations throughout the differentiation h
 |DiffTriangle|Constant|constant size population with $z$ levels of maturity|
 
 
-##NodeList Data Structure
+## NodeList Data Structure
 
 The cells of each population are maintained by a NodeList.  A NodeList is a doubly-linked list of Nodes.  Each Node keeps track of a particular cell state, defined by the combination of a barcode, mutation status, and fitness value, as well as a count of how many cells belong to that particular state.  In addition, DiffTriangle Nodes also contain data to record which triangle and at which level a cell resides.  Mutation status is a string listing which mutations have occurred in that state.  Information about particular mutations can be found in the mutation information file.  The NodeList keeps track of the total number of cells in the list and overall fitness for the population.  Methods exist to insert or remove cells from the list, maintaining a left-balanced list by cell count -- that is, cell states with higher cell counts are found to the left of the list.  This approach allows for more efficient indexing by cell count, particularly as diversity in the compartment decreases or dominant clones arise. 
 
@@ -143,18 +143,18 @@ Mutations in DIFFpop occur only during mitosis events.  Each mitosis event resul
 In the FixedPop setting, all de-differentiation events will result in an apoptosis event in the receiving population.  This is necessary to avoid circular equations when calculating adjustments to net proliferation in order to maintain a constant population size.  
 
 
-#Simulation Overview
+# Simulation Overview
 
 After the tree structure has been specified in R, the task of simulating is handed off to a C++ backend.  Before events can be enacted, the tree structure and other user-specified parmaeters must be read from the input files. 
 
-##Initializing a Simulation
+## Initializing a Simulation
 
 1.	Read tree structure from input files
 2.	Initialize cell list for each population
 3.	Write information file
 4.	Output tree structure
 
-##Simulation via Gillespie Algorithm
+## Simulation via Gillespie Algorithm
 
 1.	Initiate simulation at time 0
 2.	Generate the time to the next event
@@ -166,7 +166,7 @@ After the tree structure has been specified in R, the task of simulating is hand
     b.	Enact single event on that population
 5.	If simulation time remains, repeat from step 2
 
-##Simulation via modified Moran Process
+## Simulation via modified Moran Process
 
 1.	For each time unit:
     a.	Iterate through tree in breadth-first manner
@@ -174,7 +174,7 @@ After the tree structure has been specified in R, the task of simulating is hand
         i.	Get total number of “i-1” and “i” events [$\gamma_1$, $\gamma_2$, $\delta$, $\zeta$, and $\beta$] = $j$
         ii.	Enact $j$ events choosing which event according to the event rates. If event results in a one-cell deficit, enact a mitosis [$\alpha$] event
 
-##Output Files
+## Output Files
 
 Each run of the simulation will be given a unique file prefix, consisting of the date and time when the simulation initiated, followed by a random integer. 
 
@@ -190,7 +190,7 @@ Each run of the simulation will be given a unique file prefix, consisting of the
     +	Time, compartment location, and additional fitness at which a new mutation arises
 
 
-#Maintaining a constant population size
+# Maintaining a constant population size
 
 In order to maintain a constant population size, a relationship must exist between the event rates of the compartment.  Specifically, those event rates that result in an excess of cells in the compartment [“i+1” rates] must be balanced with those event rates that result in a deficit of cells [“i-1” rates].  
 
@@ -211,8 +211,8 @@ n_{(A)}\alpha_{(A)} &+ \sum_{\text{pop }i \neq A}n_{(i)}\left( \gamma_{1(i,A)} +
 \end{align*}
 
 For the population size to remain constant, this first line of the equation must hold.  That is, events that increase the population size (self-renewal and influx from other populations) must be balanced by events that decrease the population (cell death and differentiation).  In the modified Moran Process, we force this to hold by automatically calculating delta for each population.  If this calculated delta value is positive, we simply set the effective death rate equal to this value.  If this calculated delta value is negative, we increase the alpha rate of the population by this value.
-
-#Fitness Distribution
+ 
+# Fitness Distribution
 	
 Throughout the differentiation hierarchy, whenever a new clone arises due to mutation, a change in fitness can be drawn from a random distribution.  The parameters of that distribution can be specified by the user in R.  
 
@@ -228,7 +228,7 @@ Throughout the differentiation hierarchy, whenever a new clone arises due to mut
 If the distribution function selected is normal, fitness additions are drawn from a $N(alpha\_fitness, beta\_fitness)$ distribution.  If the distribution function selected is uniform, fitness additions are drawn from a $U(alpha\_fitness, beta\_fitness)$ distribution.  If the distribution function selected is double exponential, alpha_fitness refers to the rate parameter of an exponetial distribution for the positive range and beta_fitness refers to the rate parameter of an exponential distribution for the negative range.
 
 
-#Using DIFFpop in R
+# Using DIFFpop in R
 
 DIFFpop consists of three steps to run simulations of differentiation hierarchies.  The first step is to build and describe the tree structure using the appropriate R functions. Populations of cells are created using their specific type.  Users must give each population a unique name, as well as an initial population size.  Optionally, users may specify an initial cell barcoding frequency, this is the proportion of initial cells that receive a unique barcode.  If this parameter is not set, no unique barcodes will be created for the population.  To specify the transitions between populations, the addEdge function is used, along with the correct parameters: the initiating (from) population, the receiving (to) population, event type as a string ("alpha", "beta", "gamma1", "gamma2", "delta", "zeta", "mu"), and event rate.  For events involving only one population ("alpha", "delta", or "mu"), set that population as both the initiating and receiving population.  The last step is to specify which population is the root of the differentiation hiearchy, that is, which population is the furthest upstream, using the setRoot function in R.
 
@@ -236,7 +236,7 @@ After the tree has been completely specified, the writeTree function is used to 
 
 The last step is to use either the simulateTree or simulateFixedTree function to kick off the C++ backend simulation.    
 
-##Simulation Parameters
+## Simulation Parameters
 
 The following parameters are available to the user in the simulateTree/simulateFixedTree function.  
 
