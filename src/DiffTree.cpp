@@ -316,10 +316,10 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 
     // Display some stuff - debugging
 	if(verbose){
-    std::cout << "numTime: " << numTime << std::endl;
+    //std::cout << "numTime: " << numTime << std::endl;
     std::cout << "Simulation Start Time: " << curTime << std::endl;
     std::cout << "Simulation End Time: " << obsTimes[numTime] << std::endl;
-    std::cout << "obsTimes.size(): " << obsTimes.size() << std::endl;
+    //std::cout << "obsTimes.size(): " << obsTimes.size() << std::endl;
 	}
 
     // Run until our currentTime is greater than our largest Observation time
@@ -353,7 +353,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 				writeAll(obsTimes[curObsIndex]);
             zeroEvents();
 			if(verbose &&  obsTimes[curObsIndex] % obsMod == 0)
-				std::cout << "Observation " << obsTimes[curObsIndex] << " of " << numTime << std::endl;
+				std::cout << "Time " << obsTimes[curObsIndex] << " of " << numTime << std::endl;
             curObsIndex++;
             //std::cout << "Sucessfully made an observation" << std::endl;
 			if((unsigned)curObsIndex >= obsTimes.size()-1)
@@ -371,7 +371,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
         curTime = curTime + timeToNext;
         //timeToNext = nextEventTime();
     }
-	std::cout << "curObsIndex: " << curObsIndex << std::endl;
+	//std::cout << "curObsIndex: " << curObsIndex << std::endl;
 	std::cout << "End Simulation Time: " << obsTimes[curObsIndex] << std::endl;
     std::cout << "Number of total events: " << numEvents << std::endl;
 
@@ -428,14 +428,15 @@ void DiffTree::time_steps(int n, int outputFrequency)
 	writeTypes(types_of, 0);
     //writeEvents(events_of, 0);
 
-	std::cout << "Traverse Frequency: " << outputFrequency << std::endl;
+	//std::cout << "Traverse Frequency: " << outputFrequency << std::endl;
+	std::cout << "Time 0 of " << n << std::endl;
 
     for(int i = 1; i <= n; i++)
     {
 		simTime = i;
         Rcpp::checkUserInterrupt();
 		if(verbose && i % obsMod == 0)
-			std::cout << "Time Step: " << i << std::endl;
+			std::cout << "Time " << i << " of " << n << std::endl;
         time_step();
         writeSDI(sdi_of, i);
         writePopSize(pop_of, i);
