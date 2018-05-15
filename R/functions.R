@@ -161,7 +161,7 @@ setRoot = function(tree, popName){
 #' \dontrun{
 #' setFitnessDistribution(tree = myTree, distribution = "uniform", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 0, upper_fitness = 5, lower_fitness = 0)
 #' }
-setFitnessDistribution = function(tree, distribution = "normal", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 1, upper_fitness = NA, lower_fitness = NA){
+setFitnessDistribution = function(tree, distribution = "normal", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 1, upper_fitness = NA, lower_fitness = 0){
   # If a tree doesn't exist, create one
   myTree = tree
   myTree <- set.graph.attribute(graph = myTree, name = "distribution", value = distribution)
