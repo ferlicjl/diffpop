@@ -439,7 +439,7 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 
 	// RECALCULATE NET PROLIFERATION, only needed to show observed rates match expected rates
 	tree.calcDelta();
-	
+		
     // Ensure NodeLists get deleted
     for ( auto current = m.begin(); current != m.end(); ++ current )
     {

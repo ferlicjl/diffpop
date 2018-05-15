@@ -98,7 +98,7 @@ void Node::removeFromList(){
 	list->total -= this->count;
 	list->totalFitness -= this->count * this->fitness;
 	
-	if(this->mutation != "")
+	if(this->mutation != "0")
 		list->numMutated -= this->count;
 	
 	if(this->prev != NULL)

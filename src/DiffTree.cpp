@@ -311,7 +311,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 
     // Keep track of number of events.  Why not?
     int numEvents = 0;
-	
+
 	int obsMod = pow(10, round(log10(numTime)-1));
 
     // Display some stuff - debugging
@@ -428,6 +428,8 @@ void DiffTree::time_steps(int n, int outputFrequency)
 	writeTypes(types_of, 0);
     //writeEvents(events_of, 0);
 
+	std::cout << "Traverse Frequency: " << outputFrequency << std::endl;
+
     for(int i = 1; i <= n; i++)
     {
 		simTime = i;
@@ -440,7 +442,8 @@ void DiffTree::time_steps(int n, int outputFrequency)
         writeLabelled(label_of, i);
         writeEvents(events_of, i);
 		writeTypes(types_of, i);
-		if((outputFrequency > 0 && n % outputFrequency == 0) || n == 0)
+		//std::cout << "outputFrequency > 0: " << (outputFrequency > 0)  << " n % outputFrequency == 0: " << (n % outputFrequency == 0) << std::endl;
+		if((outputFrequency > 0 && i % outputFrequency == 0) || i == n)
 				writeAll(i);
         //writeMutations(i);
         zeroEvents();
