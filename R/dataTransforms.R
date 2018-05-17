@@ -11,10 +11,14 @@
 eventsToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".events$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".events", sep = "")
+    files = grep(paste(".events$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".events$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -35,10 +39,14 @@ eventsToCSV = function(directory = ".", prefixes = NULL){
 labelToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".label$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".label", sep = "")
+    files = grep(paste(".label$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".label$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -59,10 +67,14 @@ labelToCSV = function(directory = ".", prefixes = NULL){
 popToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".pop$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".pop", sep = "")
+    files = grep(paste(".pop$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".pop$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -83,10 +95,14 @@ popToCSV = function(directory = ".", prefixes = NULL){
 sdiToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".sdi$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".sdi", sep = "")
+    files = grep(paste(".sdi$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".sdi$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -107,10 +123,14 @@ sdiToCSV = function(directory = ".", prefixes = NULL){
 typesToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".types$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".types", sep = "")
+    files = grep(paste(".types$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".types$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -133,10 +153,10 @@ allToCSV = function(directory = ".", prefixes = NULL){
 
   files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".all$", sep = ""), list.files(dir),value=TRUE)
+    files = grep(paste(".all$", sep = ""), list.files(dir, full.names = T),value=TRUE)
   else{
     for(p in prefixes){
-      files = c(files, grep(paste("^", p, ".*.all$", sep = ""), list.files(dir),value=TRUE) )
+      files = c(files, grep(paste(p, ".*.all$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
     }
   }
 
@@ -161,10 +181,14 @@ allToCSV = function(directory = ".", prefixes = NULL){
 paramsToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".params$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".params", sep = "")
+    files = grep(paste(".params$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".params$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -185,10 +209,14 @@ paramsToCSV = function(directory = ".", prefixes = NULL){
 params2ToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".params2$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".params2", sep = "")
+    files = grep(paste(".params2$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".params2$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -209,10 +237,14 @@ params2ToCSV = function(directory = ".", prefixes = NULL){
 mutToCSV = function(directory = ".", prefixes = NULL){
   dir = R.utils::getAbsolutePath(directory)
 
+  files = c()
   if(length(prefixes) == 0)
-    files = grep(paste(".mut$", sep = ""), list.files(dir),value=TRUE)
-  else
-    files = paste(prefixes, ".mut", sep = "")
+    files = grep(paste(".mut$", sep = ""), list.files(dir, full.names = T),value=TRUE)
+  else{
+    for(p in prefixes){
+      files = c(files, grep(paste(p, ".mut$", sep = ""), list.files(dir, full.names = T),value=TRUE) )
+    }
+  }
 
   print(files)
   for(f in files){
@@ -221,3 +253,25 @@ mutToCSV = function(directory = ".", prefixes = NULL){
     write.table(t_file, paste(name, ".csv", sep = ""), row.names = F, quote = F, col.names = F, sep = ",")
   }
 }
+
+#' outputToCSV
+#'
+#' convert all output files to CSV
+#'
+#' @param directory directory of output files
+#' @param prefixes a list of prefixes to convert
+#'
+#' @export
+outputToCSV = function(directory = ".", prefixes = NULL){
+  eventsToCSV(directory, prefixes)
+  labelToCSV(directory, prefixes)
+  mutToCSV(directory, prefixes)
+  popToCSV(directory, prefixes)
+  sdiToCSV(directory, prefixes)
+  typesToCSV(directory, prefixes)
+  paramsToCSV(directory, prefixes)
+  params2ToCSV(directory, prefixes)
+  allToCSV(directory, prefixes)
+}
+
+
