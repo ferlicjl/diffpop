@@ -283,12 +283,14 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     std::ofstream pop_of;
     std::ofstream label_of;
     std::ofstream events_of;
+	std::ofstream mutants_of;
 
     sdi_of.open(opath + ".sdi");
 	types_of.open(opath + ".types");
     pop_of.open(opath + ".pop");
     label_of.open(opath + ".label");
     events_of.open(opath + ".events");
+	mutants_of.open(opath + ".mut");
 
 	  //writeAll(0);
     writeCellHeader(sdi_of);
@@ -296,6 +298,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     writeCellHeader(pop_of);
     writeCellHeader(label_of);
     writeEventsHeader(events_of);
+	writeMutantsHeader(mutants_of);
 
     // Set up vector of observation times
     std::vector<int> obsTimes;
@@ -408,18 +411,21 @@ void DiffTree::time_steps(int n, int outputFrequency)
     std::ofstream label_of;
     std::ofstream events_of;
 	std::ofstream types_of;
+	std::ofstream mutants_of;
 
     sdi_of.open(opath + ".sdi");
     pop_of.open(opath + ".pop");
     label_of.open(opath + ".label");
     events_of.open(opath + ".events");
 	types_of.open(opath + ".types");
+	mutants_of.open(opath + ".mut");
 
     writeCellHeader(sdi_of);
     writeCellHeader(pop_of);
     writeCellHeader(label_of);
     writeEventsHeader(events_of);
 	writeTypesHeader(types_of);
+	writeMutantsHeader(mutants_of);
 	writeAll(0);
 
     writeSDI(sdi_of, 0);
@@ -503,6 +509,16 @@ void DiffTree::writeEventsHeader(std::ofstream& of)
 		of << node.second->name << "_mutation" << "\t";
     }
     of << std::endl;
+}
+
+void DiffTree::writeMutantsHeader(std::ofstream& of)
+{
+    of << "mutant" << "\t";
+	of << "time" << "\t";
+	of << "population" << "\t";
+	of << "fitness" << "\t";
+    of << std::endl;
+	of.close();
 }
 
 void DiffTree::writeSDI(std::ofstream& of, int time)

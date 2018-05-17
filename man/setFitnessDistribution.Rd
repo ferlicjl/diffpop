@@ -6,7 +6,7 @@
 \usage{
 setFitnessDistribution(tree, distribution = "normal", is_random = T,
   alpha_fitness = 0, beta_fitness = 1, pass_prob = 1,
-  upper_fitness = NA, lower_fitness = NA)
+  upper_fitness = NA, lower_fitness = 0)
 }
 \arguments{
 \item{tree}{DiffTree object for which to set fitness distribution}

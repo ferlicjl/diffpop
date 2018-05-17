@@ -76,6 +76,7 @@ public:
 	void writeCellHeader(std::ofstream& of);
 	void writeTypesHeader(std::ofstream& of);
 	void writeEventsHeader(std::ofstream& of);
+	void writeMutantsHeader(std::ofstream& of);
 	void writeSDI(std::ofstream& of, int time);
 	void writePopSize(std::ofstream& of, int time);
 	void writeLabelled(std::ofstream& of, int time);
