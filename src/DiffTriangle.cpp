@@ -507,8 +507,8 @@ double DiffTriangle::coded()
     return(GrowingPop::coded());
 }
 
-void DiffTriangle::writeToFile(std::ofstream& of){
+void DiffTriangle::writeToFile(std::ofstream& of, int time){
 	//
-	cells.writeToFile2(of);
+	cells.writeToFile2(of, time);
 }
 

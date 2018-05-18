@@ -820,8 +820,8 @@ std::vector<long int> GrowingPop::sample(int size)
 	return ret;
 }
 
-void GrowingPop::writeToFile(std::ofstream& of){
-	cells.writeToFile(of);
+void GrowingPop::writeToFile(std::ofstream& of, int time){
+	cells.writeToFile(of, time);
 }
 
 

@@ -87,8 +87,8 @@ public:
 	void deleteList();
 
 	// Two methods to write to file
-	void writeToFile(std::ofstream& of);
-	void writeToFile2(std::ofstream& of);
+	void writeToFile(std::ofstream& of, int time);
+	void writeToFile2(std::ofstream& of, int time);
 
 	// Fast method to build a DiffTriangle's NodeList structure
 	std::vector<std::vector<Node*>>makeTriangle(int nlevels, int mfac);

@@ -144,7 +144,7 @@ public:
 	std::vector<long int> sample(int size);
 	
 	// Full output of population
-	virtual void writeToFile(std::ofstream& of);
+	virtual void writeToFile(std::ofstream& of, int time);
 
 };
 

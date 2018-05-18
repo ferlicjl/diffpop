@@ -413,12 +413,12 @@ void DiffTree::time_steps(int n, int outputFrequency)
 	std::ofstream types_of;
 	std::ofstream mutants_of;
 
-    sdi_of.open(opath + ".sdi");
-    pop_of.open(opath + ".pop");
-    label_of.open(opath + ".label");
-    events_of.open(opath + ".events");
-	types_of.open(opath + ".types");
-	mutants_of.open(opath + ".mut");
+    sdi_of.open(opath + "_sdi.csv");
+    pop_of.open(opath + "_pop.csv");
+    label_of.open(opath + "_label.csv");
+    events_of.open(opath + "_events.csv");
+	types_of.open(opath + "_types.csv");
+	mutants_of.open(opath + "_mut.csv");
 
     writeCellHeader(sdi_of);
     writeCellHeader(pop_of);
@@ -472,11 +472,11 @@ void DiffTree::time_steps(int n, int outputFrequency)
 // OUTPUT METHODS
 void DiffTree::writeCellHeader(std::ofstream& of)
 {
-    of << "time" << "\t";
+    of << "time";
 
     for(auto const& x: m)
     {
-        of << x.second->name << "\t";
+        of << "," << x.second->name;
     }
 
     of << std::endl;
@@ -484,11 +484,11 @@ void DiffTree::writeCellHeader(std::ofstream& of)
 
 void DiffTree::writeTypesHeader(std::ofstream& of)
 {
-    of << "time" << "\t";
+    of << "time";
 
     for(auto const& x: m)
     {
-        of << x.second->name << "\t";
+        of << "," << x.second->name;
     }
 
     of << std::endl;
@@ -496,38 +496,38 @@ void DiffTree::writeTypesHeader(std::ofstream& of)
 
 void DiffTree::writeEventsHeader(std::ofstream& of)
 {
-    of << "time" << "\t";
+    of << "time";
     for(auto const& node: m)
     {
-        of << node.second->name << "_alpha" << "\t";
-        of << node.second->name << "_gamma1" << "\t";
-        of << node.second->name << "_gamma2" << "\t";
-        of << node.second->name << "_death" << "\t";
-        of << node.second->name << "_beta" << "\t";
-        of << node.second->name << "_addcell" << "\t";
-		of << node.second->name << "_dediff" << "\t";
-		of << node.second->name << "_mutation" << "\t";
+        of << "," << node.second->name << "_alpha";
+        of << "," << node.second->name << "_gamma1";
+        of << "," << node.second->name << "_gamma2";
+        of << "," << node.second->name << "_death";
+        of << "," << node.second->name << "_beta";
+        of << "," << node.second->name << "_addcell";
+		of << "," << node.second->name << "_dediff";
+		of << "," << node.second->name << "_mutation";
     }
     of << std::endl;
 }
 
 void DiffTree::writeMutantsHeader(std::ofstream& of)
 {
-    of << "mutant" << "\t";
-	of << "time" << "\t";
-	of << "population" << "\t";
-	of << "fitness" << "\t";
+    of << "mutant" << ",";
+	of << "time" << ",";
+	of << "population" << ",";
+	of << "fitness";
     of << std::endl;
 	of.close();
 }
 
 void DiffTree::writeSDI(std::ofstream& of, int time)
 {
-    of << time << "\t";
+    of << time;
 
     for(auto const& node: m)
     {
-        of << node.second->sdi() << "\t";
+        of << "," << node.second->sdi();
         //of << 0 << "\t";
     }
 
@@ -536,11 +536,11 @@ void DiffTree::writeSDI(std::ofstream& of, int time)
 
 void DiffTree::writeTypes(std::ofstream& of, int time)
 {
-    of << time << "\t";
+    of << time;
 
     for(auto const& node: m)
     {
-        of << node.second->cells.numTypes() << "\t";
+        of << "," << node.second->cells.numTypes();
         //of << 0 << "\t";
     }
 
@@ -549,11 +549,11 @@ void DiffTree::writeTypes(std::ofstream& of, int time)
 
 void DiffTree::writePopSize(std::ofstream& of, int time)
 {
-    of << time << "\t";
+    of << time;
 
     for(auto const& node: m)
     {
-        of << node.second->cells.total << "\t";
+        of << "," << node.second->cells.total;
     }
 
     of << std::endl;
@@ -561,11 +561,11 @@ void DiffTree::writePopSize(std::ofstream& of, int time)
 
 void DiffTree::writeLabelled(std::ofstream& of, int time)
 {
-    of << time << "\t";
+    of << time;
 
     for(auto const& node: m)
     {
-        of << node.second->coded() << "\t";
+        of << "," << node.second->coded();
     }
 
 
@@ -574,18 +574,18 @@ void DiffTree::writeLabelled(std::ofstream& of, int time)
 
 void DiffTree::writeEvents(std::ofstream& of, int time)
 {
-    of << time << "\t";
+    of << time;
 
     for(auto const& node: m)
     {
-        of << (double) node.second->alphaEvents << "\t";
-        of << (double)node.second->gamma1Events << "\t";
-        of << (double)node.second->gamma2Events << "\t";
-        of << (double)node.second->deathEvents  << "\t";
-        of << (double)node.second->betaEvents << "\t";
-        of << (double)node.second->addcellEvents << "\t";
-		of << (double)node.second->dediffEvents << "\t";
-		of << (double)node.second->mutateEvents << "\t";
+        of << "," << (double) node.second->alphaEvents;
+        of << "," << (double)node.second->gamma1Events;
+        of << "," << (double)node.second->gamma2Events;
+        of << "," << (double)node.second->deathEvents;
+        of << "," << (double)node.second->betaEvents;
+        of << "," << (double)node.second->addcellEvents;
+		of << "," << (double)node.second->dediffEvents;
+		of << "," << (double)node.second->mutateEvents;
     }
     of << std::endl;
 }
@@ -624,16 +624,17 @@ void DiffTree::writeAll(int time)
     for(auto const& node: m)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + node.second->name + "_" + std::to_string(time) + ".all", std::fstream::in | std::fstream::out | std::fstream::app);
-        node.second->writeToFile(all_of);
+        all_of.open(opath + "_" + node.second->name + "_" + std::to_string(time) + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+		all_of << "time,barcode,mutation,fitness,count" << std::endl;
+        node.second->writeToFile(all_of, time);
         all_of.close();
     }
 }
 
 void DiffTree::writeMutant(std::string pop, int mutant, double fitIncrease){
 	std::ofstream all_of;
-	all_of.open(opath + ".mut", std::fstream::in | std::fstream::out | std::fstream::app);
-	all_of << mutant << " " << simTime << " " << pop << " " << fitIncrease << std::endl;
+	all_of.open(opath + "_mut.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+	all_of << mutant << "," << simTime << "," << pop << "," << fitIncrease << std::endl;
 	all_of.close();
 }
 
