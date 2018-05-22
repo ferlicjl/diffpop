@@ -406,6 +406,7 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
     p_file << std::endl;
 	p_file.close();
 
+	/*
     // Create an information file - REDUNDANT DUE TO PARAMETERS FILE
 	// KEPT FOR THE MOMENT FOR OLD SIMULATION RESULTS
     std::ofstream info_file;
@@ -433,6 +434,7 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
     }
     info_file << std::endl;
     info_file.close();
+	*/
 
 	// Print out the tree structure
     tree.print();
@@ -515,6 +517,7 @@ int simulateTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::string i
     p_file << std::endl;
 	p_file.close();
 
+	/*
     // INFO FILE
     std::ofstream info_file;
     info_file.open(tree.opath+".info");
@@ -541,6 +544,7 @@ int simulateTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::string i
     }
     info_file << std::endl;
     info_file.close();
+	*/
 
 	std::cout << "Created info file..." << std::endl;
     tree.print();
