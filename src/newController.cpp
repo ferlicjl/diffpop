@@ -341,31 +341,31 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 
 	// Output the initial parameters given by the user
 	std::ofstream p_file;
-    p_file.open(tree.opath+".params");
+    p_file.open(tree.opath+"_params.csv");
 
-	p_file << "nObs\t" << nObs << std::endl;
-	p_file << "traverseFrequency\t" << traverseFrequency << std::endl;
-	p_file << "indir\t" << indir << std::endl;
-	p_file << "outdir\t" << outdir << std::endl;
-	p_file << "seed\t" << seed << std::endl;
-	p_file << "fp.distribution\t" << tree.fp.fitness_distribution << std::endl;
-	p_file << "fp.is_randfitness\t" << tree.fp.is_randfitness << std::endl;
-	p_file << "fp.alpha_fitness\t" << tree.fp.alpha_fitness << std::endl;
-	p_file << "fp.beta_fitness\t" << tree.fp.beta_fitness << std::endl;
-	p_file << "fp.pass_prob\t" << tree.fp.pass_prob << std::endl;
-	p_file << "fp.lower_fitness\t" << tree.fp.lower_fitness << std::endl;
-	p_file << "fp.upper_fitness\t" << tree.fp.upper_fitness << std::endl;
+	p_file << "nObs," << nObs << std::endl;
+	p_file << "traverseFrequency," << traverseFrequency << std::endl;
+	p_file << "indir," << indir << std::endl;
+	p_file << "outdir," << outdir << std::endl;
+	p_file << "seed," << seed << std::endl;
+	p_file << "fp.distribution," << tree.fp.fitness_distribution << std::endl;
+	p_file << "fp.is_randfitness," << tree.fp.is_randfitness << std::endl;
+	p_file << "fp.alpha_fitness," << tree.fp.alpha_fitness << std::endl;
+	p_file << "fp.beta_fitness," << tree.fp.beta_fitness << std::endl;
+	p_file << "fp.pass_prob," << tree.fp.pass_prob << std::endl;
+	p_file << "fp.lower_fitness," << tree.fp.lower_fitness << std::endl;
+	p_file << "fp.upper_fitness," << tree.fp.upper_fitness << std::endl;
 
     for(auto const& node: m)
     {
-        p_file << "N_" << node.second->name << "\t" << node.second->cells.total << std::endl;
-        p_file << "alpha_" << node.second->name << "\t"<< node.second->alpha << std::endl;
-        p_file << "beta_" << node.second->name << "\t"<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
-        p_file << "gamma1_" << node.second->name << "\t"<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
-		p_file << "gamma2_" << node.second->name << "\t"<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
-		p_file << "zeta2_" << node.second->name << "\t"<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
-        p_file << "delta_" << node.second->name << "\t"<< node.second->death << std::endl;
-		p_file << "mu_" << node.second->name << "\t"<< node.second->mu << std::endl;
+        p_file << "N_" << node.second->name << "," << node.second->cells.total << std::endl;
+        p_file << "alpha_" << node.second->name << ","<< node.second->alpha << std::endl;
+        p_file << "beta_" << node.second->name << ","<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
+        p_file << "gamma1_" << node.second->name << ","<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
+		p_file << "gamma2_" << node.second->name << ","<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
+		p_file << "zeta2_" << node.second->name << ","<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
+        p_file << "delta_" << node.second->name << ","<< node.second->death << std::endl;
+		p_file << "mu_" << node.second->name << ","<< node.second->mu << std::endl;
     }
     p_file << std::endl;
 	p_file.close();
@@ -374,8 +374,9 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 	tree.calcDelta();
 
 	// Re-output parameters after having adjusted net-proliferation
-    p_file.open(tree.opath+".params2");
+    p_file.open(tree.opath+"_params.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 
+	/*
 	p_file << "nObs\t" << nObs << std::endl;
 	p_file << "traverseFrequency\t" << traverseFrequency << std::endl;
 	p_file << "indir\t" << indir << std::endl;
@@ -388,17 +389,19 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 	p_file << "fp.pass_prob\t" << tree.fp.pass_prob << std::endl;
 	p_file << "fp.lower_fitness\t" << tree.fp.lower_fitness << std::endl;
 	p_file << "fp.upper_fitness\t" << tree.fp.upper_fitness << std::endl;
+	*/
+	p_file << "# Rates after adjusting net proliferation for FixedPops" << std::endl;
 
     for(auto const& node: m)
     {
-        p_file << "N_" << node.second->name << "\t" << node.second->cells.total << std::endl;
-        p_file << "alpha_" << node.second->name << "\t"<< node.second->alpha << std::endl;
-        p_file << "beta_" << node.second->name << "\t"<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
-        p_file << "gamma1_" << node.second->name << "\t"<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
-		p_file << "gamma2_" << node.second->name << "\t"<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
-		p_file << "zeta2_" << node.second->name << "\t"<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
-        p_file << "delta_" << node.second->name << "\t"<< node.second->death << std::endl;
-		p_file << "mu_" << node.second->name << "\t"<< node.second->mu << std::endl;
+        p_file << "N_" << node.second->name << "_adj," << node.second->cells.total << std::endl;
+        p_file << "alpha_" << node.second->name << "_adj,"<< node.second->alpha << std::endl;
+        p_file << "beta_" << node.second->name << "_adj,"<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
+        p_file << "gamma1_" << node.second->name << "_adj,"<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
+		p_file << "gamma2_" << node.second->name << "_adj,"<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
+		p_file << "zeta2_" << node.second->name << "_adj,"<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
+        p_file << "delta_" << node.second->name << "_adj,"<< node.second->death << std::endl;
+		p_file << "mu_" << node.second->name << "_adj,"<< node.second->mu << std::endl;
     }
     p_file << std::endl;
 	p_file.close();
@@ -489,25 +492,25 @@ int simulateTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::string i
 
 	// Parameters File
 	std::ofstream p_file;
-    p_file.open(tree.opath+".params");
+    p_file.open(tree.opath+"_params.csv");
 
-	p_file << "nObs\t" << nObs << std::endl;
-	p_file << "traverseFrequency\t" << traverseFrequency << std::endl;
-	p_file << "indir\t" << indir << std::endl;
-	p_file << "outdir\t" << outdir << std::endl;
-	p_file << "seed\t" << seed << std::endl;
+	p_file << "nObs," << nObs << std::endl;
+	p_file << "traverseFrequency," << traverseFrequency << std::endl;
+	p_file << "indir," << indir << std::endl;
+	p_file << "outdir," << outdir << std::endl;
+	p_file << "seed," << seed << std::endl;
 
 
     for(auto const& node: m)
     {
-        p_file << "N_" << node.second->name << "\t" << node.second->cells.total << std::endl;
-        p_file << "alpha_" << node.second->name << "\t"<< node.second->alpha << std::endl;
-        p_file << "beta_" << node.second->name << "\t"<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
-        p_file << "gamma1_" << node.second->name << "\t"<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
-		p_file << "gamma2_" << node.second->name << "\t"<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
-		p_file << "zeta2_" << node.second->name << "\t"<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
-        p_file << "delta_" << node.second->name << "\t"<< node.second->death << std::endl;
-		p_file << "mu_" << node.second->name << "\t"<< node.second->mu << std::endl;
+        p_file << "N_" << node.second->name << "," << node.second->cells.total << std::endl;
+        p_file << "alpha_" << node.second->name << ","<< node.second->alpha << std::endl;
+        p_file << "beta_" << node.second->name << ","<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
+        p_file << "gamma1_" << node.second->name << ","<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
+		p_file << "gamma2_" << node.second->name << ","<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
+		p_file << "zeta2_" << node.second->name << ","<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
+        p_file << "delta_" << node.second->name << ","<< node.second->death << std::endl;
+		p_file << "mu_" << node.second->name << ","<< node.second->mu << std::endl;
     }
     p_file << std::endl;
 	p_file.close();

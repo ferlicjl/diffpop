@@ -285,12 +285,12 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     std::ofstream events_of;
 	std::ofstream mutants_of;
 
-    sdi_of.open(opath + ".sdi");
-	types_of.open(opath + ".types");
-    pop_of.open(opath + ".pop");
-    label_of.open(opath + ".label");
-    events_of.open(opath + ".events");
-	mutants_of.open(opath + ".mut");
+    sdi_of.open(opath + "_sdi.csv");
+	types_of.open(opath + "_types.csv");
+    pop_of.open(opath + "_pop.csv");
+    label_of.open(opath + "_label.csv");
+    events_of.open(opath + "_events.csv");
+	mutants_of.open(opath + "_mut.csv");
 
 	  //writeAll(0);
     writeCellHeader(sdi_of);
