@@ -443,6 +443,44 @@ double NodeList::sdi(){
 	return -ret;
 }
 
+std::string NodeList::diversity(){
+	
+	std::map<long int, int> c_map = count_map_codes();
+	std::ostringstream o;
+    o << c_map.size() << "," << shannon(c_map) << "," << simpson(c_map);
+    return o.str();
+}
+
+double NodeList::shannon(std::map<long int, int> c_map){
+	// Total number of codes N and counter map of codes
+	long int N = total;
+	
+	// Shannon Diversity simply a sum of terms
+	double ret = 0.0;
+	std::map<long int, int>::iterator it;
+	for ( it = c_map.begin(); it != c_map.end(); it++ )
+	{
+		double c = (double)it->second;
+		ret = ret + (c / N * log(c / N));
+	}
+	return -ret;
+}
+
+double NodeList::simpson(std::map<long int, int> c_map){
+	// Total number of codes N and counter map of codes
+	long int N = total;
+
+	// Shannon Diversity simply a sum of terms
+	double ret = 0.0;
+	std::map<long int, int>::iterator it;
+	for ( it = c_map.begin(); it != c_map.end(); it++ )
+	{
+		double c = (double)it->second;
+		ret = ret + ((c / N) * (c / N));
+	}
+	return 1/ret;
+}
+
 std::map<long int, int> NodeList::count_map_codes(){
 	std::map<long int, int> m;
 	for(Node* t = root; t != NULL; t = t->next){

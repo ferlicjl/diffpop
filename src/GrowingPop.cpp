@@ -797,6 +797,10 @@ double GrowingPop::sdi()
    return cells.sdi();
 }
 
+std::string GrowingPop::diversity(){
+	return cells.diversity();
+}
+
 // Returns percent of cells with barcode
 double GrowingPop::coded()
 {

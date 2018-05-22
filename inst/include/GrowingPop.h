@@ -140,6 +140,7 @@ public:
 
 	// Statistics on cell population
 	virtual double sdi();
+	std::string diversity();
 	virtual double coded();
 	std::vector<long int> sample(int size);
 	

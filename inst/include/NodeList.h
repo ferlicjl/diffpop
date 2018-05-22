@@ -78,6 +78,9 @@ public:
 	// Outputs
 	double labelled();
 	double sdi();
+	std::string diversity();
+	double shannon(std::map<long int, int> c_map);
+	double simpson(std::map<long int, int> c_map);
 
 	std::map<long int, int> count_map_codes();
 	std::map<std::string, int> count_map_mutation();

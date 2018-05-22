@@ -285,7 +285,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     std::ofstream events_of;
 	std::ofstream mutants_of;
 
-    sdi_of.open(opath + "_sdi.csv");
+    sdi_of.open(opath + "_diversity.csv");
 	types_of.open(opath + "_types.csv");
     pop_of.open(opath + "_pop.csv");
     label_of.open(opath + "_label.csv");
@@ -293,7 +293,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 	mutants_of.open(opath + "_mut.csv");
 
 	  //writeAll(0);
-    writeCellHeader(sdi_of);
+    writeDiversityHeader(sdi_of);
 	writeTypesHeader(types_of);
     writeCellHeader(pop_of);
     writeCellHeader(label_of);
@@ -413,14 +413,14 @@ void DiffTree::time_steps(int n, int outputFrequency)
 	std::ofstream types_of;
 	std::ofstream mutants_of;
 
-    sdi_of.open(opath + "_sdi.csv");
+    sdi_of.open(opath + "_diversity.csv");
     pop_of.open(opath + "_pop.csv");
     label_of.open(opath + "_label.csv");
     events_of.open(opath + "_events.csv");
 	types_of.open(opath + "_types.csv");
 	mutants_of.open(opath + "_mut.csv");
 
-    writeCellHeader(sdi_of);
+    writeDiversityHeader(sdi_of);
     writeCellHeader(pop_of);
     writeCellHeader(label_of);
     writeEventsHeader(events_of);
@@ -482,6 +482,18 @@ void DiffTree::writeCellHeader(std::ofstream& of)
     of << std::endl;
 }
 
+void DiffTree::writeDiversityHeader(std::ofstream& of)
+{
+    of << "time";
+
+    for(auto const& x: m)
+    {
+        of << "," << "species_" << x.second->name << ",shannon_" << x.second->name << ",simpson_" << x.second->name;
+    }
+
+    of << std::endl;
+}
+
 void DiffTree::writeTypesHeader(std::ofstream& of)
 {
     of << "time";
@@ -527,7 +539,7 @@ void DiffTree::writeSDI(std::ofstream& of, int time)
 
     for(auto const& node: m)
     {
-        of << "," << node.second->sdi();
+        of << "," << node.second->diversity();
         //of << 0 << "\t";
     }
 

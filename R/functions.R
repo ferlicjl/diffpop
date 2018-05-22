@@ -324,15 +324,16 @@ writeTree = function(tree, outdir = "tree_files/"){
   #outdir = paste(getwd(), outdir, sep = "")
   dir.create(directory, showWarnings = F, recursive = T)
   setwd(directory)
-  write.graph(g, "g.txt", format = "ncol")
-  write.table(cbind(V(g)$name, V(g)$type, V(g)$root), "nodes.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$name), "names.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$type), "types.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$root), "roots.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$popsize), "sizes.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$lbl), "labels.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$height), "heights.txt", quote = F, row.names = F, col.names = F)
-  write.table(cbind(V(g)$firstlevel), "firstlevels.txt", quote = F, row.names = F, col.names = F)
+  #write.graph(g, "g.txt", format = "graphml")
+  #write.table(cbind(V(g)$name, V(g)$type, V(g)$root, V(g)$popsize, V(g)$lbl, V(g)$height, V(g)$firstlevel), "nodes.txt", quote = F, row.names = F, col.names = F)
+  write.table(cbind(V(g)$name, V(g)$type, V(g)$root, V(g)$popsize, V(g)$lbl, V(g)$height, V(g)$firstlevel), "nodes.csv", quote = F, row.names = F, col.names = F, sep = ",")
+  # write.table(cbind(V(g)$name), "names.txt", quote = F, row.names = F, col.names = F)
+  # write.table(cbind(V(g)$type), "types.txt", quote = F, row.names = F, col.names = F)
+  # write.table(cbind(V(g)$root), "roots.txt", quote = F, row.names = F, col.names = F)
+  # write.table(cbind(V(g)$popsize), "sizes.txt", quote = F, row.names = F, col.names = F)
+  # write.table(cbind(V(g)$lbl), "labels.txt", quote = F, row.names = F, col.names = F)
+  # write.table(cbind(V(g)$height), "heights.txt", quote = F, row.names = F, col.names = F)
+  # write.table(cbind(V(g)$firstlevel), "firstlevels.txt", quote = F, row.names = F, col.names = F)
   write.table(row.names(cbind(bfs(myTree, which(V(myTree)$root == T))$order)), file = "bfs.txt", row.names = F, col.names = F, quote = F)
 
   edge_list = data.frame()
@@ -343,12 +344,13 @@ writeTree = function(tree, outdir = "tree_files/"){
     edge_list = rbind(edge_list, cbind(ends(g,e), E(g)[e]$type, E(g)[e]$weight))
   }
 
-  write.table(edge_list, "edges.txt", row.names = F, col.names = F, quote = F)
-
-  write.table(edge_list[,1], "parent.txt", row.names = F, col.names = F, quote = F)
-  write.table(edge_list[,2], "child.txt", row.names = F, col.names = F, quote = F)
-  write.table(edge_list[,3], "diff.txt", row.names = F, col.names = F, quote = F)
-  write.table(edge_list[,4], "rates.txt", row.names = F, col.names = F, quote = F)
+  #write.table(edge_list, "edges.txt", row.names = F, col.names = F, quote = F)
+  write.table(edge_list, "edges.csv", row.names = F, col.names = F, quote = F, sep  = ",")
+#
+#   write.table(edge_list[,1], "parent.txt", row.names = F, col.names = F, quote = F)
+#   write.table(edge_list[,2], "child.txt", row.names = F, col.names = F, quote = F)
+#   write.table(edge_list[,3], "diff.txt", row.names = F, col.names = F, quote = F)
+#   write.table(edge_list[,4], "rates.txt", row.names = F, col.names = F, quote = F)
 
   write.table(rbind(g$distribution, g$is_random, g$alpha_fitness, g$beta_fitness, g$pass_prob, g$upper_fitness, g$lower_fitness),
               "fitnessdist.txt", row.names = F, col.names = F, quote = F)
