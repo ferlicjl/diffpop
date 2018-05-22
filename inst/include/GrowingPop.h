@@ -140,11 +140,12 @@ public:
 
 	// Statistics on cell population
 	virtual double sdi();
+	std::string diversity();
 	virtual double coded();
 	std::vector<long int> sample(int size);
 	
 	// Full output of population
-	virtual void writeToFile(std::ofstream& of);
+	virtual void writeToFile(std::ofstream& of, int time);
 
 };
 

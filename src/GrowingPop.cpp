@@ -797,6 +797,10 @@ double GrowingPop::sdi()
    return cells.sdi();
 }
 
+std::string GrowingPop::diversity(){
+	return cells.diversity();
+}
+
 // Returns percent of cells with barcode
 double GrowingPop::coded()
 {
@@ -820,8 +824,8 @@ std::vector<long int> GrowingPop::sample(int size)
 	return ret;
 }
 
-void GrowingPop::writeToFile(std::ofstream& of){
-	cells.writeToFile(of);
+void GrowingPop::writeToFile(std::ofstream& of, int time){
+	cells.writeToFile(of, time);
 }
 
 

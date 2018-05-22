@@ -74,6 +74,7 @@ public:
 
 	// Output methods
 	void writeCellHeader(std::ofstream& of);
+	void writeDiversityHeader(std::ofstream& of);
 	void writeTypesHeader(std::ofstream& of);
 	void writeEventsHeader(std::ofstream& of);
 	void writeMutantsHeader(std::ofstream& of);

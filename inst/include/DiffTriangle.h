@@ -75,7 +75,7 @@ public:
 	double sdi();
 	double coded();
 	
-	virtual void writeToFile(std::ofstream& of);
+	virtual void writeToFile(std::ofstream& of, int time);
 };
 
 // Old helper methods

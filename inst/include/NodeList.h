@@ -78,6 +78,9 @@ public:
 	// Outputs
 	double labelled();
 	double sdi();
+	std::string diversity();
+	double shannon(std::map<long int, int> c_map);
+	double simpson(std::map<long int, int> c_map);
 
 	std::map<long int, int> count_map_codes();
 	std::map<std::string, int> count_map_mutation();
@@ -87,8 +90,8 @@ public:
 	void deleteList();
 
 	// Two methods to write to file
-	void writeToFile(std::ofstream& of);
-	void writeToFile2(std::ofstream& of);
+	void writeToFile(std::ofstream& of, int time);
+	void writeToFile2(std::ofstream& of, int time);
 
 	// Fast method to build a DiffTriangle's NodeList structure
 	std::vector<std::vector<Node*>>makeTriangle(int nlevels, int mfac);

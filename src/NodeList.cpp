@@ -443,6 +443,44 @@ double NodeList::sdi(){
 	return -ret;
 }
 
+std::string NodeList::diversity(){
+	
+	std::map<long int, int> c_map = count_map_codes();
+	std::ostringstream o;
+    o << c_map.size() << "," << shannon(c_map) << "," << simpson(c_map);
+    return o.str();
+}
+
+double NodeList::shannon(std::map<long int, int> c_map){
+	// Total number of codes N and counter map of codes
+	long int N = total;
+	
+	// Shannon Diversity simply a sum of terms
+	double ret = 0.0;
+	std::map<long int, int>::iterator it;
+	for ( it = c_map.begin(); it != c_map.end(); it++ )
+	{
+		double c = (double)it->second;
+		ret = ret + (c / N * log(c / N));
+	}
+	return -ret;
+}
+
+double NodeList::simpson(std::map<long int, int> c_map){
+	// Total number of codes N and counter map of codes
+	long int N = total;
+
+	// Shannon Diversity simply a sum of terms
+	double ret = 0.0;
+	std::map<long int, int>::iterator it;
+	for ( it = c_map.begin(); it != c_map.end(); it++ )
+	{
+		double c = (double)it->second;
+		ret = ret + ((c / N) * (c / N));
+	}
+	return 1/ret;
+}
+
 std::map<long int, int> NodeList::count_map_codes(){
 	std::map<long int, int> m;
 	for(Node* t = root; t != NULL; t = t->next){
@@ -502,23 +540,23 @@ void NodeList::deleteList(){
 	}
 }
 
-void NodeList::writeToFile(std::ofstream& of){
+void NodeList::writeToFile(std::ofstream& of, int time){
 	for(Node* t = root; t != NULL; t = t->next){
-		of << "C: " << t->barcode << " M: " << t->mutation << " F: " << t->fitness << " Count: " << t->count << std::endl;
+		of << time << "," << t->barcode << "," << t->mutation << "," << t->fitness << "," << t->count << std::endl;
 	}
-	of << "Total: " << total << std::endl;
-	of << "Types: " << numTypes() << std::endl;
-	of << "Total Fitness: " << totalFitness << std::endl;
-	of << "Number Mutated: " << numMutated << std::endl;
+	//of << "Total: " << total << std::endl;
+	//of << "Types: " << numTypes() << std::endl;
+	//of << "Total Fitness: " << totalFitness << std::endl;
+	//of << "Number Mutated: " << numMutated << std::endl;
 }
 
-void NodeList::writeToFile2(std::ofstream& of){
+void NodeList::writeToFile2(std::ofstream& of, int time){
 	NodeList temp;
 	for(Node* t = root; t != NULL; t = t->next){
 		temp.insert(t->barcode, t->mutation, t->fitness, t->count);
 		//of << "C: " << t->barcode << " M: " << t->mutation << " F: " << t->fitness << " Count: " << t->count << std::endl;
 	}
-	temp.writeToFile(of);
+	temp.writeToFile(of, time);
 	/*
 	of << "Total: " << total << std::endl;
 	of << "Types: " << numTypes() << std::endl;
@@ -558,7 +596,7 @@ std::vector<std::vector<Node*>> NodeList::makeTriangle(int nlevels, int mfac){
 				t->list = this;
 				root = t;
 				p = t;
-				
+
 				ret[i][j-1] = t;
 			} else {
 				Node* t = new Node();
@@ -572,7 +610,7 @@ std::vector<std::vector<Node*>> NodeList::makeTriangle(int nlevels, int mfac){
 				t->prev = p;
 				p->next = t;
 				p = t;
-				
+
 				ret[i][j-1] = t;
 			}
         }
