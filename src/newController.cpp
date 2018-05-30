@@ -204,10 +204,10 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
 	std::cout << "in readIntputFiles" << std::endl;
 	std::vector <std::vector<std::string>> nodes = funct(indir + "nodes.csv");
 
-	std::ifstream  src(indir + "bfs.txt", std::ios::binary);
-    std::ofstream  dst(tree.opath + ".bfs",   std::ios::binary);
+	//std::ifstream  src(indir + "bfs.txt", std::ios::binary);
+    //std::ofstream  dst(tree.opath + ".bfs",   std::ios::binary);
 
-    dst << src.rdbuf();
+    //dst << src.rdbuf();
 
     // Create Populations
     for(size_t i = 0; i < nodes.size(); i++)
@@ -296,6 +296,12 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
 			f.lower_fitness = std::numeric_limits<double>::lowest();
 		}
 		tree.setFitnessDist(f);
+	}
+	
+	// Read in BFS order of populations
+	tree.bfs = inputStringVector(indir + "bfs.txt");
+	for(size_t i = 0; i < tree.bfs.size(); i++){
+		std::cout << tree.bfs[i] << std::endl;
 	}
 }
 

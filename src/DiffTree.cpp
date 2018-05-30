@@ -476,9 +476,9 @@ void DiffTree::writeCellHeader(std::ofstream& of)
 {
     of << "time";
 
-    for(auto const& x: m)
+    for(auto const& x: bfs)
     {
-        of << "," << x.second->name;
+        of << "," << m[x]->name;
     }
 
     of << std::endl;
@@ -488,9 +488,9 @@ void DiffTree::writeDiversityHeader(std::ofstream& of)
 {
     of << "time";
 
-    for(auto const& x: m)
+    for(auto const& x: bfs)
     {
-        of << "," << "species_" << x.second->name << ",shannon_" << x.second->name << ",simpson_" << x.second->name;
+        of << "," << "species_" << m[x]->name << ",shannon_" << m[x]->name << ",simpson_" << m[x]->name;
     }
 
     of << std::endl;
@@ -500,9 +500,9 @@ void DiffTree::writeTypesHeader(std::ofstream& of)
 {
     of << "time";
 
-    for(auto const& x: m)
+    for(auto const& x: bfs)
     {
-        of << "," << x.second->name;
+        of << "," << m[x]->name;
     }
 
     of << std::endl;
@@ -511,16 +511,16 @@ void DiffTree::writeTypesHeader(std::ofstream& of)
 void DiffTree::writeEventsHeader(std::ofstream& of)
 {
     of << "time";
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
-        of << "," << node.second->name << "_alpha";
-        of << "," << node.second->name << "_gamma1";
-        of << "," << node.second->name << "_gamma2";
-        of << "," << node.second->name << "_death";
-        of << "," << node.second->name << "_beta";
-        of << "," << node.second->name << "_addcell";
-		of << "," << node.second->name << "_dediff";
-		of << "," << node.second->name << "_mutation";
+        of << "," << m[x]->name << "_alpha";
+        of << "," << m[x]->name << "_gamma1";
+        of << "," << m[x]->name << "_gamma2";
+        of << "," << m[x]->name << "_death";
+        of << "," << m[x]->name << "_beta";
+        of << "," << m[x]->name << "_addcell";
+		of << "," << m[x]->name << "_dediff";
+		of << "," << m[x]->name << "_mutation";
     }
     of << std::endl;
 }
@@ -539,9 +539,9 @@ void DiffTree::writeSDI(std::ofstream& of, int time)
 {
     of << time;
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
-        of << "," << node.second->diversity();
+        of << "," << m[x]->diversity();
         //of << 0 << "\t";
     }
 
@@ -552,9 +552,9 @@ void DiffTree::writeTypes(std::ofstream& of, int time)
 {
     of << time;
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
-        of << "," << node.second->cells.numTypes();
+        of << "," << m[x]->cells.numTypes();
         //of << 0 << "\t";
     }
 
@@ -565,9 +565,9 @@ void DiffTree::writePopSize(std::ofstream& of, int time)
 {
     of << time;
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
-        of << "," << node.second->cells.total;
+        of << "," << m[x]->cells.total;
     }
 
     of << std::endl;
@@ -577,9 +577,9 @@ void DiffTree::writeLabelled(std::ofstream& of, int time)
 {
     of << time;
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
-        of << "," << node.second->coded();
+        of << "," << m[x]->coded();
     }
 
 
@@ -590,16 +590,16 @@ void DiffTree::writeEvents(std::ofstream& of, int time)
 {
     of << time;
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
-        of << "," << (double) node.second->alphaEvents;
-        of << "," << (double)node.second->gamma1Events;
-        of << "," << (double)node.second->gamma2Events;
-        of << "," << (double)node.second->deathEvents;
-        of << "," << (double)node.second->betaEvents;
-        of << "," << (double)node.second->addcellEvents;
-		of << "," << (double)node.second->dediffEvents;
-		of << "," << (double)node.second->mutateEvents;
+        of << "," << (double) m[x]->alphaEvents;
+        of << "," << (double) m[x]->gamma1Events;
+        of << "," << (double) m[x]->gamma2Events;
+        of << "," << (double) m[x]->deathEvents;
+        of << "," << (double) m[x]->betaEvents;
+        of << "," << (double) m[x]->addcellEvents;
+		of << "," << (double) m[x]->dediffEvents;
+		of << "," << (double) m[x]->mutateEvents;
     }
     of << std::endl;
 }
@@ -635,10 +635,10 @@ void DiffTree::writeAllHeaders()
     std::ofstream all_of;
 
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + node.second->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+        all_of.open(opath + "_" + m[x]->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 		all_of << "time,barcode,mutation,fitness,count" << std::endl;
         //node.second->writeToFile(all_of, time);
         all_of.close();
@@ -651,12 +651,12 @@ void DiffTree::writeAll(int time)
     std::ofstream all_of;
 
 
-    for(auto const& node: m)
+    for(auto const& x: bfs)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + node.second->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+        all_of.open(opath + "_" + m[x]->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 		//all_of << "time,barcode,mutation,fitness,count" << std::endl;
-        node.second->writeToFile(all_of, time);
+        m[x]->writeToFile(all_of, time);
         all_of.close();
     }
 }
