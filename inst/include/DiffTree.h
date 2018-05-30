@@ -40,6 +40,9 @@ public:
 
 	// Map from population name to object instances to all Populations
 	std::map<std::string, GrowingPop*> m;
+	
+	// Vector to hold BFS order of populations
+	std::vector<string> bfs;
 
 	// Constructors / Destructor
 	DiffTree();
