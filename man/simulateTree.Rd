@@ -4,8 +4,8 @@
 \alias{simulateTree}
 \title{simulateTree}
 \usage{
-simulateTree(tree, fixed = FALSE, time = 100, traverseFrequency = -1,
-  indir = ".", outdir = ".", seed = NULL)
+simulateTree(tree, fixed = FALSE, time = 100, census = -1, indir = ".",
+  outdir = ".", seed = NULL)
 }
 \arguments{
 \item{tree}{DiffTree object to simulate}
@@ -14,7 +14,7 @@ simulateTree(tree, fixed = FALSE, time = 100, traverseFrequency = -1,
 
 \item{time}{number of time units to simulate}
 
-\item{traverseFrequency}{how often to output entire system population to filesystem}
+\item{census}{how often to output entire system population to filesystem}
 
 \item{indir}{input directory for tree files}
 
@@ -27,6 +27,6 @@ Used to plot hierarchy structure using igraph
 }
 \examples{
 \dontrun{
-simulateTree(myTree, fixed = TRUE, time = 500, traverseFrequency = 1, indir = "input_dir", outdir = "output_dir")
+simulateTree(myTree, fixed = TRUE, time = 500, census = 1, indir = "input_dir", outdir = "output_dir")
 }
 }
