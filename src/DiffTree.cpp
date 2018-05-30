@@ -299,6 +299,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     writeCellHeader(label_of);
     writeEventsHeader(events_of);
 	writeMutantsHeader(mutants_of);
+	writeAllHeaders();
 
     // Set up vector of observation times
     std::vector<int> obsTimes;
@@ -426,6 +427,7 @@ void DiffTree::time_steps(int n, int outputFrequency)
     writeEventsHeader(events_of);
 	//writeTypesHeader(types_of);
 	writeMutantsHeader(mutants_of);
+	writeAllHeaders();
 	writeAll(0);
 
     writeSDI(sdi_of, 0);
@@ -627,6 +629,22 @@ void DiffTree::writeMutations(int time)
 }
 */
 
+void DiffTree::writeAllHeaders()
+{
+
+    std::ofstream all_of;
+
+
+    for(auto const& node: m)
+    {
+        //CellPopulation* t = node->second;
+        all_of.open(opath + "_" + node.second->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+		all_of << "time,barcode,mutation,fitness,count" << std::endl;
+        //node.second->writeToFile(all_of, time);
+        all_of.close();
+    }
+}
+
 void DiffTree::writeAll(int time)
 {
 
@@ -636,8 +654,8 @@ void DiffTree::writeAll(int time)
     for(auto const& node: m)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + node.second->name + "_" + std::to_string(time) + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
-		all_of << "time,barcode,mutation,fitness,count" << std::endl;
+        all_of.open(opath + "_" + node.second->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+		//all_of << "time,barcode,mutation,fitness,count" << std::endl;
         node.second->writeToFile(all_of, time);
         all_of.close();
     }

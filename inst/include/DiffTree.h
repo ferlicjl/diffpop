@@ -40,9 +40,9 @@ public:
 
 	// Map from population name to object instances to all Populations
 	std::map<std::string, GrowingPop*> m;
-	
+
 	// Vector to hold BFS order of populations
-	std::vector<string> bfs;
+	std::vector<std::string> bfs;
 
 	// Constructors / Destructor
 	DiffTree();
@@ -81,6 +81,7 @@ public:
 	void writeTypesHeader(std::ofstream& of);
 	void writeEventsHeader(std::ofstream& of);
 	void writeMutantsHeader(std::ofstream& of);
+	void writeAllHeaders();
 	void writeSDI(std::ofstream& of, int time);
 	void writePopSize(std::ofstream& of, int time);
 	void writeLabelled(std::ofstream& of, int time);
