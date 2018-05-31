@@ -279,19 +279,19 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
 	if(fp.size() > 0){
 		FitnessParameters f;
 		f.fitness_distribution = fp[0];
-		f.is_randfitness = (fp[1] == "TRUE");
-		f.alpha_fitness = stod(fp[2]);
-		f.beta_fitness = stod(fp[3]);
-		f.pass_prob = stod(fp[4]);
+		f.is_randfitness = true;
+		f.alpha_fitness = stod(fp[1]);
+		f.beta_fitness = stod(fp[2]);
+		f.pass_prob = stod(fp[3]);
 
-		if(fp[5] != "NA"){
-			f.upper_fitness = stod(fp[5]);
+		if(fp[4] != "NA"){
+			f.upper_fitness = stod(fp[4]);
 		} else {
 			f.upper_fitness = std::numeric_limits<double>::max();
 		}
 
-		if(fp[6] != "NA"){
-			f.lower_fitness = stod(fp[6]);
+		if(fp[5] != "NA"){
+			f.lower_fitness = stod(fp[5]);
 		} else {
 			f.lower_fitness = std::numeric_limits<double>::lowest();
 		}

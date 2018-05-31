@@ -159,13 +159,12 @@ setRoot = function(tree, popName){
 #' @export
 #' @examples
 #' \dontrun{
-#' setFitnessDistribution(tree = myTree, distribution = "uniform", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 0, upper_fitness = 5, lower_fitness = 0)
+#' setFitnessDistribution(tree = myTree, distribution = "uniform", alpha_fitness = 0, beta_fitness = 1, pass_prob = 0, upper_fitness = 5, lower_fitness = 0)
 #' }
-setFitnessDistribution = function(tree, distribution = "normal", is_random = T, alpha_fitness = 0, beta_fitness = 1, pass_prob = 1, upper_fitness = NA, lower_fitness = 0){
+setFitnessDistribution = function(tree, distribution = "normal", alpha_fitness = 0, beta_fitness = 1, pass_prob = 1, upper_fitness = NA, lower_fitness = 0){
   # If a tree doesn't exist, create one
   myTree = tree
   myTree <- set.graph.attribute(graph = myTree, name = "distribution", value = distribution)
-  myTree <- set.graph.attribute(graph = myTree, name = "is_random", value = is_random)
   myTree <- set.graph.attribute(graph = myTree, name = "alpha_fitness", value = alpha_fitness)
   myTree <- set.graph.attribute(graph = myTree, name = "beta_fitness", value = beta_fitness)
   myTree <- set.graph.attribute(graph = myTree, name = "pass_prob", value = pass_prob)
@@ -352,7 +351,7 @@ writeTree = function(tree, outdir = "tree_files/"){
 #   write.table(edge_list[,3], "diff.txt", row.names = F, col.names = F, quote = F)
 #   write.table(edge_list[,4], "rates.txt", row.names = F, col.names = F, quote = F)
 
-  write.table(rbind(g$distribution, g$is_random, g$alpha_fitness, g$beta_fitness, g$pass_prob, g$upper_fitness, g$lower_fitness),
+  write.table(rbind(g$distribution, g$alpha_fitness, g$beta_fitness, g$pass_prob, g$upper_fitness, g$lower_fitness),
               "fitnessdist.txt", row.names = F, col.names = F, quote = F)
   setwd(cdir)
 }
