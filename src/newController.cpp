@@ -361,16 +361,16 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 	p_file << "fp.lower_fitness," << tree.fp.lower_fitness << std::endl;
 	p_file << "fp.upper_fitness," << tree.fp.upper_fitness << std::endl;
 
-    for(auto const& node: m)
+    for(auto const& x: tree.bfs)
     {
-        p_file << "N_" << node.second->name << "," << node.second->cells.total << std::endl;
-        p_file << "alpha_" << node.second->name << ","<< node.second->alpha << std::endl;
-        p_file << "beta_" << node.second->name << ","<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
-        p_file << "gamma1_" << node.second->name << ","<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
-		p_file << "gamma2_" << node.second->name << ","<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
-		p_file << "zeta2_" << node.second->name << ","<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
-        p_file << "delta_" << node.second->name << ","<< node.second->death << std::endl;
-		p_file << "mu_" << node.second->name << ","<< node.second->mu << std::endl;
+        p_file << "N_" << m[x]->name << "," << m[x]->cells.total << std::endl;
+        p_file << "alpha_" << m[x]->name << ","<< m[x]->alpha << std::endl;
+        p_file << "beta_" << m[x]->name << ","<< std::accumulate(m[x]->beta.begin(), m[x]->beta.end(), 0.0)<< std::endl;
+        p_file << "gamma1_" << m[x]->name << ","<< std::accumulate(m[x]->gamma1.begin(), m[x]->gamma1.end(), 0.0) << std::endl;
+		p_file << "gamma2_" << m[x]->name << ","<< std::accumulate(m[x]->gamma2.begin(), m[x]->gamma2.end(), 0.0) << std::endl;
+		p_file << "zeta2_" << m[x]->name << ","<< std::accumulate(m[x]->zeta.begin(), m[x]->zeta.end(), 0.0) << std::endl;
+        p_file << "delta_" << m[x]->name << ","<< m[x]->death << std::endl;
+		p_file << "mu_" << m[x]->name << ","<< m[x]->mu << std::endl;
     }
     p_file << std::endl;
 	p_file.close();
@@ -397,16 +397,16 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 	*/
 	p_file << "# Rates after adjusting net proliferation for FixedPops" << std::endl;
 
-    for(auto const& node: m)
+    for(auto const& x: tree.bfs)
     {
-        p_file << "N_" << node.second->name << "_adj," << node.second->cells.total << std::endl;
-        p_file << "alpha_" << node.second->name << "_adj,"<< node.second->alpha << std::endl;
-        p_file << "beta_" << node.second->name << "_adj,"<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
-        p_file << "gamma1_" << node.second->name << "_adj,"<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
-		p_file << "gamma2_" << node.second->name << "_adj,"<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
-		p_file << "zeta2_" << node.second->name << "_adj,"<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
-        p_file << "delta_" << node.second->name << "_adj,"<< node.second->death << std::endl;
-		p_file << "mu_" << node.second->name << "_adj,"<< node.second->mu << std::endl;
+        p_file << "N_" << m[x]->name << "_adj," << m[x]->cells.total << std::endl;
+        p_file << "alpha_" << m[x]->name << "_adj,"<< m[x]->alpha << std::endl;
+        p_file << "beta_" << m[x]->name << "_adj,"<< std::accumulate(m[x]->beta.begin(), m[x]->beta.end(), 0.0)<< std::endl;
+        p_file << "gamma1_" << m[x]->name << "_adj,"<< std::accumulate(m[x]->gamma1.begin(), m[x]->gamma1.end(), 0.0) << std::endl;
+		p_file << "gamma2_" << m[x]->name << "_adj,"<< std::accumulate(m[x]->gamma2.begin(), m[x]->gamma2.end(), 0.0) << std::endl;
+		p_file << "zeta2_" << m[x]->name << "_adj,"<< std::accumulate(m[x]->zeta.begin(), m[x]->zeta.end(), 0.0) << std::endl;
+        p_file << "delta_" << m[x]->name << "_adj,"<< m[x]->death << std::endl;
+		p_file << "mu_" << m[x]->name << "_adj,"<< m[x]->mu << std::endl;
     }
     p_file << std::endl;
 	p_file.close();
@@ -512,16 +512,16 @@ int simulateTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::string i
 	p_file << "seed," << seed << std::endl;
 
 
-    for(auto const& node: m)
+    for(auto const& x: tree.bfs)
     {
-        p_file << "N_" << node.second->name << "," << node.second->cells.total << std::endl;
-        p_file << "alpha_" << node.second->name << ","<< node.second->alpha << std::endl;
-        p_file << "beta_" << node.second->name << ","<< std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0)<< std::endl;
-        p_file << "gamma1_" << node.second->name << ","<< std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << std::endl;
-		p_file << "gamma2_" << node.second->name << ","<< std::accumulate(node.second->gamma2.begin(), node.second->gamma2.end(), 0.0) << std::endl;
-		p_file << "zeta2_" << node.second->name << ","<< std::accumulate(node.second->zeta.begin(), node.second->zeta.end(), 0.0) << std::endl;
-        p_file << "delta_" << node.second->name << ","<< node.second->death << std::endl;
-		p_file << "mu_" << node.second->name << ","<< node.second->mu << std::endl;
+        p_file << "N_" << m[x]->name << "," << m[x]->cells.total << std::endl;
+        p_file << "alpha_" << m[x]->name << ","<< m[x]->alpha << std::endl;
+        p_file << "beta_" << m[x]->name << ","<< std::accumulate(m[x]->beta.begin(), m[x]->beta.end(), 0.0)<< std::endl;
+        p_file << "gamma1_" << m[x]->name << ","<< std::accumulate(m[x]->gamma1.begin(), m[x]->gamma1.end(), 0.0) << std::endl;
+		p_file << "gamma2_" << m[x]->name << ","<< std::accumulate(m[x]->gamma2.begin(), m[x]->gamma2.end(), 0.0) << std::endl;
+		p_file << "zeta2_" << m[x]->name << ","<< std::accumulate(m[x]->zeta.begin(), m[x]->zeta.end(), 0.0) << std::endl;
+        p_file << "delta_" << m[x]->name << ","<< m[x]->death << std::endl;
+		p_file << "mu_" << m[x]->name << ","<< m[x]->mu << std::endl;
     }
     p_file << std::endl;
 	p_file.close();
