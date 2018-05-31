@@ -638,7 +638,7 @@ void DiffTree::writeAllHeaders()
     for(auto const& x: bfs)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + m[x]->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+        all_of.open(opath + "_" + m[x]->name + "_census.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 		all_of << "time,barcode,mutation,fitness,count" << std::endl;
         //node.second->writeToFile(all_of, time);
         all_of.close();
@@ -654,7 +654,7 @@ void DiffTree::writeAll(int time)
     for(auto const& x: bfs)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + m[x]->name + "_all.csv", std::fstream::in | std::fstream::out | std::fstream::app);
+        all_of.open(opath + "_" + m[x]->name + "_census.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 		//all_of << "time,barcode,mutation,fitness,count" << std::endl;
         m[x]->writeToFile(all_of, time);
         all_of.close();
