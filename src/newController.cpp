@@ -247,7 +247,7 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
         {
             m[edges[i][0]]->setAlpha(r);
         }
-        else if (edges[i][2] == "delta")
+        else if (edges[i][2] == "delta" || edges[i][2] == "death")
         {
             m[edges[i][0]]->setDeath(r);
         }
@@ -263,11 +263,11 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
         {
             m[edges[i][0]]->setAsymdiff(m[edges[i][1]], r);
         }
-        else if(edges[i][2] == "dediff")
+        else if(edges[i][2] == "dediff" || edges[i][2] == "zeta")
         {
             m[edges[i][0]]->addDediff(m[edges[i][1]], r);
         }
-        else if(edges[i][2] == "mutation")
+        else if(edges[i][2] == "mutation" || edges[i][2] == "mu")
         {
             m[edges[i][0]]->setMu(r);
         }
