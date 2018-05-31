@@ -224,7 +224,7 @@ double GrowingPop::calcDelta(){
 
 	double ret = d / numCells;
 
-	std::cout << "\tReturned Death Rate: " << ret << std::endl;
+	//std::cout << "\tReturned Death Rate: " << ret << std::endl;
 
 	return ret;
 }

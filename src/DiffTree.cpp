@@ -321,8 +321,8 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     // Display some stuff - debugging
 	if(verbose){
     //std::cout << "numTime: " << numTime << std::endl;
-    std::cout << "Simulation Start Time: " << curTime << std::endl;
-    std::cout << "Simulation End Time: " << obsTimes[numTime] << std::endl;
+    //std::cout << "Simulation Start Time: " << curTime << std::endl;
+    //std::cout << "Simulation End Time: " << obsTimes[numTime] << std::endl;
     //std::cout << "obsTimes.size(): " << obsTimes.size() << std::endl;
 	}
 
@@ -770,6 +770,7 @@ void DiffTree::printCells()
 
 // METHOD TO GO THROUGH AND CALCULATE
 void DiffTree::calcDelta(){
+	std::cout << "Adjusting net proliferation for fixed setting..." << std::endl;
 for(auto const& x: m)
     {
 		std::cout << x.second->name << ":\tOld Death: " << x.second->death <<std::endl;
@@ -778,7 +779,7 @@ for(auto const& x: m)
 		 if(d >= 0){
 			x.second->death = d;
 		 } else {
-			 std::cout << x.second->name << " needs to increase alpha: " << -d + x.second->death << std::endl;
+			 std::cout << "\t" << x.second->name << " needs to increase alpha by " << -d + x.second->death << std::endl;
 			 x.second->alpha += (-d + x.second->death);
 		 }
 		//std::cout << x.second->death << std::endl;
