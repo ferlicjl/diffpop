@@ -614,12 +614,12 @@ void DiffTree::writeMutations(int time)
     for(auto const& node: m)
     {
         //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + node.second->name + ".mut", std::fstream::in | std::fstream::out | std::fstream::app);
+        all_of.open(opath + "_" + m[x]->name + ".mut", std::fstream::in | std::fstream::out | std::fstream::app);
         all_of << time << "\t";
 
-		std::map<int, int> mut = node.second->cells.count_map_mutation();
+		std::map<int, int> mut = m[x]->cells.count_map_mutation();
 
-        for(int i = 0; i <= node.second->numMutations; i++)
+        for(int i = 0; i <= m[x]->numMutations; i++)
         {
             all_of << mut[i] << "\t";
         }
@@ -640,7 +640,7 @@ void DiffTree::writeAllHeaders()
         //CellPopulation* t = node->second;
         all_of.open(opath + "_" + m[x]->name + "_census.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 		all_of << "time,barcode,mutation,fitness,count" << std::endl;
-        //node.second->writeToFile(all_of, time);
+        //m[x]->writeToFile(all_of, time);
         all_of.close();
     }
 }
@@ -771,18 +771,18 @@ void DiffTree::printCells()
 // METHOD TO GO THROUGH AND CALCULATE
 void DiffTree::calcDelta(){
 	std::cout << "Adjusting net proliferation for fixed setting..." << std::endl;
-for(auto const& x: m)
+for(auto const& x: bfs)
     {
-		std::cout << x.second->name << ":\tOld Death: " << x.second->death <<std::endl;
+		std::cout << m[x]->name << ":\tOld Death: " << m[x]->death <<std::endl;
 		//std::cout << "HERE!" << std::endl;
-		 double d = x.second->calcDelta();
+		 double d = m[x]->calcDelta();
 		 if(d >= 0){
-			x.second->death = d;
+			m[x]->death = d;
 		 } else {
-			 std::cout << "\t" << x.second->name << " needs to increase alpha by " << -d + x.second->death << std::endl;
-			 x.second->alpha += (-d + x.second->death);
+			 std::cout << "\t" << m[x]->name << " needs to increase alpha by " << -d + m[x]->death << std::endl;
+			 m[x]->alpha += (-d + m[x]->death);
 		 }
-		//std::cout << x.second->death << std::endl;
+		//std::cout << m[x]->death << std::endl;
     }
 }
 
