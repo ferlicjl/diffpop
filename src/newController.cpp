@@ -349,12 +349,11 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
     p_file.open(tree.opath+"_params.csv");
 
 	p_file << "nObs," << nObs << std::endl;
-	p_file << "traverseFrequency," << traverseFrequency << std::endl;
+	p_file << "census," << traverseFrequency << std::endl;
 	p_file << "indir," << indir << std::endl;
 	p_file << "outdir," << outdir << std::endl;
 	p_file << "seed," << seed << std::endl;
 	p_file << "fp.distribution," << tree.fp.fitness_distribution << std::endl;
-	p_file << "fp.is_randfitness," << tree.fp.is_randfitness << std::endl;
 	p_file << "fp.alpha_fitness," << tree.fp.alpha_fitness << std::endl;
 	p_file << "fp.beta_fitness," << tree.fp.beta_fitness << std::endl;
 	p_file << "fp.pass_prob," << tree.fp.pass_prob << std::endl;
@@ -506,11 +505,16 @@ int simulateTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::string i
     p_file.open(tree.opath+"_params.csv");
 
 	p_file << "nObs," << nObs << std::endl;
-	p_file << "traverseFrequency," << traverseFrequency << std::endl;
+	p_file << "census," << traverseFrequency << std::endl;
 	p_file << "indir," << indir << std::endl;
 	p_file << "outdir," << outdir << std::endl;
 	p_file << "seed," << seed << std::endl;
-
+	p_file << "fp.distribution," << tree.fp.fitness_distribution << std::endl;
+	p_file << "fp.alpha_fitness," << tree.fp.alpha_fitness << std::endl;
+	p_file << "fp.beta_fitness," << tree.fp.beta_fitness << std::endl;
+	p_file << "fp.pass_prob," << tree.fp.pass_prob << std::endl;
+	p_file << "fp.lower_fitness," << tree.fp.lower_fitness << std::endl;
+	p_file << "fp.upper_fitness," << tree.fp.upper_fitness << std::endl;	
 
     for(auto const& x: tree.bfs)
     {
