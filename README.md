@@ -176,7 +176,7 @@ Cellular events in DIFFpop are enacted according to their accompanying parameter
 
 \*Note Population specific parameters are specified using subscripts, i.e. *α*<sub>(*L**T* − *H**S**C*)</sub> is the mitotic self renewal rate for the LT-HSC population and *γ*<sub>1(*L**T* − *H**S**C*, *S**T* − *H**S**C*)</sub> is the one-to-one differentiation rate from the LT-HSC population to the ST-HSC population.
 
-![events](README/events.pdf)
+![events](README/events.png)
 
 Events can be split into three categories based on how they affect the population size of the compartment:
 
