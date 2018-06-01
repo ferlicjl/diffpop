@@ -305,7 +305,7 @@ Throughout the differentiation hierarchy, whenever a new clone arises due to mut
 </tbody>
 </table>
 
-If the distribution function selected is normal, fitness additions are drawn from a *N*(*a**l**p**h**a*\_*f**i**t**n**e**s**s*, *b**e**t**a*\_*f**i**t**n**e**s**s*) distribution. If the distribution function selected is uniform, fitness additions are drawn from a *U*(*a**l**p**h**a*\_*f**i**t**n**e**s**s*, *b**e**t**a*\_*f**i**t**n**e**s**s*) distribution. If the distribution function selected is double exponential, alpha\_fitness refers to the rate parameter of an exponetial distribution for the positive range and beta\_fitness refers to the rate parameter of an exponential distribution for the negative range.
+If the distribution function selected is normal, fitness additions are drawn from a *N*(*alpha\_fitness*, *beta\_fitness*) distribution. If the distribution function selected is uniform, fitness additions are drawn from a *U*(*a**l**p**h**a*\_*f**i**t**n**e**s**s*, *b**e**t**a*\_*f**i**t**n**e**s**s*) distribution. If the distribution function selected is double exponential, alpha\_fitness refers to the rate parameter of an exponetial distribution for the positive range and beta\_fitness refers to the rate parameter of an exponential distribution for the negative range.
 
 Using DIFFpop in R
 ==================
