@@ -723,18 +723,13 @@ void DiffTree::print()
 void DiffTree::initializeCells()
 {
     long int o = 0;
-    std::deque<GrowingPop*> deque;
-    deque.push_back(root);
-
-    while(deque.size() > 0)
-    {
-
-        GrowingPop* node = deque.front();
-        deque.pop_front();
+    
+	for(auto const& x: bfs)
+	{
+        GrowingPop* node = m[x];
         //std::cout << *(node) << " " << o << std::endl;
         node->initializeCells(o);
         o = o + node->cells.total;
-        deque.insert( deque.end(), node->children.begin(), node->children.end() );
     }
 }
 

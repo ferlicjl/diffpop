@@ -208,6 +208,8 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
     //std::ofstream  dst(tree.opath + ".bfs",   std::ios::binary);
 
     //dst << src.rdbuf();
+	
+	long int offset = 0;
 
     // Create Populations
     for(size_t i = 0; i < nodes.size(); i++)
@@ -216,12 +218,14 @@ void readInputFiles(std::string indir, std::map<std::string, GrowingPop*> &m, Di
         if (nodes[i][1] == "CellPopulation")
         {
             long int s = stol(nodes[i][3]);
-            m.insert(std::make_pair(nodes[i][0], new GrowingPop(nodes[i][0], s, 0, l)));
+            m.insert(std::make_pair(nodes[i][0], new GrowingPop(nodes[i][0], s, offset, l)));
+			offset += s;
         }
         else if (nodes[i][1] == "FixedPopCell")
         {
             long int s = stol(nodes[i][3]);
-            m.insert(std::make_pair(nodes[i][0], new FixedPop(nodes[i][0], s, 0, l)));
+            m.insert(std::make_pair(nodes[i][0], new FixedPop(nodes[i][0], s, offset, l)));
+			offset += s;
         }
         else if(nodes[i][1] == "DiffTriangle")
         {
