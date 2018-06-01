@@ -1,7 +1,9 @@
 
 #' FixedPop
 #'
-#' Designates a FixedPop, a structure whose size remains constant throughout the course of a simulation
+#' Designates a FixedPop, a structure whose size remains constant throughout the course of a simulation.
+#'
+#' A FixedPop is a class derived from a GrowingPop.  In order to maintain a constant population size, cellular events are coupled together; i.e. a mitosis event generating an additional cell is immediately coupled with a differentiation or death event.  Similarly, if the number of cells in the FixedPop population increases by one from upstream differentiation, a differentiation or death event of its own is immediately enacted to maintain the population level.
 #'
 #' @param tree DiffTree object to add FixedPop to
 #' @param name population name
@@ -33,6 +35,8 @@ FixedPop = function(tree, name, size, label = 0){
 #'
 #' Designates a GrowingPop, a structure used to simulate differentiation via a branching process
 #'
+#' A GrowingPop is the base class used to designate the various cell types throughout a differentiation tree.  A GrowingPop contains a list of cell states, functions to enact cellular events on those cell states, and event rates at which to perform those functions.  The hierarchical structure is maintained by pointers to upstream and downstream CellPopulations.
+#'
 #' @param tree DiffTree object to add GrowingPop to
 #' @param name population name
 #' @param size initial population size
@@ -61,6 +65,9 @@ GrowingPop = function(tree, name, size, label = 0.0){
 #' DiffTriangle
 #'
 #' Designates a DiffTriangle, a fixed-size structure used to model a population undergoing different levels of maturation
+#'
+#' A DiffTriangle cell type is used to represent the downstream fully differentiated cells.  Cells are arranged in a triangle formation.  Cells enter the population on the highest level of the triangle, experiencing further differentiation and division to progress down the triangle.  When a new cell enters the DiffTriangle population, it causes an already existing cell on the highest level to divide and further differentiate to the next level of the triangle.  Those two cells each displace a pre-existing cell, causing them to divide and differentiate (thus generating four newly displaced cells), which in turn displace cells that further displace cells until reaching the lowest level of the triangle.  A displaced cell from the last row of the triangle can either be passed on to an offspring cell type (if there are further cell types in the hierarchy), or die out.  Importantly, DiffTriangle structures will not initiate any cellular events of their own, as differentiation waves throughout a triangle is only initiated when receiving a new cell from an upstream population.
+#' The population size of a DiffTriangle is specified by two parameters; the first, z is the number of cell divisions until full maturation or the number of levels in the triangle.  The second is called the mfactor, which is the number of triangles to be stacked side-by-side.  If mfactor is greater than 1, then a cell entering the DiffTriangle population simply chooses at random which specific triangle to enter.
 #'
 #' @param tree DiffTree object to add DiffTriangle to
 #' @param name population name

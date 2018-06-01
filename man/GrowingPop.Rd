@@ -18,6 +18,9 @@ GrowingPop(tree, name, size, label = 0)
 \description{
 Designates a GrowingPop, a structure used to simulate differentiation via a branching process
 }
+\details{
+A GrowingPop is the base class used to designate the various cell types throughout a differentiation tree.  A GrowingPop contains a list of cell states, functions to enact cellular events on those cell states, and event rates at which to perform those functions.  The hierarchical structure is maintained by pointers to upstream and downstream CellPopulations.
+}
 \examples{
 \dontrun{
 GrowingPop(myTree, "Population A", 1000, 0.5)

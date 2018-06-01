@@ -16,7 +16,10 @@ FixedPop(tree, name, size, label = 0)
 \item{label}{initial probabilty that a cell receives a unique barcode}
 }
 \description{
-Designates a FixedPop, a structure whose size remains constant throughout the course of a simulation
+Designates a FixedPop, a structure whose size remains constant throughout the course of a simulation.
+}
+\details{
+A FixedPop is a class derived from a GrowingPop.  In order to maintain a constant population size, cellular events are coupled together; i.e. a mitosis event generating an additional cell is immediately coupled with a differentiation or death event.  Similarly, if the number of cells in the FixedPop population increases by one from upstream differentiation, a differentiation or death event of its own is immediately enacted to maintain the population level.
 }
 \examples{
 \dontrun{
