@@ -194,18 +194,18 @@ In the FixedPop setting, all de-differentiation events will result in an apoptos
 Simulation Overview
 ===================
 
-After the tree structure has been specified in R, the task of simulating is handed off to a C++ backend. Before events can be enacted, the tree structure and other user-specified parmaeters must be read from the input files.
+After the tree structure has been specified in R, the task of simulating is handed off to a C++ backend. Before events can be enacted, the tree structure and other user-specified parameters must be read from the input files.
 
 Initializing a Simulation
 -------------------------
 
 1.  Read tree structure from input files
-2.  Initialize cell list for each population
-3.  Write information file
-4.  Output tree structure
+2.  Initialize populations
+3.  Write parameter information
+4.  Output tree structure to user
 
-Simulation via Gillespie Algorithm
-----------------------------------
+Simulation for branching process via Gillespie Algorithm
+--------------------------------------------------------
 
 1.  Initiate simulation at time 0
 2.  Generate the time to the next event
@@ -217,14 +217,26 @@ Simulation via Gillespie Algorithm
     2.  Enact single event on that population
 5.  If simulation time remains, repeat from step 2
 
-Simulation via modified Moran Process
--------------------------------------
+Simulation for multitype Moran process via tau leaping
+------------------------------------------------------
 
 1.  For each time unit:
     1.  Iterate through tree in breadth-first manner
     2.  For each population:
-        1.  Get total number of “i-1” and “i” events \[*γ*<sub>1</sub>, *γ*<sub>2</sub>, *δ*, *ζ*, and *β*\] = *j*
+        1.  Get total number of i-1 and i events \[*γ*<sub>1</sub>, *γ*<sub>2</sub>, *δ*, *ζ*, and *β*\] = *j*
         2.  Enact *j* events choosing which event according to the event rates. If event results in a one-cell deficit, enact a mitosis \[*α*\] event
+
+Input Files
+-----------
+
+1.  Population information (node.csv)
+    -   Population name, software class of population, root, initial barcode percentage, DiffTriangle height, DiffTriangle mfactor
+2.  Event information (edges.csv)
+    -   "from" population, "to" population, event type, event rate
+3.  Fitness change distribution (fitnessdist.txt)
+    -   Parameters of user-defined fitness distribution. Blank file means the default parameters will be used
+4.  Population order (bfs.txt)
+    -   Populations in the tree listed in breadth-first order. Used to order populations for output files
 
 Output Files
 ------------
