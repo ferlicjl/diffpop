@@ -217,7 +217,7 @@ Simulation for branching process via Gillespie Algorithm
     2.  Enact single event on that population
 5.  If simulation time remains, repeat from step 2
 
-Simulation for multitype Moran process via tau leaping
+Simulation for multitype Moran process via Tau Leaping
 ------------------------------------------------------
 
 1.  For each time unit:
