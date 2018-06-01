@@ -321,12 +321,12 @@ Simulation Parameters
 
 The following parameters are available to the user in the simulateTree/simulateFixedTree function.
 
-| Parameter         | Variable Type | Description                                    |
-|-------------------|---------------|------------------------------------------------|
-| nObs              | integer       | number of time units to simulate               |
-| traverseFrequency | integer       | how often to output full census of populations |
-| indir             | string        | directory location of input files              |
-| outdir            | string        | directory location for output files            |
-| seed              | numeric       | optional seed for the random number generator  |
+| Parameter | Variable Type | Description                                    |
+|-----------|---------------|------------------------------------------------|
+| nObs      | integer       | number of time units to simulate               |
+| census    | integer       | how often to output full census of populations |
+| indir     | string        | directory location of input files              |
+| outdir    | string        | directory location for output files            |
+| seed      | numeric       | optional seed for the random number generator  |
 
-Observations are made and output files updated at every integer time unit through *n**O**b**s*. In addition, full printouts of each population are made every *t**r**a**v**e**r**s**e**F**r**e**q**u**e**n**c**y* time unit. The *i**n**d**i**r* directory informs the C++ backend where the input files are located for the differentiation hierarchy and *o**u**t**d**i**r* specifies a particular directory to place all output files. Optionally, the user can specify a numeric *s**e**e**d* for the GSL random number generator used throughout the simulation.
+Observations are made and output files updated at every integer time unit through *n**O**b**s*. In addition, full printouts of each population are made every *census* time unit. The *i**n**d**i**r* directory informs the C++ backend where the input files are located for the differentiation hierarchy and *o**u**t**d**i**r* specifies a particular directory to place all output files. Optionally, the user can specify a numeric *s**e**e**d* for the GSL random number generator used throughout the simulation.
