@@ -273,8 +273,13 @@ Let *α*<sub>(*x*)</sub> denote the mitotic self-renewal (*α*) rate of populati
 
 Then, for any compartment *A*,
 
-$
-$
+$$
+\\begin{align}
+n\_{(A)}\\alpha\_{(A)} &+ \\sum\_{\\text{pop }i \\neq A}n\_{(i)}\\left( \\gamma\_{1(i,A)} + 2\\gamma\_{2(i,A)} + \\beta\_{(i,A)} + \\zeta\_{(i,A)}\\right) = n\_{(A)}\\left\[ \\delta\_{(A)} + \\sum\_{\\text{pop }i\\neq A}\\left( \\gamma\_{1(A,i)} +\\gamma\_{2(A,i)} + \\zeta\_{(A,i)}\\right) \\right\] \\\\
+\\implies \\\\
+\\delta\_{(A)} &= \\frac{n\_{(A)}\\left\[\\alpha\_{(A)}- \\sum\_{\\text{pop }i\\neq A}\\left( \\gamma\_{1(A,i)} + \\gamma\_{2(A,i)} + \\zeta\_{(A,i)} \\right)\\right\] + \\sum\_{\\text{pop }i \\neq A}n\_{(i)}\\left( \\gamma\_{1(i,A)} + 2\\gamma\_{2(i,A)} + \\beta\_{(i,A)} + \\zeta\_{(i,A)}\\right)}{n\_{(A)}}
+\\end{align}
+$$
 
 For the population size to remain constant, this first line of the equation must hold. That is, events that increase the population size (self-renewal and influx from other populations) must be balanced by events that decrease the population (cell death and differentiation). In the modified Moran Process, we force this to hold by automatically calculating delta for each population. If this calculated delta value is positive, we simply set the effective death rate equal to this value. If this calculated delta value is negative, we increase the alpha rate of the population by this value.
 
