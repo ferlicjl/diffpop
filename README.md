@@ -231,16 +231,22 @@ Output Files
 
 Each run of the simulation will be given a unique file prefix, consisting of the date and time when the simulation initiated, followed by a random integer.
 
-1.  Population size (out\_31-05-2018\_123456.pop)
+1.  Population size (*prefix*\_pop.csv)
     -   Size of each population at each observation time
-2.  Shannon diversity index (out\_31-05-2018\_123456.sdi)
-    -   Shannon diversity index is calculated at each observation time for each population
-3.  Fraction of labelled cells (out\_31-05-2018\_123456.label)
+2.  Diversity indices (*prefix*\_diversity.csv)
+    -   Shannon diversity and Simpson diversity are calculated at each observation time for each population along with the total number of barcode species present in each population at each obervation time
+3.  Fraction of labelled cells (*prefix*\_label.csv)
     -   Fraction of cells that contain unique barcode/label at each observation time for each population
-4.  Event rates (out\_31-05-2018\_123456.events)
+4.  Event rates (*prefix*\_events.csv)
     -   Number of events that occurred between each observation time
-5.  Mutation summary (out\_31-05-2018\_123456.mut)
-    -   Time, compartment location, and additional fitness at which a new mutation arises
+5.  Mutation summary (*prefix*\_mut.csv)
+    -   Time of mutation, compartment location, and new fitness for each new clone that arises
+6.  Parameter summary (*prefix*\_params.csv)
+    -   Summary of parameters given by user, as well as recalculated event rates if using FixedPops
+7.  Census files (*prefix*\_*population*\_census.csv)
+    -   Complete census of cell states for each census time, including barcode, mutation history, fitness, and cell count
+8.  Done file (*prefix*.done)
+    -   File is created when simulation is complete. Alerts user that they can begin moving or manipulating other simulation results files
 
 Maintaining a constant population size
 ======================================
