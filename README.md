@@ -310,11 +310,13 @@ If the distribution function selected is normal, fitness additions are drawn fro
 Using DIFFpop in R
 ==================
 
-DIFFpop consists of three steps to run simulations of differentiation hierarchies. The first step is to build and describe the tree structure using the appropriate R functions. Populations of cells are created using their specific type. Users must give each population a unique name, as well as an initial population size. Optionally, users may specify an initial cell barcoding frequency, this is the proportion of initial cells that receive a unique barcode. If this parameter is not set, no unique barcodes will be created for the population. To specify the transitions between populations, the addEdge function is used, along with the correct parameters: the initiating (from) population, the receiving (to) population, event type as a string ("alpha", "beta", "gamma1", "gamma2", "delta", "zeta", "mu"), and event rate. For events involving only one population ("alpha", "delta", or "mu"), set that population as both the initiating and receiving population. The last step is to specify which population is the root of the differentiation hiearchy, that is, which population is the furthest upstream, using the setRoot function in R.
+The first step to utilize DIFFpop to simulate differentiaton is to describe the populations of the hierarchy. Populations of cells are created using functions that correspond to a specific software class, i.e. GrowingPop, FixedPop, or DiffTriangle. Users must give each population a unique name, as well as an initial population size. Optionally, users may specify an initial cell barcoding frequency, this is the proportion of initial cells that receive a unique barcode. If this parameter is not set, no unique barcodes will be created for the population.
 
-After the tree has been completely specified, the writeTree function is used to create the necessary input files for the C++ backend.
+The next step is to specify the transitions between populations. For that purpose, the addEdge function is used, along with the correct parameters: the initiating (from) population, the receiving (to) population, event type as a string ("alpha", "beta", "gamma1", "gamma2", "delta", "zeta", "mu"), and event rate. For events involving only one population ("alpha", "delta", or "mu"), set that population as both the initiating and receiving population.
 
-The last step is to use either the simulateTree or simulateFixedTree function to kick off the C++ backend simulation.
+The last step is to specify which population is the root of the differentiation hiearchy, that is, which population is the furthest upstream, using the setRoot function in R.
+
+The last step is to use the simulateTree function to write all the necessary input files for and initialize the C++ backend simulation.
 
 Simulation Parameters
 ---------------------
