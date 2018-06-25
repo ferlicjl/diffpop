@@ -115,19 +115,12 @@ void FixedPop::down_Event(bool verbose){
 // Importantly, events are ordered such that cell population size remains constant
 void FixedPop::time_step(bool verbose)
 {
-    //std::cout << "in time_step for " << name << std::endl;
-	//verbose = true;
-    // Select number of events from these rates
-    //int n_events = getNumDownEvents() - tree->dediffTo(name);
 	int n_events = getNumDownEvents();
     if(verbose)
         std::cout << "Down events: " <<  n_events << std::endl;
 
     // Set up a vector to be able to choose an event type
     std::vector<double> init_rates = getRates();
-
-	// TRYING SOMETHING
-	//std::cout << "HELLO" << std::endl;
 
     // Set up simple string to print out event type name
     std::vector<std::string> init_names;
@@ -137,10 +130,8 @@ void FixedPop::time_step(bool verbose)
 	init_names.push_back("Diff2");
 	init_names.push_back("Death");
 	init_names.push_back("Dedifferentiation");
-	//init_names.push_back("Mutation");
-
+	
 	init_rates[0] = 0.0;
-	//init_rates[1] = 0.0;
 
     // Iterate over the number of events
 	if(verbose)
@@ -190,7 +181,6 @@ void FixedPop::time_step(bool verbose)
     }
     if(verbose)
         std::cout << std::endl;
-    //std::cout << "end of time_step() for " << name << std::endl;
 }
 
 // Enacts the events that would occur in one-unit of time according to rates determined by the cell type

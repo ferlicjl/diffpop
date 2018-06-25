@@ -384,20 +384,6 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
 	// Re-output parameters after having adjusted net-proliferation
     p_file.open(tree.opath+"_params.csv", std::fstream::in | std::fstream::out | std::fstream::app);
 
-	/*
-	p_file << "nObs\t" << nObs << std::endl;
-	p_file << "traverseFrequency\t" << traverseFrequency << std::endl;
-	p_file << "indir\t" << indir << std::endl;
-	p_file << "outdir\t" << outdir << std::endl;
-	p_file << "seed\t" << seed << std::endl;
-	p_file << "fp.distribution\t" << tree.fp.fitness_distribution << std::endl;
-	p_file << "fp.is_randfitness\t" << tree.fp.is_randfitness << std::endl;
-	p_file << "fp.alpha_fitness\t" << tree.fp.alpha_fitness << std::endl;
-	p_file << "fp.beta_fitness\t" << tree.fp.beta_fitness << std::endl;
-	p_file << "fp.pass_prob\t" << tree.fp.pass_prob << std::endl;
-	p_file << "fp.lower_fitness\t" << tree.fp.lower_fitness << std::endl;
-	p_file << "fp.upper_fitness\t" << tree.fp.upper_fitness << std::endl;
-	*/
 	p_file << "# Rates after adjusting net proliferation for FixedPops" << std::endl;
 
     for(auto const& x: tree.bfs)
@@ -414,36 +400,6 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
     p_file << std::endl;
 	p_file.close();
 
-	/*
-    // Create an information file - REDUNDANT DUE TO PARAMETERS FILE
-	// KEPT FOR THE MOMENT FOR OLD SIMULATION RESULTS
-    std::ofstream info_file;
-    info_file.open(tree.opath+".info");
-
-    for(auto const& node: m)
-    {
-        info_file << "N_" << node.second->name << "\t";
-        info_file << "alpha_" << node.second->name << "\t";
-        info_file << "beta_" << node.second->name << "\t";
-        info_file << "gamma_" << node.second->name << "\t";
-        info_file << "delta_" << node.second->name << "\t";
-		info_file << "mu_" << node.second->name << "\t";
-    }
-    info_file << std::endl;
-
-    for(auto const& node: m)
-    {
-        info_file << node.second->cells.total<< "\t";
-        info_file << node.second->alpha << "\t";
-        info_file << std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0) << "\t";
-        info_file << std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << "\t";
-        info_file << node.second->death << "\t";
-		info_file << node.second->mu << "\t";
-    }
-    info_file << std::endl;
-    info_file.close();
-	*/
-	
 	std::cout << "Created parameters file..." << std::endl;
 
 	// Print out the tree structure
@@ -453,9 +409,6 @@ int simulateFixedTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::str
     tree.time_steps(nObs, traverseFrequency);
 	
 	std::cout << "Completed simulation." << std::endl;
-
-	// RECALCULATE NET PROLIFERATION, only needed to show observed rates match expected rates
-	//tree.calcDelta();
 
     // Ensure NodeLists get deleted
     for ( auto current = m.begin(); current != m.end(); ++ current )
@@ -533,35 +486,6 @@ int simulateTreeCodeNew(int nObs = 10, int traverseFrequency = -1, std::string i
     }
     p_file << std::endl;
 	p_file.close();
-
-	/*
-    // INFO FILE
-    std::ofstream info_file;
-    info_file.open(tree.opath+".info");
-
-    for(auto const& node: m)
-    {
-        info_file << "N_" << node.second->name << "\t";
-        info_file << "alpha_" << node.second->name << "\t";
-        info_file << "beta_" << node.second->name << "\t";
-        info_file << "gamma_" << node.second->name << "\t";
-        info_file << "delta_" << node.second->name << "\t";
-		info_file << "mu_" << node.second->name << "\t";
-    }
-    info_file << std::endl;
-
-    for(auto const& node: m)
-    {
-        info_file << node.second->cells.total << "\t";
-        info_file << node.second->alpha << "\t";
-        info_file << std::accumulate(node.second->beta.begin(), node.second->beta.end(), 0.0) << "\t";
-        info_file << std::accumulate(node.second->gamma1.begin(), node.second->gamma1.end(), 0.0) << "\t";
-        info_file << node.second->death << "\t";
-		info_file << node.second->mu << "\t";
-    }
-    info_file << std::endl;
-    info_file.close();
-	*/
 
 	std::cout << "Created parameters file..." << std::endl;
     tree.print();

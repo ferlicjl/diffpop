@@ -270,31 +270,22 @@ void DiffTree::updateState(double currentTime, double timeToNext)
 // Run simulations for n time units
 void DiffTree::simulate(int numTime, int outputFrequency)
 {
-	//initializeTree();
-	//initializeCells();
-
-	//std::cout << "I've initialized the tree!" << std::endl;
-
 	bool verbose = true;
 
-    // NEW outputs
+    // output streams
     std::ofstream sdi_of;
-	//std::ofstream types_of;
     std::ofstream pop_of;
     std::ofstream label_of;
     std::ofstream events_of;
 	std::ofstream mutants_of;
 
     sdi_of.open(opath + "_diversity.csv");
-	//types_of.open(opath + "_types.csv");
     pop_of.open(opath + "_pop.csv");
     label_of.open(opath + "_label.csv");
     events_of.open(opath + "_events.csv");
 	mutants_of.open(opath + "_mut.csv");
 
-	  //writeAll(0);
     writeDiversityHeader(sdi_of);
-	//writeTypesHeader(types_of);
     writeCellHeader(pop_of);
     writeCellHeader(label_of);
     writeEventsHeader(events_of);
@@ -307,24 +298,17 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     {
         obsTimes.push_back(k);
     }
-    //std::cout << "numTime: " << numTime << std::endl;
 
     // Set variables to keep track of our current time and which observation time comes next
     double curTime = 0;
     int curObsIndex = 0;
 
-    // Keep track of number of events.  Why not?
+    // Keep track of number of events.  
     int numEvents = 0;
 
+	// How often should we output update on simulation progress
 	int obsMod = pow(10, round(log10(numTime)-1));
 
-    // Display some stuff - debugging
-	if(verbose){
-    //std::cout << "numTime: " << numTime << std::endl;
-    //std::cout << "Simulation Start Time: " << curTime << std::endl;
-    //std::cout << "Simulation End Time: " << obsTimes[numTime] << std::endl;
-    //std::cout << "obsTimes.size(): " << obsTimes.size() << std::endl;
-	}
 
     // Run until our currentTime is greater than our largest Observation time
     while(curTime <= obsTimes[numTime])
@@ -339,59 +323,59 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 
         // Get the next event time
         double timeToNext = nextEventTime();
-        //std::cout << "Current Time: " << curTime << std::endl;
-        //std::cout << "Next: " << curTime + timeToNext << std::endl;
-
+       
         // If our next event time is later than observation times,
         // Make our observations
-        while((curTime + timeToNext > obsTimes[curObsIndex]))// & (curTime + timeToNext <= obsTimes[numTime]))
+        while((curTime + timeToNext > obsTimes[curObsIndex]))
         {
-			//writeAll(obsTimes[curObsIndex]);
             writeSDI(sdi_of, obsTimes[curObsIndex]);
-			//writeTypes(types_of, obsTimes[curObsIndex]);
             writePopSize(pop_of, obsTimes[curObsIndex]);
             writeLabelled(label_of, obsTimes[curObsIndex]);
             writeEvents(events_of, obsTimes[curObsIndex]);
-            //writeMutations(obsTimes[curObsIndex]);
+			
+			// Should we output a census?
 			if((outputFrequency > 0 && obsTimes[curObsIndex] % outputFrequency == 0) || curTime == 0)
 				writeAll(obsTimes[curObsIndex]);
+			
+			// Zero out our event counters
             zeroEvents();
+			
+			// Should we update our progress?
 			if(verbose &&  obsTimes[curObsIndex] % obsMod == 0)
 				std::cout << "Time " << obsTimes[curObsIndex] << " of " << numTime << std::endl;
+			
             curObsIndex++;
-            //std::cout << "Sucessfully made an observation" << std::endl;
+			
+			// Have we reached the end of simulating?
 			if((unsigned)curObsIndex >= obsTimes.size()-1)
 				break;
         }
 		if((unsigned)curObsIndex >= obsTimes.size()-1)
 				break;
-        //std::cout << "trying to update state!" << std::endl;
+   
         // Update our state
         updateState(curTime, timeToNext);
-       // std::cout << "Updated state: " << curTime << " next: " << timeToNext << std::endl;
         numEvents++;
 
         // Increase our current time and get the next Event Time
         curTime = curTime + timeToNext;
-        //timeToNext = nextEventTime();
     }
-	//std::cout << "curObsIndex: " << curObsIndex << std::endl;
+	
 	std::cout << "End Simulation Time: " << obsTimes[curObsIndex] << std::endl;
     std::cout << "Number of total events: " << numEvents << std::endl;
 
+	// Make final outputs and close streams
 	writeAll(obsTimes[curObsIndex]);
 	writeSDI(sdi_of, obsTimes[curObsIndex]);
-	//writeTypes(types_of, obsTimes[curObsIndex]);
     writePopSize(pop_of, obsTimes[curObsIndex]);
     writeLabelled(label_of, obsTimes[curObsIndex]);
     writeEvents(events_of, obsTimes[curObsIndex]);
-    //writeMutations(obsTimes[curObsIndex]);
     sdi_of.close();
     pop_of.close();
     label_of.close();
     events_of.close();
-	//types_of.close();
 
+	// Create done file
     std::ofstream done_file;
     done_file.open(opath+".done");
     done_file << "Done" << std::endl;
@@ -400,32 +384,28 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 
 void DiffTree::time_steps(int n, int outputFrequency)
 {
-    //initializeTree();
-	//std::cout << "made it here" << std::cout;
 	bool verbose = true;
+	
+	// How often should we update on simulation progress
 	int obsMod = pow(10, round(log10(n)-1));
-	//initializeCells();
 
-	//std::cout << "can't make it here though..." << std::cout;
+	// output streams
     std::ofstream sdi_of;
     std::ofstream pop_of;
     std::ofstream label_of;
     std::ofstream events_of;
-	//std::ofstream types_of;
 	std::ofstream mutants_of;
 
     sdi_of.open(opath + "_diversity.csv");
     pop_of.open(opath + "_pop.csv");
     label_of.open(opath + "_label.csv");
     events_of.open(opath + "_events.csv");
-	//types_of.open(opath + "_types.csv");
 	mutants_of.open(opath + "_mut.csv");
 
     writeDiversityHeader(sdi_of);
     writeCellHeader(pop_of);
     writeCellHeader(label_of);
     writeEventsHeader(events_of);
-	//writeTypesHeader(types_of);
 	writeMutantsHeader(mutants_of);
 	writeAllHeaders();
 	writeAll(0);
@@ -433,38 +413,41 @@ void DiffTree::time_steps(int n, int outputFrequency)
     writeSDI(sdi_of, 0);
     writePopSize(pop_of, 0);
     writeLabelled(label_of, 0);
-	//writeTypes(types_of, 0);
-    //writeEvents(events_of, 0);
-
-	//std::cout << "Traverse Frequency: " << outputFrequency << std::endl;
+	
 	std::cout << "Time 0 of " << n << std::endl;
 
+	// Simulate n time units
     for(int i = 1; i <= n; i++)
     {
 		simTime = i;
         Rcpp::checkUserInterrupt();
 		if(verbose && i % obsMod == 0)
 			std::cout << "Time " << i << " of " << n << std::endl;
+		
+		// time step
         time_step();
+		
+		// outputs
         writeSDI(sdi_of, i);
         writePopSize(pop_of, i);
         writeLabelled(label_of, i);
         writeEvents(events_of, i);
-		//writeTypes(types_of, i);
-		//std::cout << "outputFrequency > 0: " << (outputFrequency > 0)  << " n % outputFrequency == 0: " << (n % outputFrequency == 0) << std::endl;
+		
+		// should we census?
 		if((outputFrequency > 0 && i % outputFrequency == 0) || i == n)
 				writeAll(i);
-        //writeMutations(i);
+		
+		// Zero out event counters
         zeroEvents();
     }
 
+	// close output streams
     sdi_of.close();
     pop_of.close();
     label_of.close();
     events_of.close();
-	//types_of.close();
-	//writeAll(n);
 
+	// create done file
     std::ofstream done_file;
     done_file.open(opath+".done");
     done_file << "Done" << std::endl;
@@ -604,30 +587,6 @@ void DiffTree::writeEvents(std::ofstream& of, int time)
     of << std::endl;
 }
 
-/*
-void DiffTree::writeMutations(int time)
-{
-
-    std::ofstream all_of;
-
-
-    for(auto const& node: m)
-    {
-        //CellPopulation* t = node->second;
-        all_of.open(opath + "_" + m[x]->name + ".mut", std::fstream::in | std::fstream::out | std::fstream::app);
-        all_of << time << "\t";
-
-		std::map<int, int> mut = m[x]->cells.count_map_mutation();
-
-        for(int i = 0; i <= m[x]->numMutations; i++)
-        {
-            all_of << mut[i] << "\t";
-        }
-        all_of << std::endl;
-        all_of.close();
-    }
-}
-*/
 
 void DiffTree::writeAllHeaders()
 {
