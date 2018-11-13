@@ -195,7 +195,6 @@ Before expanding our basic process, let us take a look at some of the output fil
 
 ``` r
 library(ggplot2)
-#> Warning: package 'ggplot2' was built under R version 3.5.1
 
 popfiles = list.files("./output/", pattern="^out.*_pop.csv$", full.names=T)
 
@@ -302,12 +301,12 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  65.8838| pop1       |  0.381235|
-|       2|  74.0586| pop1       |  1.549150|
-|       3|  76.1474| pop1       |  0.145062|
-|       4|  79.0161| pop1       |  1.966940|
-|       5|  80.3686| pop1       |  0.000000|
-|       6|  86.7645| pop1       |  0.619659|
+|       1|  65.1597| pop1       |  2.585730|
+|       2|  74.5515| pop1       |  1.228730|
+|       3|  78.8288| pop1       |  0.319679|
+|       4|  84.0502| pop1       |  1.458930|
+|       5|  87.5814| pop1       |  3.077130|
+|       6|  88.3941| pop1       |  1.660150|
 
 For more detailed examples, please set the vignettes.
 
