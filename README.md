@@ -298,12 +298,12 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  50.5808| pop1       |  1.142150|
-|       2|  81.6264| pop1       |  0.588587|
-|       3|  81.9099| pop1       |  0.957609|
-|       4|  83.2619| pop1       |  1.836450|
-|       5|  86.2924| pop1       |  1.094640|
-|       6|  86.4769| pop1       |  4.257530|
+|       1|  44.1094| pop1       |  1.540510|
+|       2|  75.8620| pop1       |  0.000000|
+|       3|  77.4168| pop1       |  2.274700|
+|       4|  81.3809| pop1       |  1.309050|
+|       5|  82.8778| pop1       |  0.376172|
+|       6|  85.0447| pop1       |  0.498258|
 
 For more detailed examples, please set the vignettes.
 
@@ -588,29 +588,3 @@ Throughout the differentiation hierarchy, whenever a new clone arises due to mut
 </table>
 
 If the distribution function selected is normal, fitness additions are drawn from a *N*(*alpha\_fitness*, *beta\_fitness*) distribution. If the distribution function selected is uniform, fitness additions are drawn from a *U*(*alpha\_fitness*, *beta\_fitness*) distribution. If the distribution function selected is double exponential, *alpha\_fitness* refers to the rate parameter of an exponetial distribution for the positive range and *beta\_fitness* refers to the rate parameter of an exponential distribution for the negative range.
-
-Using DIFFpop in R
-==================
-
-The first step to utilize DIFFpop to simulate differentiaton is to describe the populations of the hierarchy. Populations of cells are created using functions that correspond to a specific software class, i.e. GrowingPop, FixedPop, or DiffTriangle. Users must give each population a unique name, as well as an initial population size. Optionally, users may specify an initial cell barcoding frequency, this is the proportion of initial cells that receive a unique barcode. If this parameter is not set, no unique barcodes will be created for the population.
-
-The next step is to specify the transitions between populations. For that purpose, the addEdge function is used, along with the correct parameters: the initiating (from) population, the receiving (to) population, event type as a string ("alpha", "beta", "gamma1", "gamma2", "delta", "zeta", "mu"), and event rate. For events involving only one population ("alpha", "delta", or "mu"), set that population as both the initiating and receiving population.
-
-The last step is to specify which population is the root of the differentiation hiearchy, that is, which population is the furthest upstream, using the setRoot function in R.
-
-The last step is to use the simulateTree function to write all the necessary input files for and initialize the C++ backend simulation.
-
-Simulation Parameters
----------------------
-
-The following parameters are available to the user in the simulateTree/simulateFixedTree function.
-
-| Parameter | Variable Type | Description                                    |
-|-----------|---------------|------------------------------------------------|
-| nObs      | integer       | number of time units to simulate               |
-| census    | integer       | how often to output full census of populations |
-| indir     | string        | directory location of input files              |
-| outdir    | string        | directory location for output files            |
-| seed      | numeric       | optional seed for the random number generator  |
-
-Observations are made and output files updated at every integer time unit through *nObs*. In addition, full printouts of each population are made every *census* time unit. The *indir* directory informs the C++ backend where the input files are located for the differentiation hierarchy and *outdir* specifies a particular directory to place all output files. Optionally, the user can specify a numeric *seed* for the GSL random number generator used throughout the simulation.
