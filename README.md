@@ -55,6 +55,261 @@ For increasing population simulations, the system will grow or decline as a bran
 
 Simulations with fixed population sizes are carried out using a modified Moran Process. A traditional Moran Process consist of a population of cells, each belonging to a certain class, and having an individual fitness. In each time step, a random cell is selected for division and a random cell is selected for apotosis, ensuring that the population size remains constant. To introduce selection, cells with higher fitness values are more likely to be selected for division. To modify the Moran Process and place it in the setting of differentiation, we have included additional cellular events. By continuing to couple events together, we are able to maintain a constant population size.
 
+Applications
+============
+
+Binary Cell Labeling
+--------------------
+
+DIFFpop is capable of tracking the uptake and progression of a binary label throughout a differentiation hierarchy. In experimental settings, these are often fluorescent labels that allow the researchers to sort samples into cell types and then quantify proportion of cells that express the label.
+
+Simulating a binary labeling scheme in DIFFpop can be achieved in two ways. In the first, the user manually enters the number of initial cells that belong to the unlabeled and labeled populations. In the second, the user specifies with what probability a cell will gain the label upon simulation initiation. The proportion of labeled cells can be tracked over time in the label and census output file.
+
+As an example of applying DIFFpop to this type of data, we have included a vignette replicating the results from introducing a yellow fluorescent protein (YFP) reporter into the hematopoietic cells of the bone marrow (Busch et al., Nature 2015). After validating that our stochastic simulations closely match the results from the in-vivo experiments, we could further investigate the system using DIFFpop, including inferring hematopoietic clonal dynamics from the system if the investigators introduced unique barcode labeling.
+
+Confetti-style Labeling
+-----------------------
+
+A confetti-style labeling scheme is one in which one particular label from amongst a series of possible labels is expressed through random segregration and reintegration into the host cells genome. As an example system, 4 possible colored reports, labeled green, blue, yellow, and red, are added side-by-side in the host cell's genome. Upon induction by CRE recombinase, these label sections are random spliced out of the genome and reintegrated, with ultimately only one label color being expressed. This same label is expressed in all daughter cells and can be traced as cells replicate and differentiate.
+
+Simulating a confetti-style labeling scheme can be achieved in DIFFpop by simply specifying the initial number of cells to express each particular label. The census files can then be analyzed upon simulation completion to track the changes in label expression throughout the system over time.
+
+As an example of this type of experimental procedure, we point the reader to a confetti-style labeling scheme implemented in the hematopoietic system of mice (Ganuza et al., Nat Cell Biol. 2017). Such a labeling experiment could be easily simulated using DIFFpop assuming the proper population sizes and transition rates were known.
+
+Unique Cell Barcoding
+---------------------
+
+In addition to simulating fluorescent cell labels, DIFFpop can also be used in combination with unique cell barcoding experiments. Unique cell labeling can be achieved by introducing a mobile transcodon into the genome. Upon induction of labeling with tamoxifen, this transcodon is spliced from the genome, and randomly reintegrated at some point in the host genome. Assuming the probability that the transcodon randomly integrating into the same location in two cells is negligible, each cell now contains the transcodon in a unique genomic position. The transcodon in this location will then be passed to all offspring cells and be maintained through replication and differentiation events. At the end of an experiment, cell populations can be sorted and then sequenced for the presence or absence of these barcodes. Alternatively, a sample of cells can be sent off for single cell sequencing, allowing for not only the presence or absence of a particular barcode, but also an estimate of the size of a particular barcode-defined clone.
+
+Simulating unique cell barcoding in DIFFpop can easily be achieved by simply specifying the proportion of cells to be successfully labeling upon system initialization. The census files can then be analyzed upon simulation completion to track the barcode frequencies in the system over time. One can even simulate a single cell barcoding experiment by randomly sampling from the barcode population.
+
+As an example of a unique barcoding population, we point the reader to an experimental procedure in which cells of the hematopoietic system are labeled in-vivo and analyzed in native hematopoiesis, not requiring the use of cell transplantation (Rodriguez-Fraticelli et al., Nature 2018).
+
+Using DIFFpop in R
+==================
+
+The first step to utilize DIFFpop for simulation of a differentiaton hierarchy is to specify the populations of the hierarchy. Populations of cells are created using functions that correspond to a specific software class, i.e. GrowingPop, FixedPop, or DiffTriangle. Users must give each population a unique name as well as an initial population size. Optionally, users may specify an initial cell barcoding frequency, which represents the proportion of initial cells that receive a unique barcode. If this parameter is not set, no unique barcodes will be created for the population.
+
+The next step is to specify the transitions between populations. For that purpose, the addEdge function is used, along with the correct parameters: the initiating population, the receiving population, event type as a string (either "alpha", "beta", "gamma1", "gamma2", "delta", "zeta", or "mu"), and event rate. For events involving only one population ("alpha", "delta", or "mu"), users set that population as both the initiating and receiving population.
+
+The last specification step is to specify which population is the root of the differentiation hierarchy, that is, which population is the furthest upstream, using the setRoot function in R.
+
+The simulateTree function is then used to initiate the simulation.
+
+Simulation parameters
+---------------------
+
+Table 4 describes the parameters of the simulation.
+
+<table>
+<caption>Description of simulation parameters</caption>
+<colgroup>
+<col width="13%" />
+<col width="17%" />
+<col width="69%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Variable Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tree</td>
+<td>DiffTree</td>
+<td>specifies which hierarchy to simulate</td>
+</tr>
+<tr class="even">
+<td>fixed</td>
+<td>boolean</td>
+<td>TRUE if simulating using FixedPops and DiffTriangles, FALSE if simulating using GrowingPops</td>
+</tr>
+<tr class="odd">
+<td>time</td>
+<td>integer</td>
+<td>number of time units to simulate</td>
+</tr>
+<tr class="even">
+<td>census</td>
+<td>integer</td>
+<td>how often to output full census of populations</td>
+</tr>
+<tr class="odd">
+<td>indir</td>
+<td>string</td>
+<td>directory location of input files</td>
+</tr>
+<tr class="even">
+<td>outdir</td>
+<td>string</td>
+<td>directory location for output files</td>
+</tr>
+<tr class="odd">
+<td>seed</td>
+<td>numeric</td>
+<td>optional seed for the random number generator</td>
+</tr>
+</tbody>
+</table>
+
+Observations are made and output files updated at every integer time unit through *n**O**b**s*. In addition, full outputs of the cell states in each population are made every *c**e**n**s**u**s* time unit(s). The *i**n**d**i**r* directory informs the C++ backend where the input files for the differentiation hierarchy are located and *o**u**t**d**i**r* specifies a particular directory in which to place all output files. Optionally, the user can specify a numeric *s**e**e**d* for the GSL random number generator used throughout the simulation.
+
+Birth-Death Example
+-------------------
+
+Towards learning how to utilize DIFFpop to simulate cellular differentiation, we present the following birth-death process. Using this simple example as a starting-off point, we will then show how by the addition of relatively few lines, this model can be modified and expanded.
+
+The following script will create the example.
+
+``` r
+library(diffpop)
+
+# Create an empty DiffTree object
+tree1 = DiffTree()
+
+# Create a population "pop1" with 100 unlabeled cells
+GrowingPop(tree = tree1, name = "pop1", size = 100, label = 0.0)
+
+# Add cell birth event to pop1
+addEdge(tree = tree1, parent = "pop1", child = "pop1", type = "alpha", rate = 0.5)
+# Add cell death event to pop1
+addEdge(tree = tree1, parent = "pop1", child = "pop1", type = "delta", rate = 0.3)
+
+# Set the root of tree1 to "pop1"
+setRoot(tree = tree1, popName = "pop1")
+
+# Simulate tree1 for 10 time units writing results to ./output/
+simulateTree(tree = tree1, fixed = FALSE, time = 20, 
+             indir = "./input/", outdir = "./output/")
+```
+
+After installing DIFFpop using the steps outlined above, the library must first be loaded into the current R session. In order to begin creating a differentiation hierarchy, we must create an empty DiffTree object we wil call "tree1". We then begin by creating a single population named "pop1", and initializing it to contain 100 unlabeled cells, and add it to the tree. Because we want to model a population whose size will fluctuate over time, we will use a GrowingPop to model this population.
+
+We will then add transitions to this population. We will start by adding a self-renewal event, which will occur at a rate of 0.5 events per cell per time unit. We will also add the death event, which will occur at a rate of 0.3 events per cell per time unit.
+
+The last remaining steps are to set "pop1" as the root of the differentiation tree and start our simulation. We will simulate this tree for 20 units of time, writing all of the inputs to the input folder and all output files to the output folder. We will also set the simulation parameter fixed to FALSE, notifying DIFFpop we are modeling the system using GrowingPops.
+
+Before expanding our basic process, let us take a look at some of the output files from this simulation. Each simulation is given a unique file prefix. For example, the output files from the last run were all prefixed with "out\_11-11-2018-202313\_54045", letting us know the simulation was initiated at 8:23 PM on November 11, 2018. Because we had completely unlabelled cells and did not allow for mutation, the only system statistics of interest are the population sizes, which are output to the "out\_11-11-2018-202313\_54045\_pop.csv" file each time unit. Let's plot the population size of "pop1" over the course of the simulation.
+
+``` r
+library(ggplot2)
+#> Warning: package 'ggplot2' was built under R version 3.5.1
+
+popfiles = list.files("./output/", pattern="^out.*_pop.csv$", full.names=T)
+
+# Read in population sizes file
+pop = read.csv(popfiles[length(popfiles)])
+
+# Plot the population size of "pop1" vs. simulation
+plot(pop$time, pop$pop1, xlab = "Time", ylab = "Population Size", 
+      main = "Simple Birth-Death Process")
+```
+
+![](README-bd2-1.png)
+
+Extending the Birth-Death Example
+---------------------------------
+
+In our next example, let us look at exploring some other features of DIFFpop beyond a simple birth-death process by labeling 50% of cells in "pop1", adding an additional population "pop2", adding differentiation from "pop1" to "pop2", and allowing for mutations to occur in "pop1". We can store this updated tree as "tree2". Whenever a mutation occurs, we will introduce a new fitness change to be drawn from a standard normal distribution. Below is the entire script needed to simulate this model.
+
+``` r
+library(diffpop)
+
+# Create an empty DiffTree object
+tree2 = DiffTree()
+
+# Create two populations, labeling on average 50% of cells in pop1
+GrowingPop(tree = tree2, name = "pop1", size = 100, label = 0.50)
+GrowingPop(tree = tree2, name = "pop2", size = 50, label = 0.0)
+
+# Add cell birth/death events to pop1
+addEdge(tree = tree2, parent = "pop1", child = "pop1", type = "alpha", rate = 0.4)
+addEdge(tree = tree2, parent = "pop1", child = "pop1", type = "delta", rate = 0.3)
+
+# Add cell birth/death event to pop2
+addEdge(tree = tree2, parent = "pop2", child = "pop2", type = "alpha", rate = 0.35)
+addEdge(tree = tree2, parent = "pop2", child = "pop2", type = "delta", rate = 0.4)
+
+# Add differentiation from pop1 to pop2
+addEdge(tree = tree2, parent = "pop1", child = "pop2", type = "gamma1", rate = 0.05)
+
+# Add mutation in pop1, occurs during each mitosis event with probability 1e-4
+addEdge(tree = tree2, parent = "pop1", child = "pop1", type = "mu", rate = 1e-4)
+
+# Set fitness change distribution when a new mutant arises
+setFitnessDistribution(tree = tree2, 
+                       distribution = "normal",
+                       alpha_fitness = 0, 
+                       beta_fitness = 1,
+                       pass_prob = 0, 
+                       upper_fitness = NA, 
+                       lower_fitness = 0)
+
+# Set the root of tree1 to "pop1"
+setRoot(tree = tree2, popName = "pop1")
+
+# Simulate tree1 for 50 time units writing results to ./output2/
+simulateTree(tree = tree2, fixed = FALSE, time = 100, 
+             indir = "./input2/",  outdir = "./output2/")
+```
+
+Let us explore some of the output files from this simulation run. First, let us once again start with a plot of the population sizes over time.
+
+``` r
+popfiles = list.files("./output2/", pattern="^out.*_pop.csv$", full.names=T)
+
+# Read in population sizes file
+pop = read.csv(popfiles[length(popfiles)])
+
+# Plot the population size of "pop1" vs. simulation time
+plot(pop$time, pop$pop1, col = "black", 
+     xlab = "Time", ylab = "Population Size", ylim = c(0, max(pop)))
+points(pop$time, pop$pop2, col = "red")
+```
+
+![](README-bd4-1.png)
+
+We can also look at how quickly the label, which was only initialized in pop1, was taken up in pop2. To do this, we will plot from the label output file, which shows the percentage of cells in the population that contain the label.
+
+``` r
+# Read in label file
+lblfiles = list.files("./output2/", pattern="^out.*_label.csv$", full.names=T)
+
+# Read in label file
+label = read.csv(lblfiles[length(lblfiles)])
+
+# Plot the label percentage  vs. simulation time
+plot(label$time, label$pop1, col = "black", 
+     xlab = "Time", ylab = "Percentage of cells with label", ylim = c(0, 1))
+points(label$time, label$pop2, col = "red")
+```
+
+![](README-bd5-1.png)
+
+We can view the mutation output file to see which mutations occurred, in which populations they occurred, and the resulting fitnesses of those clone.
+
+``` r
+# Read in label file
+mutfiles = list.files("./output2/", pattern="^out.*_mut.csv$", full.names=T)
+
+# Read in population sizes file
+mut = read.csv(mutfiles[length(mutfiles)])
+
+head(mut)
+```
+
+|    mutant|        time| population    |                fitness|
+|---------:|-----------:|:--------------|----------------------:|
+|         1|     54.9423| pop1          |               1.061780|
+|         2|     72.9635| pop1          |               0.000000|
+|         3|     74.6086| pop1          |               0.920603|
+|         4|     75.9973| pop1          |               1.039830|
+|         5|     81.9822| pop1          |               1.899900|
+|         6|     86.6593| pop1          |               1.225360|
+|  For more|  detailed e| xamples, plea |  se set the vignettes.|
+
 Software Design and Class Structures
 ====================================
 
@@ -182,13 +437,13 @@ Cellular events in DIFFpop are enacted according to their accompanying parameter
 
 Events can be split into three categories based on how they affect the population size of the compartment:
 
--   “i-1” events result in a one-cell deficit
+-   âi-1â events result in a one-cell deficit
     -   differentiation (*γ*<sub>1</sub>/*γ*<sub>2</sub>)
     -   de-differentiation (*ζ*)
     -   apoptosis (*δ*)
--   “i” events maintain the population size
+-   âiâ events maintain the population size
     -   asymmetric differentiation (*β*)
--   “i+1” events result in a one-cell surplus
+-   âi+1â events result in a one-cell surplus
     -   mitosis (*α*)
 
 Mutations in DIFFpop occur only during mitosis events. Each mitosis event results in a new mutation with probability *μ*. Thus, in the MPP population, the rate of mitosis events resulting in a new mutation is *α*<sub>(*M**P**P*)</sub>*μ*<sub>(*M**P**P*)</sub> and the rate of mitosis events resulting in no mutation is *α*<sub>(*M**P**P*)</sub>(1 − *μ*<sub>(*M**P**P*)</sub>). Mutations accumulate according to the infinite allele assumption, that is, a new mutation leads to a new allele that has yet to be seen in the population.
@@ -267,7 +522,7 @@ Each run of the simulation will be given a unique file prefix, consisting of the
 Maintaining a constant population size
 ======================================
 
-In order to maintain a constant population size, a relationship must exist between the event rates of the compartment. Specifically, those event rates that result in an excess of cells in the compartment \[“i+1” rates\] must be balanced with those event rates that result in a deficit of cells \[“i-1” rates\].
+In order to maintain a constant population size, a relationship must exist between the event rates of the compartment. Specifically, those event rates that result in an excess of cells in the compartment \[âi+1â rates\] must be balanced with those event rates that result in a deficit of cells \[âi-1â rates\].
 
 Let *α*<sub>(*x*)</sub> denote the mitotic self-renewal (*α*) rate of population *x*. Let *γ*<sub>1(*x*, *y*)</sub> denote the one-to-one differentiation (*γ*<sub>1</sub>) rate from population *x* to population *y*.Let *γ*<sub>2(*x*, *y*)</sub> denote the one-to-two differentiation (*γ*<sub>2</sub>) rate from population *x* to population *y*.Let *β*<sub>(*x*, *y*)</sub> denote the asymmetric differentiation (*β*) rate from population *x* to population *y*.Let *ζ*<sub>(*x*, *y*)</sub> denote the one-to-one de-differentiation (*ζ*) rate from population *x* to population *y*.Let *δ*<sub>(*x*)</sub> denote the cell death (*δ*) rate of population *x*.Let *n*<sub>(*x*)</sub> be the size of population *x*.
 

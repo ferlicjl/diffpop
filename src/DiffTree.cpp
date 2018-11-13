@@ -347,10 +347,10 @@ void DiffTree::simulate(int numTime, int outputFrequency)
             curObsIndex++;
 			
 			// Have we reached the end of simulating?
-			if((unsigned)curObsIndex >= obsTimes.size()-1)
+			if((unsigned)curObsIndex >= obsTimes.size())
 				break;
         }
-		if((unsigned)curObsIndex >= obsTimes.size()-1)
+		if((unsigned)curObsIndex >= obsTimes.size())
 				break;
    
         // Update our state
@@ -365,11 +365,11 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     std::cout << "Number of total events: " << numEvents << std::endl;
 
 	// Make final outputs and close streams
-	writeAll(obsTimes[curObsIndex]);
-	writeSDI(sdi_of, obsTimes[curObsIndex]);
-    writePopSize(pop_of, obsTimes[curObsIndex]);
-    writeLabelled(label_of, obsTimes[curObsIndex]);
-    writeEvents(events_of, obsTimes[curObsIndex]);
+	writeAll(obsTimes[obsTimes.size()-1]);
+	//writeSDI(sdi_of, obsTimes[curObsIndex]);
+    //writePopSize(pop_of, obsTimes[curObsIndex]);
+    //writeLabelled(label_of, obsTimes[curObsIndex]);
+    //writeEvents(events_of, obsTimes[curObsIndex]);
     sdi_of.close();
     pop_of.close();
     label_of.close();

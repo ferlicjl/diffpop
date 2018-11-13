@@ -40,6 +40,7 @@ NodeList::NodeList(){
 	right = 0;
 	totalFitness = 0;
 	numMutated = 0;
+	// HERE
 }
 
 NodeList::~NodeList(){
@@ -47,7 +48,7 @@ NodeList::~NodeList(){
 }
 
 void NodeList::insert(long int b, std::string m, double f, int c){
-	if(m != "0"){
+	if(!(m == "0" || m == "")){
 		numMutated += c;
 	}
 	if (root == NULL){

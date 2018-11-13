@@ -6,6 +6,17 @@
 
 using namespace Rcpp;
 
+// readFileR
+void readFileR(std::string indir, std::string fname);
+RcppExport SEXP _diffpop_readFileR(SEXP indirSEXP, SEXP fnameSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::string >::type indir(indirSEXP);
+    Rcpp::traits::input_parameter< std::string >::type fname(fnameSEXP);
+    readFileR(indir, fname);
+    return R_NilValue;
+END_RCPP
+}
 // simulateFixedTreeCodeNew
 int simulateFixedTreeCodeNew(int nObs, int traverseFrequency, std::string indir, std::string outdir, SEXP seed);
 RcppExport SEXP _diffpop_simulateFixedTreeCodeNew(SEXP nObsSEXP, SEXP traverseFrequencySEXP, SEXP indirSEXP, SEXP outdirSEXP, SEXP seedSEXP) {
@@ -38,6 +49,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_diffpop_readFileR", (DL_FUNC) &_diffpop_readFileR, 2},
     {"_diffpop_simulateFixedTreeCodeNew", (DL_FUNC) &_diffpop_simulateFixedTreeCodeNew, 5},
     {"_diffpop_simulateTreeCodeNew", (DL_FUNC) &_diffpop_simulateTreeCodeNew, 5},
     {NULL, NULL, 0}
