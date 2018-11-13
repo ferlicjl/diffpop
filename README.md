@@ -300,15 +300,16 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|    mutant|        time| population    |                fitness|
-|---------:|-----------:|:--------------|----------------------:|
-|         1|     54.9423| pop1          |               1.061780|
-|         2|     72.9635| pop1          |               0.000000|
-|         3|     74.6086| pop1          |               0.920603|
-|         4|     75.9973| pop1          |               1.039830|
-|         5|     81.9822| pop1          |               1.899900|
-|         6|     86.6593| pop1          |               1.225360|
-|  For more|  detailed e| xamples, plea |  se set the vignettes.|
+|  mutant|     time| population |   fitness|
+|-------:|--------:|:-----------|---------:|
+|       1|  24.0903| pop1       |  0.404841|
+|       2|  47.4648| pop1       |  0.000000|
+|       3|  63.2785| pop1       |  1.438960|
+|       4|  67.1273| pop1       |  0.802359|
+|       5|  73.7532| pop1       |  2.880130|
+|       6|  76.1173| pop1       |  1.735140|
+
+For more detailed examples, please set the vignettes.
 
 Software Design and Class Structures
 ====================================

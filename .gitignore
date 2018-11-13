@@ -39,3 +39,7 @@ README.Rmd
 **/output/*
 **/example/*
 configure
+input/*
+input2/*
+output/*
+output2/*
