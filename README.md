@@ -297,17 +297,15 @@ mutfiles = list.files("./output2/", pattern="^out.*_mut.csv$", full.names=T)
 # Read in population sizes file
 mut = read.csv(mutfiles[length(mutfiles)])
 
-head(mut)
+print(head(mut))
+#>   mutant    time population fitness
+#> 1      1 32.1992       pop1 0.00000
+#> 2      2 64.7184       pop1 2.39859
+#> 3      3 67.4419       pop1 0.00000
+#> 4      4 68.8658       pop1 0.00000
+#> 5      5 71.7886       pop1 0.00000
+#> 6      6 80.1769       pop1 2.18164
 ```
-
-|  mutant|     time| population |   fitness|
-|-------:|--------:|:-----------|---------:|
-|       1|  24.0903| pop1       |  0.404841|
-|       2|  47.4648| pop1       |  0.000000|
-|       3|  63.2785| pop1       |  1.438960|
-|       4|  67.1273| pop1       |  0.802359|
-|       5|  73.7532| pop1       |  2.880130|
-|       6|  76.1173| pop1       |  1.735140|
 
 For more detailed examples, please set the vignettes.
 
