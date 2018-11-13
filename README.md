@@ -35,7 +35,7 @@ The following R packages are required for certain functions.
 -   R.utils
 
 Installation
-============
+------------
 
 To install in R, type:
 
@@ -47,7 +47,7 @@ devtools::install_git("https://github.com/ferlicjl/diffpop.git")
 Installing the library should compile all necessary functions so that DIFFpop can be run as an R function.
 
 Uses
-====
+----
 
 DIFFpop is an R package that uses C++ to simulate the maturation process of cells through user-defined differentiation hierarchies according to user-defined event rates. The software is capable of simulating hierarchies in two manners: using a branching process with growing populations and using a modified Moran process with fixed population sizes.
 
@@ -56,10 +56,9 @@ For increasing population simulations, the system will grow or decline as a bran
 Simulations with fixed population sizes are carried out using a modified Moran Process. A traditional Moran Process consist of a population of cells, each belonging to a certain class, and having an individual fitness. In each time step, a random cell is selected for division and a random cell is selected for apotosis, ensuring that the population size remains constant. To introduce selection, cells with higher fitness values are more likely to be selected for division. To modify the Moran Process and place it in the setting of differentiation, we have included additional cellular events. By continuing to couple events together, we are able to maintain a constant population size.
 
 Applications
-============
+------------
 
-Binary Cell Labeling
---------------------
+### Binary Cell Labeling
 
 DIFFpop is capable of tracking the uptake and progression of a binary label throughout a differentiation hierarchy. In experimental settings, these are often fluorescent labels that allow the researchers to sort samples into cell types and then quantify proportion of cells that express the label.
 
@@ -67,8 +66,7 @@ Simulating a binary labeling scheme in DIFFpop can be achieved in two ways. In t
 
 As an example of applying DIFFpop to this type of data, we have included a vignette replicating the results from introducing a yellow fluorescent protein (YFP) reporter into the hematopoietic cells of the bone marrow (Busch et al., Nature 2015). After validating that our stochastic simulations closely match the results from the in-vivo experiments, we could further investigate the system using DIFFpop, including inferring hematopoietic clonal dynamics from the system if the investigators introduced unique barcode labeling.
 
-Confetti-style Labeling
------------------------
+### Confetti-style Labeling
 
 A confetti-style labeling scheme is one in which one particular label from amongst a series of possible labels is expressed through random segregration and reintegration into the host cells genome. As an example system, 4 possible colored reports, labeled green, blue, yellow, and red, are added side-by-side in the host cell's genome. Upon induction by CRE recombinase, these label sections are random spliced out of the genome and reintegrated, with ultimately only one label color being expressed. This same label is expressed in all daughter cells and can be traced as cells replicate and differentiate.
 
@@ -76,8 +74,7 @@ Simulating a confetti-style labeling scheme can be achieved in DIFFpop by simply
 
 As an example of this type of experimental procedure, we point the reader to a confetti-style labeling scheme implemented in the hematopoietic system of mice (Ganuza et al., Nat Cell Biol. 2017). Such a labeling experiment could be easily simulated using DIFFpop assuming the proper population sizes and transition rates were known.
 
-Unique Cell Barcoding
----------------------
+### Unique Cell Barcoding
 
 In addition to simulating fluorescent cell labels, DIFFpop can also be used in combination with unique cell barcoding experiments. Unique cell labeling can be achieved by introducing a mobile transcodon into the genome. Upon induction of labeling with tamoxifen, this transcodon is spliced from the genome, and randomly reintegrated at some point in the host genome. Assuming the probability that the transcodon randomly integrating into the same location in two cells is negligible, each cell now contains the transcodon in a unique genomic position. The transcodon in this location will then be passed to all offspring cells and be maintained through replication and differentiation events. At the end of an experiment, cell populations can be sorted and then sequenced for the presence or absence of these barcodes. Alternatively, a sample of cells can be sent off for single cell sequencing, allowing for not only the presence or absence of a particular barcode, but also an estimate of the size of a particular barcode-defined clone.
 
@@ -301,12 +298,12 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  65.1597| pop1       |  2.585730|
-|       2|  74.5515| pop1       |  1.228730|
-|       3|  78.8288| pop1       |  0.319679|
-|       4|  84.0502| pop1       |  1.458930|
-|       5|  87.5814| pop1       |  3.077130|
-|       6|  88.3941| pop1       |  1.660150|
+|       1|  50.5808| pop1       |  1.142150|
+|       2|  81.6264| pop1       |  0.588587|
+|       3|  81.9099| pop1       |  0.957609|
+|       4|  83.2619| pop1       |  1.836450|
+|       5|  86.2924| pop1       |  1.094640|
+|       6|  86.4769| pop1       |  4.257530|
 
 For more detailed examples, please set the vignettes.
 
