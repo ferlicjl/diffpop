@@ -296,14 +296,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |   fitness|
-|-------:|--------:|:-----------|---------:|
-|       1|  20.8255| pop1       |  0.511671|
-|       2|  62.7594| pop1       |  2.337660|
-|       3|  73.9241| pop1       |  1.331760|
-|       4|  75.6744| pop1       |  1.206100|
-|       5|  76.7297| pop1       |  3.077400|
-|       6|  81.6081| pop1       |  2.652410|
+|  mutant|     time| population |    fitness|
+|-------:|--------:|:-----------|----------:|
+|       1|  61.1242| pop1       |  1.3270500|
+|       2|  68.0666| pop1       |  0.8117980|
+|       3|  69.7699| pop1       |  1.6606500|
+|       4|  70.2441| pop1       |  2.5317600|
+|       5|  71.1121| pop1       |  1.8734400|
+|       6|  71.2909| pop1       |  0.0625481|
 
 For more detailed examples, please set the vignettes.
 
@@ -444,41 +444,6 @@ Events can be split into three categories based on how they affect the populatio
 Mutations in DIFFpop occur only during mitosis events. Each mitosis event results in a new mutation with probability *μ*. Thus, in the MPP population, the rate of mitosis events resulting in a new mutation is *α*<sub>(*M**P**P*)</sub>*μ*<sub>(*M**P**P*)</sub> and the rate of mitosis events resulting in no mutation is *α*<sub>(*M**P**P*)</sub>(1 − *μ*<sub>(*M**P**P*)</sub>). Mutations accumulate according to the infinite allele assumption, that is, a new mutation leads to a new allele that has yet to be seen in the population.
 
 In the FixedPop setting, all de-differentiation events will result in an apoptosis event in the receiving population. This is necessary to avoid circular equations when calculating adjustments to net proliferation in order to maintain a constant population size.
-
-Simulation Overview
-===================
-
-After the tree structure has been specified in R, the task of simulating is handed off to a C++ backend. Before events can be enacted, the tree structure and other user-specified parameters must be read from the input files.
-
-Initializing a Simulation
--------------------------
-
-1.  Read tree structure from input files
-2.  Initialize populations
-3.  Write parameter information
-4.  Output tree structure to user
-
-Simulation for branching process via Gillespie Algorithm
---------------------------------------------------------
-
-1.  Initiate simulation at time 0
-2.  Generate the time to the next event
-    1.  Iterate through population hierarchy, collecting total event rate from each population
-    2.  Generate a time from exponential distribution, parameter equal to sum of event rates from all populations
-3.  Make observations
-4.  Update state
-    1.  Choose which population enacts event
-    2.  Enact single event on that population
-5.  If simulation time remains, repeat from step 2
-
-Simulation for multitype Moran process via Tau Leaping
-------------------------------------------------------
-
-1.  For each time unit:
-    1.  Iterate through tree in breadth-first manner
-    2.  For each population:
-        1.  Get total number of i-1 and i events \[*γ*<sub>1</sub>, *γ*<sub>2</sub>, *δ*, *ζ*, and *β*\] = *j*
-        2.  Enact *j* events choosing which event according to the event rates. If event results in a one-cell deficit, enact a mitosis \[*α*\] event
 
 Input Files
 -----------
