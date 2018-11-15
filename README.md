@@ -296,13 +296,11 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |   fitness|
-|-------:|--------:|:-----------|---------:|
-|       1|  38.6566| pop1       |  0.000000|
-|       2|  46.1308| pop1       |  1.448390|
-|       3|  70.2657| pop1       |  1.452210|
-|       4|  86.5981| pop1       |  2.877170|
-|       5|  92.4098| pop1       |  0.605749|
+|  mutant|     time| population |  fitness|
+|-------:|--------:|:-----------|--------:|
+|       1|  72.5105| pop1       |  0.00000|
+|       2|  90.4084| pop1       |  1.55108|
+|       3|  92.7092| pop1       |  1.94312|
 
 For more detailed examples, please set the vignettes.
 
@@ -435,9 +433,9 @@ Events can be split into three categories based on how they affect the populatio
     -   differentiation (*γ*<sub>1</sub>/*γ*<sub>2</sub>)
     -   de-differentiation (*ζ*)
     -   apoptosis (*δ*)
--   âiâ events maintain the population size
+-   "i" events maintain the population size
     -   asymmetric differentiation (*β*)
--   âi+1â events result in a one-cell surplus
+-   "i+1" events result in a one-cell surplus
     -   mitosis (*α*)
 
 Mutations in DIFFpop occur only during mitosis events. Each mitosis event results in a new mutation with probability *μ*. Thus, in the MPP population, the rate of mitosis events resulting in a new mutation is *α*<sub>(*M**P**P*)</sub>*μ*<sub>(*M**P**P*)</sub> and the rate of mitosis events resulting in no mutation is *α*<sub>(*M**P**P*)</sub>(1 − *μ*<sub>(*M**P**P*)</sub>). Mutations accumulate according to the infinite allele assumption, that is, a new mutation leads to a new allele that has yet to be seen in the population.
