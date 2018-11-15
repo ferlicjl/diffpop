@@ -298,7 +298,11 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  97.2961| pop1       |  0.754189|
+|       1|  38.6566| pop1       |  0.000000|
+|       2|  46.1308| pop1       |  1.448390|
+|       3|  70.2657| pop1       |  1.452210|
+|       4|  86.5981| pop1       |  2.877170|
+|       5|  92.4098| pop1       |  0.605749|
 
 For more detailed examples, please set the vignettes.
 
@@ -427,7 +431,7 @@ Cellular events in DIFFpop are enacted according to their accompanying parameter
 
 Events can be split into three categories based on how they affect the population size of the compartment:
 
--   âi-1â events result in a one-cell deficit
+-   "i-1" events result in a one-cell deficit
     -   differentiation (*γ*<sub>1</sub>/*γ*<sub>2</sub>)
     -   de-differentiation (*ζ*)
     -   apoptosis (*δ*)
