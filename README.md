@@ -151,7 +151,7 @@ Table 4 describes the parameters of the simulation.
 </tbody>
 </table>
 
-Observations are made and output files updated at every integer time unit through *n**O**b**s*. In addition, full outputs of the cell states in each population are made every *c**e**n**s**u**s* time unit(s). The *i**n**d**i**r* directory informs the C++ backend where the input files for the differentiation hierarchy are located and *o**u**t**d**i**r* specifies a particular directory in which to place all output files. Optionally, the user can specify a numeric *s**e**e**d* for the GSL random number generator used throughout the simulation.
+Observations are made and output files updated at every integer time unit through *nObs*. In addition, full outputs of the cell states in each population are made every *c**e**n**s**u**s* time unit(s). The *i**n**d**i**r* directory informs the C++ backend where the input files for the differentiation hierarchy are located and *o**u**t**d**i**r* specifies a particular directory in which to place all output files. Optionally, the user can specify a numeric *s**e**e**d* for the GSL random number generator used throughout the simulation.
 
 Birth-Death Example
 -------------------
@@ -298,12 +298,12 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  44.1094| pop1       |  1.540510|
-|       2|  75.8620| pop1       |  0.000000|
-|       3|  77.4168| pop1       |  2.274700|
-|       4|  81.3809| pop1       |  1.309050|
-|       5|  82.8778| pop1       |  0.376172|
-|       6|  85.0447| pop1       |  0.498258|
+|       1|  71.4503| pop1       |  0.000000|
+|       2|  83.1570| pop1       |  1.837070|
+|       3|  85.7071| pop1       |  2.055670|
+|       4|  87.9195| pop1       |  1.011360|
+|       5|  90.6220| pop1       |  1.420780|
+|       6|  94.5916| pop1       |  0.638824|
 
 For more detailed examples, please set the vignettes.
 
