@@ -298,12 +298,12 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  56.3036| pop1       |  1.202330|
-|       2|  59.9147| pop1       |  1.577500|
-|       3|  69.2826| pop1       |  0.956732|
-|       4|  81.4211| pop1       |  0.217857|
-|       5|  81.9379| pop1       |  3.031510|
-|       6|  85.9559| pop1       |  1.521850|
+|       1|  32.2592| pop1       |  1.125330|
+|       2|  37.5402| pop1       |  1.587090|
+|       3|  51.6393| pop1       |  0.919050|
+|       4|  70.0659| pop1       |  0.000000|
+|       5|  70.2106| pop1       |  1.687620|
+|       6|  79.7070| pop1       |  0.985622|
 
 For more detailed examples, please set the vignettes.
 
@@ -504,12 +504,7 @@ Each run of the simulation will be given a unique file prefix, consisting of the
     head(pop)
     ```
 
-    V1 V2 ----- --- time A
-    0 1
-    1 2
-    2 2
-    3 2
-    4 4
+    time A ----- --- 0 1 1 2 2 2 3 2 4 4 5 7
 2.  Diversity indices (*prefix*\_diversity.csv)
     -   Shannon diversity and Simpson diversity are calculated at each observation time for each population along with the total number of barcode species present in each population at each obervation time
 3.  Fraction of labelled cells (*prefix*\_label.csv)
