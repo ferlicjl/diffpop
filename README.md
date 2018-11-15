@@ -296,14 +296,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |    fitness|
-|-------:|--------:|:-----------|----------:|
-|       1|  53.9230| pop1       |  0.0000000|
-|       2|  70.5276| pop1       |  0.1078670|
-|       3|  72.6280| pop1       |  2.9220800|
-|       4|  77.2993| pop1       |  1.0009000|
-|       5|  88.3915| pop1       |  2.4516700|
-|       6|  89.1371| pop1       |  0.0656839|
+|  mutant|     time| population |  fitness|
+|-------:|--------:|:-----------|--------:|
+|       1|  49.4105| pop1       |  2.25719|
+|       2|  56.0088| pop1       |  0.00000|
+|       3|  81.0500| pop1       |  1.94280|
+|       4|  82.3119| pop1       |  2.01249|
+|       5|  85.3752| pop1       |  2.11479|
+|       6|  89.4715| pop1       |  1.37392|
 
 For more detailed examples, please set the vignettes.
 
@@ -500,26 +500,33 @@ Each run of the simulation will be given a unique file prefix, consisting of the
 1.  Population size (*prefix*\_pop.csv)
     -   Size of each population at each observation time
 
-    ``` r
+``` r
     pop = read.csv("example/out_11-10-2018-115538_95258_pop.csv")
     head(pop)
-    ```
+```
 
-    time A ----- --- 0 1 1 2 2 2 3 2 4 4 5 7
-2.  Diversity indices (*prefix*\_diversity.csv)
-    -   Shannon diversity and Simpson diversity are calculated at each observation time for each population along with the total number of barcode species present in each population at each obervation time
-3.  Fraction of labelled cells (*prefix*\_label.csv)
-    -   Fraction of cells that contain unique barcode/label at each observation time for each population
-4.  Event rates (*prefix*\_events.csv)
-    -   Number of events that occurred between each observation time
-5.  Mutation summary (*prefix*\_mut.csv)
-    -   Time of mutation, compartment location, and new fitness for each new clone that arises
-6.  Parameter summary (*prefix*\_params.csv)
-    -   Summary of parameters given by user, as well as recalculated event rates if using FixedPops
-7.  Census files (*prefix*\_*population*\_census.csv)
-    -   Complete census of cell states for each census time, including barcode, mutation history, fitness, and cell count
-8.  Done file (*prefix*.done)
-    -   File is created when simulation is complete. Alerts user that they can begin moving or manipulating other simulation results files
+|    time|                                                                                                                                                                                                      A|
+|-------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|       0|                                                                                                                                                                                                      1|
+|       1|                                                                                                                                                                                                      2|
+|       2|                                                                                                                                                                                                      2|
+|       3|                                                                                                                                                                                                      2|
+|       4|                                                                                                                                                                                                      4|
+|       5|                                                                                                                                                                                                      7|
+|  2. Div|                                                                                                                                                               ersity indices (*prefix*\_diversity.csv)|
+|       +|  Shannon diversity and Simpson diversity are calculated at each observation time for each population along with the total number of barcode species present in each population at each obervation time|
+|  3. Fra|                                                                                                                                                          ction of labelled cells (*prefix*\_label.csv)|
+|       +|                                                                                                       Fraction of cells that contain unique barcode/label at each observation time for each population|
+|  4. Eve|                                                                                                                                                                        nt rates (*prefix*\_events.csv)|
+|       +|                                                                                                                                           Number of events that occurred between each observation time|
+|  5. Mut|                                                                                                                                                                      ation summary (*prefix*\_mut.csv)|
+|       +|                                                                                                                 Time of mutation, compartment location, and new fitness for each new clone that arises|
+|  6. Par|                                                                                                                                                                  ameter summary (*prefix*\_params.csv)|
+|       +|                                                                                                            Summary of parameters given by user, as well as recalculated event rates if using FixedPops|
+|  7. Cen|                                                                                                                                                         sus files (*prefix*\_*population*\_census.csv)|
+|       +|                                                                                      Complete census of cell states for each census time, including barcode, mutation history, fitness, and cell count|
+|  8. Don|                                                                                                                                                                                 e file (*prefix*.done)|
+|       +|                                                                     File is created when simulation is complete. Alerts user that they can begin moving or manipulating other simulation results files|
 
 Maintaining a constant population size
 ======================================
