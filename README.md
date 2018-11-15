@@ -151,7 +151,7 @@ Table 4 describes the parameters of the simulation.
 </tbody>
 </table>
 
-Observations are made and output files updated at every integer time unit through *nObs*. In addition, full outputs of the cell states in each population are made every *c**e**n**s**u**s* time unit(s). The *i**n**d**i**r* directory informs the C++ backend where the input files for the differentiation hierarchy are located and *o**u**t**d**i**r* specifies a particular directory in which to place all output files. Optionally, the user can specify a numeric *s**e**e**d* for the GSL random number generator used throughout the simulation.
+Observations are made and output files updated at every integer time unit through *nObs*. In addition, full outputs of the cell states in each population are made every *census* time unit(s). The *indir* directory informs the C++ backend where the input files for the differentiation hierarchy are located and *outdir* specifies a particular directory in which to place all output files. Optionally, the user can specify a numeric *seed* for the GSL random number generator used throughout the simulation.
 
 Birth-Death Example
 -------------------
@@ -296,14 +296,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |   fitness|
-|-------:|--------:|:-----------|---------:|
-|       1|  71.4503| pop1       |  0.000000|
-|       2|  83.1570| pop1       |  1.837070|
-|       3|  85.7071| pop1       |  2.055670|
-|       4|  87.9195| pop1       |  1.011360|
-|       5|  90.6220| pop1       |  1.420780|
-|       6|  94.5916| pop1       |  0.638824|
+|  mutant|     time| population |  fitness|
+|-------:|--------:|:-----------|--------:|
+|       1|  15.2679| pop1       |  1.43193|
+|       2|  64.6761| pop1       |  1.84427|
+|       3|  65.9421| pop1       |  2.76936|
+|       4|  67.4624| pop1       |  2.67684|
+|       5|  68.5347| pop1       |  1.13683|
+|       6|  71.0129| pop1       |  0.00000|
 
 For more detailed examples, please set the vignettes.
 
