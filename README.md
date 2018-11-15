@@ -296,14 +296,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |   fitness|
-|-------:|--------:|:-----------|---------:|
-|       1|  10.8420| pop1       |  0.168660|
-|       2|  51.1512| pop1       |  0.172776|
-|       3|  54.4379| pop1       |  1.669410|
-|       4|  55.7886| pop1       |  1.742760|
-|       5|  75.2648| pop1       |  1.697410|
-|       6|  76.2430| pop1       |  1.902380|
+|  mutant|     time| population |  fitness|
+|-------:|--------:|:-----------|--------:|
+|       1|  35.0022| pop1       |  1.01175|
+|       2|  56.9476| pop1       |  1.84399|
+|       3|  62.2241| pop1       |  1.45892|
+|       4|  62.5835| pop1       |  2.31890|
+|       5|  74.0567| pop1       |  1.23615|
+|       6|  95.2025| pop1       |  2.41812|
 
 For more detailed examples, please set the vignettes.
 
@@ -426,7 +426,7 @@ Cellular events in DIFFpop are enacted according to their accompanying parameter
 </tbody>
 </table>
 
-\*Note Population specific parameters are specified using subscripts, i.e. *α*<sub>(*L**T* − *H**S**C*)</sub> is the mitotic self renewal rate for the LT-HSC population and *γ*<sub>1(*L**T* − *H**S**C*, *S**T* − *H**S**C*)</sub> is the one-to-one differentiation rate from the LT-HSC population to the ST-HSC population.
+\*Note Population specific parameters are specified using subscripts, i.e. *α*<sub>*L**T* − *H**S**C*</sub> is the mitotic self renewal rate for the LT-HSC population and *γ*<sub>1(*L**T* − *H**S**C*, *S**T* − *H**S**C*)</sub> is the one-to-one differentiation rate from the LT-HSC population to the ST-HSC population.
 
 ![events](README/events.png)
 
