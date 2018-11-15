@@ -298,12 +298,12 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  51.1042| pop1       |  0.984953|
-|       2|  66.1469| pop1       |  1.837200|
-|       3|  69.0561| pop1       |  1.318450|
-|       4|  75.8958| pop1       |  2.449110|
-|       5|  79.9844| pop1       |  2.436570|
-|       6|  89.5083| pop1       |  2.937620|
+|       1|  20.8255| pop1       |  0.511671|
+|       2|  62.7594| pop1       |  2.337660|
+|       3|  73.9241| pop1       |  1.331760|
+|       4|  75.6744| pop1       |  1.206100|
+|       5|  76.7297| pop1       |  3.077400|
+|       6|  81.6081| pop1       |  2.652410|
 
 For more detailed examples, please set the vignettes.
 
@@ -513,25 +513,6 @@ Each run of the simulation will be given a unique file prefix, consisting of the
     -   Complete census of cell states for each census time, including barcode, mutation history, fitness, and cell count
 8.  Done file (*prefix*.done)
     -   File is created when simulation is complete. Alerts user that they can begin moving or manipulating other simulation results files
-
-Maintaining a constant population size
-======================================
-
-In order to maintain a constant population size, a relationship must exist between the event rates of the compartment. Specifically, those event rates that result in an excess of cells in the compartment \[âi+1â rates\] must be balanced with those event rates that result in a deficit of cells \[âi-1â rates\].
-
-Let *α*<sub>(*x*)</sub> denote the mitotic self-renewal (*α*) rate of population *x*. Let *γ*<sub>1(*x*, *y*)</sub> denote the one-to-one differentiation (*γ*<sub>1</sub>) rate from population *x* to population *y*.Let *γ*<sub>2(*x*, *y*)</sub> denote the one-to-two differentiation (*γ*<sub>2</sub>) rate from population *x* to population *y*.Let *β*<sub>(*x*, *y*)</sub> denote the asymmetric differentiation (*β*) rate from population *x* to population *y*.Let *ζ*<sub>(*x*, *y*)</sub> denote the one-to-one de-differentiation (*ζ*) rate from population *x* to population *y*.Let *δ*<sub>(*x*)</sub> denote the cell death (*δ*) rate of population *x*.Let *n*<sub>(*x*)</sub> be the size of population *x*.
-
-Then, for any compartment *A*,
-
-$$\\\[
-\\begin{align}
-n\_{(A)}\\alpha\_{(A)} &+ \\sum\_{\\text{pop }i \\neq A}n\_{(i)}\\left( \\gamma\_{1(i,A)} + 2\\gamma\_{2(i,A)} + \\beta\_{(i,A)} + \\zeta\_{(i,A)}\\right) = n\_{(A)}\\left\[ \\delta\_{(A)} + \\sum\_{\\text{pop }i\\neq A}\\left( \\gamma\_{1(A,i)} +\\gamma\_{2(A,i)} + \\zeta\_{(A,i)}\\right) \\right\] \\\\
-\\implies \\\\
-\\delta\_{(A)} &= \\frac{n\_{(A)}\\left\[\\alpha\_{(A)}- \\sum\_{\\text{pop }i\\neq A}\\left( \\gamma\_{1(A,i)} + \\gamma\_{2(A,i)} + \\zeta\_{(A,i)} \\right)\\right\] + \\sum\_{\\text{pop }i \\neq A}n\_{(i)}\\left( \\gamma\_{1(i,A)} + 2\\gamma\_{2(i,A)} + \\beta\_{(i,A)} + \\zeta\_{(i,A)}\\right)}{n\_{(A)}}
-\\end{align}
-\\\]$$
-
-For the population size to remain constant, this first line of the equation must hold. That is, events that increase the population size (self-renewal and influx from other populations) must be balanced by events that decrease the population (cell death and differentiation). In the modified Moran Process, we force this to hold by automatically calculating delta for each population. If this calculated delta value is positive, we simply set the effective death rate equal to this value. If this calculated delta value is negative, we increase the alpha rate of the population by this value.
 
 Fitness Distribution
 ====================
