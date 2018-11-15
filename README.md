@@ -296,11 +296,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |  fitness|
-|-------:|--------:|:-----------|--------:|
-|       1|  72.5105| pop1       |  0.00000|
-|       2|  90.4084| pop1       |  1.55108|
-|       3|  92.7092| pop1       |  1.94312|
+|  mutant|     time| population |   fitness|
+|-------:|--------:|:-----------|---------:|
+|       1|  56.3036| pop1       |  1.202330|
+|       2|  59.9147| pop1       |  1.577500|
+|       3|  69.2826| pop1       |  0.956732|
+|       4|  81.4211| pop1       |  0.217857|
+|       5|  81.9379| pop1       |  3.031510|
+|       6|  85.9559| pop1       |  1.521850|
 
 For more detailed examples, please set the vignettes.
 
@@ -496,6 +499,17 @@ Each run of the simulation will be given a unique file prefix, consisting of the
 
 1.  Population size (*prefix*\_pop.csv)
     -   Size of each population at each observation time
+
+    ``` r
+    head(pop)
+    ```
+
+    V1 V2 ----- --- time A
+    0 1
+    1 2
+    2 2
+    3 2
+    4 4
 2.  Diversity indices (*prefix*\_diversity.csv)
     -   Shannon diversity and Simpson diversity are calculated at each observation time for each population along with the total number of barcode species present in each population at each obervation time
 3.  Fraction of labelled cells (*prefix*\_label.csv)
