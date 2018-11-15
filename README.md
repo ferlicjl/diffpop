@@ -296,14 +296,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |   fitness|
-|-------:|--------:|:-----------|---------:|
-|       1|  32.2592| pop1       |  1.125330|
-|       2|  37.5402| pop1       |  1.587090|
-|       3|  51.6393| pop1       |  0.919050|
-|       4|  70.0659| pop1       |  0.000000|
-|       5|  70.2106| pop1       |  1.687620|
-|       6|  79.7070| pop1       |  0.985622|
+|  mutant|     time| population |    fitness|
+|-------:|--------:|:-----------|----------:|
+|       1|  53.9230| pop1       |  0.0000000|
+|       2|  70.5276| pop1       |  0.1078670|
+|       3|  72.6280| pop1       |  2.9220800|
+|       4|  77.2993| pop1       |  1.0009000|
+|       5|  88.3915| pop1       |  2.4516700|
+|       6|  89.1371| pop1       |  0.0656839|
 
 For more detailed examples, please set the vignettes.
 
@@ -501,6 +501,7 @@ Each run of the simulation will be given a unique file prefix, consisting of the
     -   Size of each population at each observation time
 
     ``` r
+    pop = read.csv("example/out_11-10-2018-115538_95258_pop.csv")
     head(pop)
     ```
 
