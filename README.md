@@ -272,12 +272,11 @@ head(mut)
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  48.2936| pop1       |  0.494559|
-|       2|  72.1662| pop1       |  0.809987|
-|       3|  73.4485| pop1       |  0.103004|
-|       4|  75.4361| pop1       |  0.340630|
-|       5|  79.9844| pop1       |  1.976360|
-|       6|  81.5734| pop1       |  0.445581|
+|       1|  83.3953| pop1       |  1.343480|
+|       2|  86.4787| pop1       |  2.477410|
+|       3|  96.0438| pop1       |  0.274828|
+|       4|  96.1062| pop1       |  0.287936|
+|       5|  96.2007| pop1       |  1.511240|
 
 Let us also take a quick look at a census file. We will take a look at the full census of pop1 at the end of the simulation time.
 
@@ -289,20 +288,19 @@ census_pop1_files = list.files("./output2/", pattern="^out.*_pop1_census.csv$", 
 c_pop1 = read.csv(census_pop1_files[length(census_pop1_files)])
 
 # Print census at last time point
-print(c_pop1[c_pop1$time == max(c_pop1$time),])
-#>    time barcode mutation  fitness count
-#> 56  100      59        0 1.000000  5660
-#> 57  100      83        0 1.000000  2679
-#> 58  100      85        0 1.000000  1770
-#> 59  100       7        0 1.000000  1613
-#> 60  100      -1        0 1.000000  1377
-#> 61  100      74        0 1.000000  1316
-#> 62  100       1        0 1.000000   359
-#> 63  100      39        0 1.000000   207
-#> 64  100       7      0>9 2.035480    22
-#> 65  100      59     0>15 0.507957     2
-#> 66  100      85     0>11 1.520080     2
+c_pop1[c_pop1$time == max(c_pop1$time),]
 ```
+
+|     |  time|  barcode| mutation |   fitness|  count|
+|-----|-----:|--------:|:---------|---------:|------:|
+| 52  |   100|       -1| 0        |  1.000000|   4313|
+| 53  |   100|       45| 0        |  1.000000|   1533|
+| 54  |   100|        8| 0        |  1.000000|    290|
+| 55  |   100|       59| 0        |  1.000000|    253|
+| 56  |   100|       75| 0        |  1.000000|    199|
+| 57  |   100|       20| 0        |  1.000000|    171|
+| 58  |   100|       45| 0&gt;5   |  1.511240|      2|
+| 59  |   100|       -1| 0&gt;3   |  0.274828|      2|
 
 For more detailed examples, please set the vignettes.
 
