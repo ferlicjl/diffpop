@@ -352,11 +352,11 @@ writeTree = function(tree, outdir = "tree_files/"){
 
   #write.table(edge_list, "edges.txt", row.names = F, col.names = F, quote = F)
   write.table(edge_list, "edges.csv", row.names = F, col.names = F, quote = F, sep  = ",")
-#
-#   write.table(edge_list[,1], "parent.txt", row.names = F, col.names = F, quote = F)
-#   write.table(edge_list[,2], "child.txt", row.names = F, col.names = F, quote = F)
-#   write.table(edge_list[,3], "diff.txt", row.names = F, col.names = F, quote = F)
-#   write.table(edge_list[,4], "rates.txt", row.names = F, col.names = F, quote = F)
+  #
+  #   write.table(edge_list[,1], "parent.txt", row.names = F, col.names = F, quote = F)
+  #   write.table(edge_list[,2], "child.txt", row.names = F, col.names = F, quote = F)
+  #   write.table(edge_list[,3], "diff.txt", row.names = F, col.names = F, quote = F)
+  #   write.table(edge_list[,4], "rates.txt", row.names = F, col.names = F, quote = F)
 
   write.table(rbind(g$distribution, g$alpha_fitness, g$beta_fitness, g$pass_prob, g$upper_fitness, g$lower_fitness),
               "fitnessdist.txt", row.names = F, col.names = F, quote = F)
@@ -424,18 +424,45 @@ simulateTree = function(tree, fixed = FALSE, time = 100, census = -1, indir = ".
   # Call appropriate
   if(fixed){
     diffpop:::simulateFixedTreeCodeNew(nObs = time,
-                                    traverseFrequency = census,
-                                    indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
-                                    outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
-                                    seed = seed)
+                                       traverseFrequency = census,
+                                       indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
+                                       outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
+                                       seed = seed)
   } else {
     diffpop:::simulateTreeCodeNew(nObs = time,
-                               traverseFrequency = census,
-                               indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
-                               outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
-                               seed = seed)
+                                  traverseFrequency = census,
+                                  indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
+                                  outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
+                                  seed = seed)
   }
 }
 
+#' sampleFromCensus
+#'
+#' Used sample from a population census file. Can be used to simulate the sampling of cells as in a single cell experiment.
+#'
+#' @param filePath path to a valid census file from a particular population
+#' @param time time unit to sample from
+#' @param n size of sample
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' simulateTree(myTree, fixed = TRUE, time = 500, census = 1, indir = "input_dir", outdir = "output_dir")
+#' }
+sampleFromCensus = function(filePath, time = 0, n = 1){
+  if(!file.exists(filePath)){
+    stop("Please enter a valid path to a *_census.csv")
+  }
 
+  census = read.csv(filePath)
+  census_i = census[census$time == time,]
+  #print(census_i)
+  probs = census_i$count
+  ids = sample(1:nrow(census_i), size = n, replace = T, prob = probs)
+  #print(ids)
+
+  ret = census_i[ids, 1:4]
+  return(ret)
+}
 
