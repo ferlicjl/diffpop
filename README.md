@@ -260,23 +260,49 @@ points(label$time, label$pop2, col = "red")
 We can view the mutation output file to see which mutations occurred, in which populations they occurred, and the resulting fitnesses of those clone.
 
 ``` r
-# Read in label file
+# Get a list of all mutation files
 mutfiles = list.files("./output2/", pattern="^out.*_mut.csv$", full.names=T)
 
-# Read in population sizes file
+# Read mutation file for last simulation run
 mut = read.csv(mutfiles[length(mutfiles)])
 
+# Print first few rows
 head(mut)
 ```
 
 |  mutant|     time| population |   fitness|
 |-------:|--------:|:-----------|---------:|
-|       1|  25.6767| pop1       |  1.028720|
-|       2|  57.2813| pop1       |  1.647670|
-|       3|  62.4459| pop1       |  0.234427|
-|       4|  77.6761| pop1       |  1.808310|
-|       5|  79.2511| pop1       |  1.074020|
-|       6|  79.6723| pop1       |  1.853150|
+|       1|  48.2936| pop1       |  0.494559|
+|       2|  72.1662| pop1       |  0.809987|
+|       3|  73.4485| pop1       |  0.103004|
+|       4|  75.4361| pop1       |  0.340630|
+|       5|  79.9844| pop1       |  1.976360|
+|       6|  81.5734| pop1       |  0.445581|
+
+Let us also take a quick look at a census file. We will take a look at the full census of pop1 at the end of the simulation time.
+
+``` r
+# Get a list of all pop1 census files
+census_pop1_files = list.files("./output2/", pattern="^out.*_pop1_census.csv$", full.names=T)
+
+# Read pop1 census file for last simulation run
+c_pop1 = read.csv(census_pop1_files[length(census_pop1_files)])
+
+# Print census at last time point
+print(c_pop1[c_pop1$time == max(c_pop1$time),])
+#>    time barcode mutation  fitness count
+#> 56  100      59        0 1.000000  5660
+#> 57  100      83        0 1.000000  2679
+#> 58  100      85        0 1.000000  1770
+#> 59  100       7        0 1.000000  1613
+#> 60  100      -1        0 1.000000  1377
+#> 61  100      74        0 1.000000  1316
+#> 62  100       1        0 1.000000   359
+#> 63  100      39        0 1.000000   207
+#> 64  100       7      0>9 2.035480    22
+#> 65  100      59     0>15 0.507957     2
+#> 66  100      85     0>11 1.520080     2
+```
 
 For more detailed examples, please set the vignettes.
 
