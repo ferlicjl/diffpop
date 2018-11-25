@@ -44,7 +44,7 @@ install.packages("devtools")
 devtools::install_git("https://github.com/ferlicjl/diffpop.git")
 ```
 
-Installing the library should compile all necessary functions so that DIFFpop can be run as an R function.
+Installing the library should compile all necessary functions so that DIFFpop can be run as via the appropriate R functions.
 
 Uses
 ----
@@ -272,12 +272,12 @@ head(mut)
 
 |  mutant|     time| population |  fitness|
 |-------:|--------:|:-----------|--------:|
-|       1|  58.2561| pop1       |  1.93890|
-|       2|  64.3573| pop1       |  2.54869|
-|       3|  73.9976| pop1       |  1.27251|
-|       4|  82.2388| pop1       |  2.67907|
-|       5|  84.8320| pop1       |  2.32920|
-|       6|  86.2763| pop1       |  4.49625|
+|       1|  24.7297| pop1       |  0.00000|
+|       2|  45.7692| pop1       |  2.75226|
+|       3|  73.4433| pop1       |  3.82084|
+|       4|  80.7638| pop1       |  4.87195|
+|       5|  81.0776| pop1       |  2.54080|
+|       6|  86.6571| pop1       |  3.19649|
 
 Let us also take a quick look at a census file. We will take a look at the full census of pop1 at the end of the simulation time.
 
@@ -292,17 +292,16 @@ c_pop1 = read.csv(census_pop1_files[length(census_pop1_files)])
 c_pop1[c_pop1$time == max(c_pop1$time),]
 ```
 
-|     |  time|  barcode| mutation    |  fitness|  count|
-|-----|-----:|--------:|:------------|--------:|------:|
-| 50  |   100|       -1| 0&gt;2      |  2.54869|  11015|
-| 51  |   100|       -1| 0&gt;2&gt;6 |  4.49625|    103|
-| 52  |   100|       -1| 0&gt;2&gt;4 |  2.67907|     23|
-| 53  |   100|       -1| 0           |  1.00000|     21|
-| 54  |   100|       76| 0           |  1.00000|      8|
-| 55  |   100|       65| 0           |  1.00000|      3|
-| 56  |   100|       -1| 0&gt;2&gt;9 |  1.37445|      2|
-| 57  |   100|       58| 0           |  1.00000|      2|
-| 58  |   100|        0| 0           |  1.00000|      1|
+|     |  time|  barcode| mutation     |  fitness|  count|
+|-----|-----:|--------:|:-------------|--------:|------:|
+| 47  |   100|       -1| 0&gt;2       |  2.75226|  19688|
+| 48  |   100|       -1| 0&gt;2&gt;4  |  4.87195|    968|
+| 49  |   100|       -1| 0&gt;2&gt;3  |  3.82084|    589|
+| 50  |   100|       -1| 0&gt;2&gt;8  |  3.56443|     14|
+| 51  |   100|       -1| 0&gt;2&gt;5  |  2.54080|     12|
+| 52  |   100|       -1| 0&gt;2&gt;10 |  3.04121|      8|
+| 53  |   100|       -1| 0&gt;2&gt;12 |  3.43850|      3|
+| 54  |   100|       -1| 0&gt;2&gt;13 |  2.18070|      1|
 
 For more detailed examples, please set the vignettes.
 
