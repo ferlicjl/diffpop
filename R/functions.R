@@ -418,7 +418,7 @@ simulateTree = function(tree, fixed = FALSE, time = 100, census = -1, indir = ".
   writeTree(tree, indir)
 
   # Create directory for output files
-  directory = R.utils::getAbsolutePath(outdir)
+  directory = R.utils::getAbsolutePath(outdir, expandTilde = T)
   dir.create(directory, showWarnings = F, recursive = T)
 
   # Call appropriate
@@ -432,7 +432,7 @@ simulateTree = function(tree, fixed = FALSE, time = 100, census = -1, indir = ".
     diffpop:::simulateTreeCodeNew(nObs = time,
                                   traverseFrequency = census,
                                   indir = paste(R.utils::getAbsolutePath(indir, expandTilde = T), "/", sep = ""),
-                                  outdir = paste(R.utils::getAbsolutePath(outdir, explandTilde = T), "/", sep = ""),
+                                  outdir = paste(R.utils::getAbsolutePath(outdir, expandTilde = T), "/", sep = ""),
                                   seed = seed)
   }
 }
