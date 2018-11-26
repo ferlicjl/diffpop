@@ -94,7 +94,7 @@ DiffTree::DiffTree(std::string outdir)
     o << outdir << "out_" << str << "_" << a;
     opath = o.str();
 
-    std::cout << opath << std::endl;
+    std::cout << "Writing output files to: " << opath << "*" << std::endl;
 
 	// Set default fitness distribution
 	fp.fitness_distribution = "normal";
