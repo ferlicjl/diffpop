@@ -425,14 +425,14 @@ simulateTree = function(tree, fixed = FALSE, time = 100, census = -1, indir = ".
   if(fixed){
     diffpop:::simulateFixedTreeCodeNew(nObs = time,
                                        traverseFrequency = census,
-                                       indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
-                                       outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
+                                       indir = paste(R.utils::getAbsolutePath(indir, expandTilde = T), "/", sep = ""),
+                                       outdir = paste(R.utils::getAbsolutePath(outdir, expandTilde = T), "/", sep = ""),
                                        seed = seed)
   } else {
     diffpop:::simulateTreeCodeNew(nObs = time,
                                   traverseFrequency = census,
-                                  indir = paste(R.utils::getAbsolutePath(indir), "/", sep = ""),
-                                  outdir = paste(R.utils::getAbsolutePath(outdir), "/", sep = ""),
+                                  indir = paste(R.utils::getAbsolutePath(indir, expandTilde = T), "/", sep = ""),
+                                  outdir = paste(R.utils::getAbsolutePath(outdir, explandTilde = T), "/", sep = ""),
                                   seed = seed)
   }
 }
