@@ -94,6 +94,8 @@ DiffTree::DiffTree(std::string outdir)
     o << outdir << "out_" << str << "_" << a;
     opath = o.str();
 
+    std::cout << opath << std::endl;
+
 	// Set default fitness distribution
 	fp.fitness_distribution = "normal";
 	fp.is_randfitness = true;
@@ -303,7 +305,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
     double curTime = 0;
     int curObsIndex = 0;
 
-    // Keep track of number of events.  
+    // Keep track of number of events.
     int numEvents = 0;
 
 	// How often should we output update on simulation progress
@@ -323,7 +325,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 
         // Get the next event time
         double timeToNext = nextEventTime();
-       
+
         // If our next event time is later than observation times,
         // Make our observations
         while((curTime + timeToNext > obsTimes[curObsIndex]))
@@ -332,27 +334,27 @@ void DiffTree::simulate(int numTime, int outputFrequency)
             writePopSize(pop_of, obsTimes[curObsIndex]);
             writeLabelled(label_of, obsTimes[curObsIndex]);
             writeEvents(events_of, obsTimes[curObsIndex]);
-			
+
 			// Should we output a census?
 			if((outputFrequency > 0 && obsTimes[curObsIndex] % outputFrequency == 0) || curTime == 0)
 				writeAll(obsTimes[curObsIndex]);
-			
+
 			// Zero out our event counters
             zeroEvents();
-			
+
 			// Should we update our progress?
 			if(verbose &&  obsTimes[curObsIndex] % obsMod == 0)
 				std::cout << "Time " << obsTimes[curObsIndex] << " of " << numTime << std::endl;
-			
+
             curObsIndex++;
-			
+
 			// Have we reached the end of simulating?
 			if((unsigned)curObsIndex >= obsTimes.size())
 				break;
         }
 		if((unsigned)curObsIndex >= obsTimes.size())
 				break;
-   
+
         // Update our state
         updateState(curTime, timeToNext);
         numEvents++;
@@ -360,7 +362,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
         // Increase our current time and get the next Event Time
         curTime = curTime + timeToNext;
     }
-	
+
 	std::cout << "End Simulation Time: " << obsTimes[curObsIndex] << std::endl;
     std::cout << "Number of total events: " << numEvents << std::endl;
 
@@ -385,7 +387,7 @@ void DiffTree::simulate(int numTime, int outputFrequency)
 void DiffTree::time_steps(int n, int outputFrequency)
 {
 	bool verbose = true;
-	
+
 	// How often should we update on simulation progress
 	int obsMod = pow(10, round(log10(n)-1));
 
@@ -413,7 +415,7 @@ void DiffTree::time_steps(int n, int outputFrequency)
     writeSDI(sdi_of, 0);
     writePopSize(pop_of, 0);
     writeLabelled(label_of, 0);
-	
+
 	std::cout << "Time 0 of " << n << std::endl;
 
 	// Simulate n time units
@@ -423,20 +425,20 @@ void DiffTree::time_steps(int n, int outputFrequency)
         Rcpp::checkUserInterrupt();
 		if(verbose && i % obsMod == 0)
 			std::cout << "Time " << i << " of " << n << std::endl;
-		
+
 		// time step
         time_step();
-		
+
 		// outputs
         writeSDI(sdi_of, i);
         writePopSize(pop_of, i);
         writeLabelled(label_of, i);
         writeEvents(events_of, i);
-		
+
 		// should we census?
 		if((outputFrequency > 0 && i % outputFrequency == 0) || i == n)
 				writeAll(i);
-		
+
 		// Zero out event counters
         zeroEvents();
     }
@@ -682,7 +684,7 @@ void DiffTree::print()
 void DiffTree::initializeCells()
 {
     long int o = 0;
-    
+
 	for(auto const& x: bfs)
 	{
         GrowingPop* node = m[x];
