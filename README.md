@@ -270,14 +270,14 @@ mut = read.csv(mutfiles[length(mutfiles)])
 head(mut)
 ```
 
-|  mutant|     time| population |  fitness|
-|-------:|--------:|:-----------|--------:|
-|       1|  24.7297| pop1       |  0.00000|
-|       2|  45.7692| pop1       |  2.75226|
-|       3|  73.4433| pop1       |  3.82084|
-|       4|  80.7638| pop1       |  4.87195|
-|       5|  81.0776| pop1       |  2.54080|
-|       6|  86.6571| pop1       |  3.19649|
+|  mutant|     time| population |   fitness|
+|-------:|--------:|:-----------|---------:|
+|       1|  24.3701| pop1       |  0.773268|
+|       2|  63.2624| pop1       |  1.657660|
+|       3|  72.5182| pop1       |  0.813800|
+|       4|  75.7739| pop1       |  0.000000|
+|       5|  82.3002| pop1       |  0.000000|
+|       6|  93.4622| pop1       |  2.923850|
 
 Let us also take a quick look at a census file. We will take a look at the full census of pop1 at the end of the simulation time.
 
@@ -292,16 +292,14 @@ c_pop1 = read.csv(census_pop1_files[length(census_pop1_files)])
 c_pop1[c_pop1$time == max(c_pop1$time),]
 ```
 
-|     |  time|  barcode| mutation     |  fitness|  count|
-|-----|-----:|--------:|:-------------|--------:|------:|
-| 47  |   100|       -1| 0&gt;2       |  2.75226|  19688|
-| 48  |   100|       -1| 0&gt;2&gt;4  |  4.87195|    968|
-| 49  |   100|       -1| 0&gt;2&gt;3  |  3.82084|    589|
-| 50  |   100|       -1| 0&gt;2&gt;8  |  3.56443|     14|
-| 51  |   100|       -1| 0&gt;2&gt;5  |  2.54080|     12|
-| 52  |   100|       -1| 0&gt;2&gt;10 |  3.04121|      8|
-| 53  |   100|       -1| 0&gt;2&gt;12 |  3.43850|      3|
-| 54  |   100|       -1| 0&gt;2&gt;13 |  2.18070|      1|
+|     |  time|  barcode| mutation    |  fitness|  count|
+|-----|-----:|--------:|:------------|--------:|------:|
+| 49  |   100|       -1| 0           |  1.00000|   5122|
+| 50  |   100|       74| 0           |  1.00000|   1506|
+| 51  |   100|       -1| 0&gt;6      |  2.92385|    973|
+| 52  |   100|       78| 0           |  1.00000|     53|
+| 53  |   100|       89| 0           |  1.00000|     40|
+| 54  |   100|       -1| 0&gt;6&gt;7 |  3.21474|      4|
 
 For more detailed examples, please set the vignettes.
 
@@ -326,7 +324,7 @@ As an example of this type of experimental procedure, we point the reader to a c
 
 ### Unique Cell Barcoding
 
-In addition to simulating fluorescent cell labels, DIFFpop can also be used in combination with unique cell barcoding experiments. Unique cell labeling can be achieved by introducing a mobile transcodon into the genome. Upon induction of labeling with tamoxifen, this transcodon is spliced from the genome, and randomly reintegrated at some point in the host genome. Assuming the probability that the transcodon randomly integrating into the same location in two cells is negligible, each cell now contains the transcodon in a unique genomic position. The transcodon in this location will then be passed to all offspring cells and be maintained through replication and differentiation events. At the end of an experiment, cell populations can be sorted and then sequenced for the presence or absence of these barcodes. Alternatively, a sample of cells can be sent off for single cell sequencing, allowing for not only the presence or absence of a particular barcode, but also an estimate of the size of a particular barcode-defined clone.
+In addition to simulating fluorescent cell labels, DIFFpop can also be used in combination with unique cell barcoding experiments. Unique cell labeling can be achieved by introducing a mobile transposon into the genome. Upon induction of labeling with tamoxifen, this transposon is spliced from the genome, and randomly reintegrated at some point in the host genome. Assuming the probability that the transposon randomly integrating into the same location in two cells is negligible, each cell now contains the transposon in a unique genomic position. The transposon in this location will then be passed to all offspring cells and be maintained through replication and differentiation events. At the end of an experiment, cell populations can be sorted and then sequenced for the presence or absence of these barcodes. Alternatively, a sample of cells can be sent off for single cell sequencing, allowing for not only the presence or absence of a particular barcode, but also an estimate of the size of a particular barcode-defined clone..
 
 Simulating unique cell barcoding in DIFFpop can easily be achieved by simply specifying the proportion of cells to be successfully labeling upon system initialization. The census files can then be analyzed upon simulation completion to track the barcode frequencies in the system over time. One can even simulate a single cell barcoding experiment by randomly sampling from the barcode population.
 
